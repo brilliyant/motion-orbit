@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-error": "#690005", "error-container": "#450A0A", "on-tertiary-fixed-variant": "#005236", "success-base": "#10B981", "tertiary": "#4edea3", "secondary-fixed": "#c4e7ff", "surface-dim": "#0b1326", "primary": "#b4c5ff", "surface": "#0b1326", "text-primary": "#F8FAFC", "surface-container-highest": "#2d3449", "text-tertiary": "#64748B", "outline-variant": "#434655", "outline": "#8d90a0", "on-primary-fixed": "#00174b", "surface-bright": "#31394d", "success-container": "#064E3B", "error": "#ffb4ab", "outline-subtle": "#1E293B", "surface-container": "#1E293B", "primary-fixed": "#dbe1ff", "on-tertiary-container": "#bdffdb", "on-secondary-fixed": "#001e2c", "on-background": "#dae2fd", "tertiary-fixed": "#6ffbbe", "error-base": "EF4444", "surface-tint": "#b4c5ff", "on-primary-fixed-variant": "#003ea8", "surface-container-high": "#222a3d", "inverse-primary": "#0053db", "on-secondary-container": "#00374d", "inverse-surface": "#dae2fd", "on-error-container": "#ffdad6", "inverse-on-surface": "#283044", "surface-variant": "#2d3449", "on-surface": "#dae2fd", "text-secondary": "#94A3B8", "on-secondary-fixed-variant": "#004c69", "secondary": "#7bd0ff", "on-primary": "#002a78", "tertiary-container": "#007d55", "primary-fixed-dim": "#b4c5ff", "secondary-container": "#00a6e0", "on-tertiary-fixed": "#002113", "background": "#0b1326", "secondary-fixed-dim": "#7bd0ff", "surface-base": "#0B1120", "on-surface-variant": "#c3c6d7", "on-tertiary": "#003824", "tertiary-fixed-dim": "#4edea3", "on-primary-container": "#eeefff", "surface-container-low": "#131b2e", "on-secondary": "#00354a", "surface-container-lowest": "#060e20", "warning-base": "#F59E0B", "primary-container": "#2563eb", "outline-focus": "#38BDF8" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "space-xs": "0.5rem", "gutter": "1rem", "space-2xl": "2.5rem", "space-3xl": "3.5rem", "space-lg": "1.5rem", "space-sm": "0.75rem", "margin-tablet": "2rem", "space-xl": "2rem", "margin": "1rem", "space-2xs": "0.25rem" }, fontFamily: { "headline-sm": ["Inter"], "body-lg": ["Inter"], "title-md": ["Inter"], "label-md": ["Inter"], "metric-display-mobile": ["Inter"], "label-lg": ["Inter"], "display-lg-mobile": ["Inter"], "body-sm": ["Inter"], "display-lg": ["Inter"], "headline-md": ["Inter"], "metric-display": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"] }, fontSize: { "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }], "title-md": ["16px", { lineHeight: "24px", letterSpacing: "0.005em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }], "metric-display-mobile": ["28px", { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "display-lg-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "800" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "display-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "800" }], "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }], "metric-display": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.015em", fontWeight: "700" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0.015em", fontWeight: "400" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.03em", fontWeight: "500" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#0b1326;color:#dae2fd;}body{overscroll-behavior:none;min-height:100vh;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Back" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="Motion Orbit Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WE2t0hXYD48CPpDJLuW7i7tqFfA0oAgz_havjuIT0muZbW-yArRgxDzS7_7jOAAx335C2A1F-BoCnm80rB8jGEPCKEz-Op3f6y9I9Sup2gIrK4BqcsdrqCEr8yBh24nw2VhyyY1P87xgTAUk08Q5sdEaIYPIpt3CEhbJBMMuFtFe-ChOxRJuR1leCWYwmgLFXub7gpFd5N59Itg0DSFMQYSwLc9PyeWTPyqaQchSKBP5KpeF-fnsnYXHjl"/><span class="font-title-md text-title-md text-text-primary uppercase tracking-wider ml-space-2xs">Motion Orbit</span></div><div class="flex items-center gap-space-sm"><span class="font-label-md text-label-md text-text-secondary truncate max-w-[120px]">Goal Selection</span><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full">
+<div class="px-gutter pt-space-xs pb-space-lg flex flex-col gap-space-lg">
+<!-- Progress Indicator Bar -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-secondary tracking-wider uppercase font-semibold">Step 2 of 3</span>
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-high text-text-secondary text-label-sm">
+<span class="material-symbols-outlined text-[14px]">offline_pin</span>
+<span>On-device</span>
+</div>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden flex gap-1">
+<div class="h-full w-1/3 bg-primary-container rounded-full"></div>
+<div class="h-full w-1/3 bg-primary-container rounded-full transition-all duration-300"></div>
+<div class="h-full w-1/3 bg-surface-container-high rounded-full"></div>
+</div>
+</div>
+<!-- Screen Title & Subtitle -->
+<div class="flex flex-col gap-space-2xs">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-text-primary tracking-tight">Your Fitness Starting Point</h1>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">Select your focus and current level. You can change these anytime in Profile.</p>
+</div>
+<!-- Section 1: Primary Goal -->
+<section aria-labelledby="goal-heading" class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-title-md text-title-md text-text-primary font-semibold flex items-center gap-space-2xs" id="goal-heading">
+<span>Primary Goal</span>
+<span class="text-secondary text-label-sm font-normal">• Required</span>
+</h2>
+<span class="font-label-sm text-label-sm text-secondary font-medium" id="goal-selected-label">Build Muscle</span>
+</div>
+<div aria-required="true" class="flex flex-col gap-space-xs" id="goal-options-group" role="radiogroup">
+<!-- Goal Card 1 (Selected) -->
+<div aria-checked="true" class="goal-card group cursor-pointer transition-all duration-150 p-space-sm rounded-xl bg-surface-container shadow-sm flex items-center justify-between gap-space-sm" data-goal="muscle" role="radio" tabindex="0">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="icon-wrap w-11 h-11 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-text-primary font-semibold truncate">Build Muscle</span>
+<span class="font-body-sm text-body-sm text-text-secondary truncate">Hypertrophy &amp; strength progression</span>
+</div>
+</div>
+<div class="indicator w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+</div>
+<!-- Goal Card 2 -->
+<div aria-checked="false" class="goal-card group cursor-pointer transition-all duration-150 p-space-sm rounded-xl bg-surface-container-low shadow-sm flex items-center justify-between gap-space-sm" data-goal="fat" role="radio" tabindex="0">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="icon-wrap w-11 h-11 rounded-lg bg-surface-container text-text-secondary flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[22px]">local_fire_department</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-text-primary font-semibold truncate">Lose Fat</span>
+<span class="font-body-sm text-body-sm text-text-secondary truncate">High tempo, calorie burn &amp; tone</span>
+</div>
+</div>
+<div class="indicator w-6 h-6 rounded-full bg-surface-container-high text-transparent flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+</div>
+<!-- Goal Card 3 -->
+<div aria-checked="false" class="goal-card group cursor-pointer transition-all duration-150 p-space-sm rounded-xl bg-surface-container-low shadow-sm flex items-center justify-between gap-space-sm" data-goal="stamina" role="radio" tabindex="0">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="icon-wrap w-11 h-11 rounded-lg bg-surface-container text-text-secondary flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[22px]">monitor_heart</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-text-primary font-semibold truncate">Improve Stamina</span>
+<span class="font-body-sm text-body-sm text-text-secondary truncate">Endurance &amp; aerobic conditioning</span>
+</div>
+</div>
+<div class="indicator w-6 h-6 rounded-full bg-surface-container-high text-transparent flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+</div>
+<!-- Goal Card 4 -->
+<div aria-checked="false" class="goal-card group cursor-pointer transition-all duration-150 p-space-sm rounded-xl bg-surface-container-low shadow-sm flex items-center justify-between gap-space-sm" data-goal="general" role="radio" tabindex="0">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="icon-wrap w-11 h-11 rounded-lg bg-surface-container text-text-secondary flex items-center justify-center shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[22px]">vital_signs</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-text-primary font-semibold truncate">General Fitness</span>
+<span class="font-body-sm text-body-sm text-text-secondary truncate">Balanced health &amp; mobility</span>
+</div>
+</div>
+<div class="indicator w-6 h-6 rounded-full bg-surface-container-high text-transparent flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Fitness Level -->
+<section aria-labelledby="level-heading" class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-title-md text-title-md text-text-primary font-semibold flex items-center gap-space-2xs" id="level-heading">
+<span>Fitness Level</span>
+<span class="text-secondary text-label-sm font-normal">• Required</span>
+</h2>
+<span class="font-label-sm text-label-sm text-secondary font-medium" id="level-selected-label">Intermediate</span>
+</div>
+<div aria-required="true" class="flex flex-col gap-space-xs" id="level-options-group" role="radiogroup">
+<!-- Level Card: Beginner -->
+<div aria-checked="false" class="level-card group cursor-pointer transition-all duration-150 p-space-sm rounded-xl bg-surface-container-low shadow-sm flex items-center justify-between gap-space-sm" data-level="beginner" role="radio" tabindex="0">
+<div class="flex flex-col gap-0.5 min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-title-md text-text-primary font-semibold">Beginner</span>
+<span class="level-badge px-2 py-0.5 rounded text-label-sm font-medium bg-surface-container-high text-text-secondary">Level 1</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary truncate">New to structured training</span>
+</div>
+<div class="indicator w-6 h-6 rounded-full bg-surface-container-high text-transparent flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+</div>
+<!-- Level Card: Intermediate (Selected) -->
+<div aria-checked="true" class="level-card group cursor-pointer transition-all duration-150 p-space-sm rounded-xl bg-surface-container shadow-sm flex items-center justify-between gap-space-sm" data-level="intermediate" role="radio" tabindex="0">
+<div class="flex flex-col gap-0.5 min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-title-md text-text-primary font-semibold">Intermediate</span>
+<span class="level-badge px-2 py-0.5 rounded text-label-sm font-medium bg-primary-container text-on-primary-container font-semibold">Level 2</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary truncate">Consistent for 6+ months</span>
+</div>
+<div class="indicator w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+</div>
+<!-- Level Card: Advanced -->
+<div aria-checked="false" class="level-card group cursor-pointer transition-all duration-150 p-space-sm rounded-xl bg-surface-container-low shadow-sm flex items-center justify-between gap-space-sm" data-level="advanced" role="radio" tabindex="0">
+<div class="flex flex-col gap-0.5 min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-title-md text-text-primary font-semibold">Advanced</span>
+<span class="level-badge px-2 py-0.5 rounded text-label-sm font-medium bg-surface-container-high text-text-secondary">Level 3</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary truncate">Experienced with progressive overload</span>
+</div>
+<div class="indicator w-6 h-6 rounded-full bg-surface-container-high text-transparent flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Momentum Info Banner -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</div>
+<div class="flex flex-col gap-0.5 min-w-0">
+<span class="font-label-md text-label-md text-text-primary font-semibold">Smart Workout Baseline</span>
+<p class="font-body-sm text-body-sm text-text-secondary leading-snug">Preferences help customize starting weights and set recommendations offline.</p>
+</div>
+</div>
+<!-- Bottom Actions Container -->
+<div class="pt-space-xs pb-space-sm flex flex-col gap-space-xs">
+<button class="w-full h-[52px] bg-primary-container text-on-primary rounded-xl font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 shadow-lg active:scale-[0.99] transition-all" id="continue-button" type="button">
+<span>Continue</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<div class="flex items-center justify-center gap-1.5 py-1 text-text-tertiary">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span class="font-label-sm text-label-sm">No account needed • 100% private &amp; offline</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    const goalCards = document.querySelectorAll('.goal-card');
+    const levelCards = document.querySelectorAll('.level-card');
+    const goalLabel = document.getElementById('goal-selected-label');
+    const levelLabel = document.getElementById('level-selected-label');
+    const continueBtn = document.getElementById('continue-button');
+
+    const goalNames = {
+      muscle: 'Build Muscle',
+      fat: 'Lose Fat',
+      stamina: 'Improve Stamina',
+      general: 'General Fitness'
+    };
+
+    const levelNames = {
+      beginner: 'Beginner',
+      intermediate: 'Intermediate',
+      advanced: 'Advanced'
+    };
+
+    let selectedGoal = 'muscle';
+    let selectedLevel = 'intermediate';
+
+    function updateGoalUI() {
+      goalCards.forEach(card => {
+        const isSelected = card.getAttribute('data-goal') === selectedGoal;
+        card.setAttribute('aria-checked', isSelected ? 'true' : 'false');
+        const iconWrap = card.querySelector('.icon-wrap');
+        const icon = card.querySelector('.icon-wrap .material-symbols-outlined');
+        const indicator = card.querySelector('.indicator');
+
+        if (isSelected) {
+          card.classList.remove('bg-surface-container-low');
+          card.classList.add('bg-surface-container');
+          iconWrap.classList.remove('bg-surface-container', 'text-text-secondary');
+          iconWrap.classList.add('bg-primary-container', 'text-on-primary-container');
+          icon.style.fontVariationSettings = "'FILL' 1";
+          indicator.classList.remove('bg-surface-container-high', 'text-transparent');
+          indicator.classList.add('bg-primary-container', 'text-on-primary');
+        } else {
+          card.classList.remove('bg-surface-container');
+          card.classList.add('bg-surface-container-low');
+          iconWrap.classList.remove('bg-primary-container', 'text-on-primary-container');
+          iconWrap.classList.add('bg-surface-container', 'text-text-secondary');
+          icon.style.fontVariationSettings = "'FILL' 0";
+          indicator.classList.remove('bg-primary-container', 'text-on-primary');
+          indicator.classList.add('bg-surface-container-high', 'text-transparent');
+        }
+      });
+      if (goalLabel) {
+        goalLabel.textContent = goalNames[selectedGoal] || '';
+      }
+    }
+
+    function updateLevelUI() {
+      levelCards.forEach(card => {
+        const isSelected = card.getAttribute('data-level') === selectedLevel;
+        card.setAttribute('aria-checked', isSelected ? 'true' : 'false');
+        const badge = card.querySelector('.level-badge');
+        const indicator = card.querySelector('.indicator');
+
+        if (isSelected) {
+          card.classList.remove('bg-surface-container-low');
+          card.classList.add('bg-surface-container');
+          badge.classList.remove('bg-surface-container-high', 'text-text-secondary');
+          badge.classList.add('bg-primary-container', 'text-on-primary-container', 'font-semibold');
+          indicator.classList.remove('bg-surface-container-high', 'text-transparent');
+          indicator.classList.add('bg-primary-container', 'text-on-primary');
+        } else {
+          card.classList.remove('bg-surface-container');
+          card.classList.add('bg-surface-container-low');
+          badge.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-semibold');
+          badge.classList.add('bg-surface-container-high', 'text-text-secondary');
+          indicator.classList.remove('bg-primary-container', 'text-on-primary');
+          indicator.classList.add('bg-surface-container-high', 'text-transparent');
+        }
+      });
+      if (levelLabel) {
+        levelLabel.textContent = levelNames[selectedLevel] || '';
+      }
+    }
+
+    goalCards.forEach(card => {
+      card.addEventListener('click', () => {
+        selectedGoal = card.getAttribute('data-goal');
+        updateGoalUI();
+      });
+      card.addEventListener('keydown', (e) => {
+        if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+          selectedGoal = card.getAttribute('data-goal');
+          updateGoalUI();
+        }
+      });
+    });
+
+    levelCards.forEach(card => {
+      card.addEventListener('click', () => {
+        selectedLevel = card.getAttribute('data-level');
+        updateLevelUI();
+      });
+      card.addEventListener('keydown', (e) => {
+        if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+          selectedLevel = card.getAttribute('data-level');
+          updateLevelUI();
+        }
+      });
+    });
+
+    if (continueBtn) {
+      continueBtn.addEventListener('click', () => {
+        try {
+          const profileDraft = JSON.parse(localStorage.getItem('motion_orbit_draft') || '{}');
+          profileDraft.primaryGoal = selectedGoal;
+          profileDraft.fitnessLevel = selectedLevel;
+          profileDraft.lastCompletedStep = 2;
+          localStorage.setItem('motion_orbit_draft', JSON.stringify(profileDraft));
+        } catch (e) {
+          // LocalStorage fallback for secure/isolated mock contexts
+        }
+
+        const currentText = continueBtn.innerHTML;
+        continueBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span><span>Saving...</span>';
+        setTimeout(() => {
+          continueBtn.innerHTML = currentText;
+        }, 350);
+      });
+    }
+
+    // Try reading any previously preserved selection
+    try {
+      const existingDraft = JSON.parse(localStorage.getItem('motion_orbit_draft') || '{}');
+      if (existingDraft.primaryGoal && goalNames[existingDraft.primaryGoal]) {
+        selectedGoal = existingDraft.primaryGoal;
+      }
+      if (existingDraft.fitnessLevel && levelNames[existingDraft.fitnessLevel]) {
+        selectedLevel = existingDraft.fitnessLevel;
+      }
+    } catch (e) {}
+
+    updateGoalUI();
+    updateLevelUI();
+  })();
+</script></main></body></html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-error": "#690005", "error-container": "#450A0A", "on-tertiary-fixed-variant": "#005236", "success-base": "#10B981", "tertiary": "#4edea3", "secondary-fixed": "#c4e7ff", "surface-dim": "#0b1326", "primary": "#b4c5ff", "surface": "#0b1326", "text-primary": "#F8FAFC", "surface-container-highest": "#2d3449", "text-tertiary": "#64748B", "outline-variant": "#434655", "outline": "#8d90a0", "on-primary-fixed": "#00174b", "surface-bright": "#31394d", "success-container": "#064E3B", "error": "#ffb4ab", "outline-subtle": "#1E293B", "surface-container": "#1E293B", "primary-fixed": "#dbe1ff", "on-tertiary-container": "#bdffdb", "on-secondary-fixed": "#001e2c", "on-background": "#dae2fd", "tertiary-fixed": "#6ffbbe", "error-base": "EF4444", "surface-tint": "#b4c5ff", "on-primary-fixed-variant": "#003ea8", "surface-container-high": "#222a3d", "inverse-primary": "#0053db", "on-secondary-container": "#00374d", "inverse-surface": "#dae2fd", "on-error-container": "#ffdad6", "inverse-on-surface": "#283044", "surface-variant": "#2d3449", "on-surface": "#dae2fd", "text-secondary": "#94A3B8", "on-secondary-fixed-variant": "#004c69", "secondary": "#7bd0ff", "on-primary": "#002a78", "tertiary-container": "#007d55", "primary-fixed-dim": "#b4c5ff", "secondary-container": "#00a6e0", "on-tertiary-fixed": "#002113", "background": "#0b1326", "secondary-fixed-dim": "#7bd0ff", "surface-base": "#0B1120", "on-surface-variant": "#c3c6d7", "on-tertiary": "#003824", "tertiary-fixed-dim": "#4edea3", "on-primary-container": "#eeefff", "surface-container-low": "#131b2e", "on-secondary": "#00354a", "surface-container-lowest": "#060e20", "warning-base": "#F59E0B", "primary-container": "#2563eb", "outline-focus": "#38BDF8" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "space-xs": "0.5rem", "gutter": "1rem", "space-2xl": "2.5rem", "space-3xl": "3.5rem", "space-lg": "1.5rem", "space-sm": "0.75rem", "margin-tablet": "2rem", "space-xl": "2rem", "margin": "1rem", "space-2xs": "0.25rem" }, fontFamily: { "headline-sm": ["Inter"], "body-lg": ["Inter"], "title-md": ["Inter"], "label-md": ["Inter"], "metric-display-mobile": ["Inter"], "label-lg": ["Inter"], "display-lg-mobile": ["Inter"], "body-sm": ["Inter"], "display-lg": ["Inter"], "headline-md": ["Inter"], "metric-display": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"] }, fontSize: { "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }], "title-md": ["16px", { lineHeight: "24px", letterSpacing: "0.005em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }], "metric-display-mobile": ["28px", { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "display-lg-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "800" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "display-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "800" }], "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }], "metric-display": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.015em", fontWeight: "700" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0.015em", fontWeight: "400" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.03em", fontWeight: "500" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#0b1326;color:#dae2fd;}body{overscroll-behavior:none;min-height:100vh;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Back" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="Motion Orbit Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WE2t0hXYD48CPpDJLuW7i7tqFfA0oAgz_havjuIT0muZbW-yArRgxDzS7_7jOAAx335C2A1F-BoCnm80rB8jGEPCKEz-Op3f6y9I9Sup2gIrK4BqcsdrqCEr8yBh24nw2VhyyY1P87xgTAUk08Q5sdEaIYPIpt3CEhbJBMMuFtFe-ChOxRJuR1leCWYwmgLFXub7gpFd5N59Itg0DSFMQYSwLc9PyeWTPyqaQchSKBP5KpeF-fnsnYXHjl"/><span class="font-title-md text-title-md text-text-primary uppercase tracking-wider ml-space-2xs">Motion Orbit</span></div><div class="flex items-center gap-space-sm"><span class="font-label-md text-label-md text-text-secondary truncate max-w-[120px]">Body Profile</span><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full">
+<!-- Interactive Form & Navigation Engine -->
+<form class="flex flex-col w-full px-gutter pb-space-2xl" id="onboarding-step-1" onsubmit="event.preventDefault(); handleContinue();">
+<!-- Top Progress Indicator Area -->
+<div class="flex flex-col gap-space-xs pt-space-xs pb-space-md">
+<div class="flex items-center justify-between text-text-secondary">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold text-primary">Step 1 of 3</span>
+<span class="font-label-sm text-label-sm text-text-tertiary">33% Completed</span>
+</div>
+<!-- Segmented Bar Track (No borders) -->
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden flex gap-1">
+<div class="h-full w-1/3 bg-primary-container rounded-full shadow-[0_0_8px_rgba(37,99,235,0.6)]"></div>
+<div class="h-full w-1/3 bg-surface-container-high rounded-full"></div>
+<div class="h-full w-1/3 bg-surface-container-high rounded-full"></div>
+</div>
+</div>
+<!-- Header & Delightful Human Framing -->
+<div class="flex flex-col gap-space-2xs mt-space-sm mb-space-lg">
+<div class="flex items-center gap-space-xs">
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">About You</h1>
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[22px] select-none">waving_hand</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+        Customize your profile. All details are stored locally on your device.
+      </p>
+</div>
+<!-- Offline Privacy Delight Micro-Pill -->
+<div class="flex items-center gap-space-xs px-space-md py-2.5 rounded-xl bg-surface-container-low shadow-sm mb-space-lg">
+<div class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary text-[16px]" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">
+<span class="font-semibold text-text-primary">Zero cloud required.</span> No accounts, trackers, or hidden sign-ups.
+      </p>
+</div>
+<!-- Form Container -->
+<div class="flex flex-col gap-space-lg">
+<!-- Field 1: Display Name -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg text-text-primary flex items-center gap-1.5" for="display-name">
+<span class="material-symbols-outlined text-text-tertiary text-[18px]">badge</span>
+            Display Name
+          </label>
+<span class="font-label-sm text-label-sm text-text-tertiary font-medium">Optional</span>
+</div>
+<div class="relative flex items-center mt-1">
+<input autocomplete="name" class="w-full h-14 bg-surface-container-low text-text-primary placeholder:text-text-tertiary font-body-lg text-body-lg rounded-xl px-4 outline-none focus:bg-surface-container focus:shadow-[0_0_0_2px_#38BDF8] transition-all" id="display-name" maxlength="24" name="displayName" placeholder="e.g. Alex" type="text"/>
+</div>
+</div>
+<!-- Field 2: Age Range Selector -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-text-tertiary text-[18px]">calendar_month</span>
+            Age Range
+          </span>
+<span class="font-label-sm text-label-sm text-text-tertiary font-medium">Optional</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-tertiary mb-1">Select an age bracket to contextualize recovery baselines</p>
+<!-- Multi-option Chip Grid -->
+<div aria-label="Age Range" class="grid grid-cols-4 gap-space-xs mt-1" role="radiogroup">
+<button aria-checked="false" class="age-chip h-12 rounded-xl bg-surface-container-low text-text-secondary font-label-md text-label-md flex items-center justify-center transition-all hover:bg-surface-container active:scale-95" onclick="selectAgeChip(this, '18–24')" role="radio" type="button">
+            18–24
+          </button>
+<button aria-checked="false" class="age-chip h-12 rounded-xl bg-surface-container-low text-text-secondary font-label-md text-label-md flex items-center justify-center transition-all hover:bg-surface-container active:scale-95" onclick="selectAgeChip(this, '25–34')" role="radio" type="button">
+            25–34
+          </button>
+<button aria-checked="false" class="age-chip h-12 rounded-xl bg-surface-container-low text-text-secondary font-label-md text-label-md flex items-center justify-center transition-all hover:bg-surface-container active:scale-95" onclick="selectAgeChip(this, '35–44')" role="radio" type="button">
+            35–44
+          </button>
+<button aria-checked="false" class="age-chip h-12 rounded-xl bg-surface-container-low text-text-secondary font-label-md text-label-md flex items-center justify-center transition-all hover:bg-surface-container active:scale-95" onclick="selectAgeChip(this, '45+')" role="radio" type="button">
+            45+
+          </button>
+</div>
+<input id="selected-age-range" name="ageRange" type="hidden" value=""/>
+</div>
+<!-- Anthropometrics (Side-by-side: Height & Weight) -->
+<div class="grid grid-cols-2 gap-space-md">
+<!-- Height (cm) -->
+<div class="flex flex-col gap-space-2xs min-w-0">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg text-text-primary truncate" for="height-input">Height</label>
+<span class="font-label-sm text-label-sm text-text-tertiary shrink-0">Opt</span>
+</div>
+<div class="relative flex items-center mt-1">
+<input class="w-full h-14 bg-surface-container-low text-text-primary placeholder:text-text-tertiary font-metric-display-mobile text-metric-display-mobile rounded-xl pl-4 pr-12 outline-none focus:bg-surface-container focus:shadow-[0_0_0_2px_#38BDF8] transition-all" id="height-input" inputmode="numeric" maxlength="3" name="heightCm" oninput="validateNumericInput(this, 80, 250, 'height-error')" pattern="[0-9]*" placeholder="175" type="text"/>
+<div class="absolute right-3.5 pointer-events-none px-2 py-0.5 rounded bg-surface-container-high text-text-secondary font-label-md text-label-md uppercase">
+              cm
+            </div>
+</div>
+<span class="hidden font-label-sm text-label-sm text-error flex items-center gap-1 mt-1" id="height-error">
+<span class="material-symbols-outlined text-[13px]">error</span>
+            Valid: 80–250 cm
+          </span>
+</div>
+<!-- Weight (kg) -->
+<div class="flex flex-col gap-space-2xs min-w-0">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg text-text-primary truncate" for="weight-input">Weight</label>
+<span class="font-label-sm text-label-sm text-text-tertiary shrink-0">Opt</span>
+</div>
+<div class="relative flex items-center mt-1">
+<input class="w-full h-14 bg-surface-container-low text-text-primary placeholder:text-text-tertiary font-metric-display-mobile text-metric-display-mobile rounded-xl pl-4 pr-12 outline-none focus:bg-surface-container focus:shadow-[0_0_0_2px_#38BDF8] transition-all" id="weight-input" inputmode="decimal" maxlength="5" name="weightKg" oninput="validateDecimalInput(this, 30, 300, 'weight-error')" placeholder="72" type="text"/>
+<div class="absolute right-3.5 pointer-events-none px-2 py-0.5 rounded bg-surface-container-high text-text-secondary font-label-md text-label-md uppercase">
+              kg
+            </div>
+</div>
+<span class="hidden font-label-sm text-label-sm text-error flex items-center gap-1 mt-1" id="weight-error">
+<span class="material-symbols-outlined text-[13px]">error</span>
+            Valid: 30–300 kg
+          </span>
+</div>
+</div>
+<!-- Helper info box with friendly anatomical delight icon -->
+<div class="flex items-start gap-space-xs p-space-sm bg-surface-container-lowest rounded-xl">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5 shrink-0">auto_awesome</span>
+<p class="font-body-sm text-body-sm text-text-secondary leading-snug">
+<strong class="text-text-primary font-medium">Optional</strong> — used to calibrate workout volume and energy metrics locally. You can update or purge this anytime in Settings.
+        </p>
+</div>
+</div>
+<!-- Warm Visual Affirmation Card (Offline Anchor) -->
+<div class="mt-space-lg p-space-md rounded-2xl bg-surface-container-low flex items-center gap-space-md shadow-md">
+<div class="relative w-14 h-14 rounded-xl overflow-hidden shrink-0 bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Athletic minimalist fitness gear resting on a gym locker bench in cinematic moody lighting with subtle electric blue rim highlights, celebrating athletic precision and personal focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCzqt5SsA3TB68-JT0w60Pc4WdnsjnuZTZ_xBqX7P6HrMtpd32Uzqan10k7XlSm-x0NiIVoIOfo5lsLVXxzCAKJU45qBP08fLCoGYa4hJ7ebiX2X9cs4EwxCudQFoNxi1acrNIoldcbIctSgDMuXEGix1BG0tnvfzB6VarjZJ784JJQkMeCAL55WjS69DOTCQBRXsjzgK1_QIbjjI3QMugsTe2eNt9v7iZ1NqxVsXF9iNnM_OBQrvqMA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-base/80 to-transparent"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-text-primary truncate">Your Pace, Your Control</span>
+<p class="font-body-sm text-body-sm text-text-tertiary line-clamp-2">
+          Skip whatever you like. Motion Orbit never locks workouts behind missing fields.
+        </p>
+</div>
+</div>
+<!-- Fixed/Anchored Bottom Action Drawer Area -->
+<div class="mt-space-xl pt-space-xs flex flex-col gap-space-sm">
+<button class="w-full h-[52px] bg-primary-container hover:bg-inverse-primary text-text-primary font-label-lg text-label-lg font-semibold rounded-xl flex items-center justify-center gap-space-xs shadow-[0_4px_20px_rgba(37,99,235,0.35)] active:scale-[0.99] transition-all" id="btn-continue" type="submit">
+<span>Continue</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<button class="w-full h-11 bg-transparent hover:bg-surface-container-low text-text-secondary hover:text-text-primary font-label-md text-label-md rounded-xl flex items-center justify-center gap-1.5 transition-colors" onclick="window.history.back()" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Back to Welcome</span>
+</button>
+</div>
+</form>
+</div>
+<script>
+  // On-device Local State Restoration & Management
+  (function initLocalProfileDraft() {
+    try {
+      const savedDraft = JSON.parse(localStorage.getItem('motion_orbit_onboarding_draft') || '{}');
+      if (savedDraft.displayName) {
+        const el = document.getElementById('display-name');
+        if (el) el.value = savedDraft.displayName;
+      }
+      if (savedDraft.heightCm) {
+        const el = document.getElementById('height-input');
+        if (el) el.value = savedDraft.heightCm;
+      }
+      if (savedDraft.weightKg) {
+        const el = document.getElementById('weight-input');
+        if (el) el.value = savedDraft.weightKg;
+      }
+      if (savedDraft.ageRange) {
+        const hiddenField = document.getElementById('selected-age-range');
+        if (hiddenField) hiddenField.value = savedDraft.ageRange;
+        document.querySelectorAll('.age-chip').forEach(btn => {
+          if (btn.textContent.trim() === savedDraft.ageRange) {
+            applyActiveChipStyles(btn);
+          }
+        });
+      }
+    } catch (e) {
+      // LocalStorage access graceful fallback
+    }
+  })();
+
+  function selectAgeChip(selectedBtn, value) {
+    const isCurrentlyActive = selectedBtn.getAttribute('aria-checked') === 'true';
+    const hiddenField = document.getElementById('selected-age-range');
+
+    // Deselect all chips
+    document.querySelectorAll('.age-chip').forEach(btn => {
+      btn.setAttribute('aria-checked', 'false');
+      btn.classList.remove('bg-primary-container', 'text-text-primary', 'shadow-md');
+      btn.classList.add('bg-surface-container-low', 'text-text-secondary');
+    });
+
+    if (!isCurrentlyActive) {
+      applyActiveChipStyles(selectedBtn);
+      if (hiddenField) hiddenField.value = value;
+    } else {
+      if (hiddenField) hiddenField.value = '';
+    }
+  }
+
+  function applyActiveChipStyles(btn) {
+    btn.setAttribute('aria-checked', 'true');
+    btn.classList.remove('bg-surface-container-low', 'text-text-secondary');
+    btn.classList.add('bg-primary-container', 'text-text-primary', 'shadow-md');
+  }
+
+  function validateNumericInput(input, min, max, errorId) {
+    input.value = input.value.replace(/[^0-9]/g, '');
+    const val = parseInt(input.value, 10);
+    const err = document.getElementById(errorId);
+    if (!err) return;
+
+    if (input.value && (val < min || val > max)) {
+      err.classList.remove('hidden');
+    } else {
+      err.classList.add('hidden');
+    }
+  }
+
+  function validateDecimalInput(input, min, max, errorId) {
+    input.value = input.value.replace(/[^0-9.]/g, '');
+    const parts = input.value.split('.');
+    if (parts.length > 2) {
+      input.value = parts[0] + '.' + parts.slice(1).join('');
+    }
+    const val = parseFloat(input.value);
+    const err = document.getElementById(errorId);
+    if (!err) return;
+
+    if (input.value && (val < min || val > max)) {
+      err.classList.remove('hidden');
+    } else {
+      err.classList.add('hidden');
+    }
+  }
+
+  function handleContinue() {
+    const displayName = (document.getElementById('display-name')?.value || '').trim();
+    const ageRange = document.getElementById('selected-age-range')?.value || '';
+    const heightCm = (document.getElementById('height-input')?.value || '').trim();
+    const weightKg = (document.getElementById('weight-input')?.value || '').trim();
+
+    // Persist draft to local device storage
+    try {
+      const existing = JSON.parse(localStorage.getItem('motion_orbit_onboarding_draft') || '{}');
+      const updated = {
+        ...existing,
+        displayName: displayName || null,
+        ageRange: ageRange || null,
+        heightCm: heightCm ? Number(heightCm) : null,
+        weightKg: weightKg ? Number(weightKg) : null,
+        lastCompletedStep: 1
+      };
+      localStorage.setItem('motion_orbit_onboarding_draft', JSON.stringify(updated));
+    } catch(e) {}
+
+    // Subtle tactile feedback trigger
+    const continueBtn = document.getElementById('btn-continue');
+    if (continueBtn) {
+      continueBtn.innerHTML = `
+        <span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span>
+        <span>Saving...</span>
+      `;
+      setTimeout(() => {
+        // Proceed along the flow to Screen 3 (Starting point / Goal selection)
+        // In prototype mode, simulates route transition:
+        window.dispatchEvent(new CustomEvent('onboarding:next', { detail: { step: 2 } }));
+        continueBtn.innerHTML = `<span>Continue</span><span class="material-symbols-outlined text-[20px]">arrow_forward</span>`;
+      }, 350);
+    }
+  }
+</script></main></body></html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_blank" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-error": "#690005", "error-container": "#450A0A", "on-tertiary-fixed-variant": "#005236", "success-base": "#10B981", "tertiary": "#4edea3", "secondary-fixed": "#c4e7ff", "surface-dim": "#0b1326", "primary": "#b4c5ff", "surface": "#0b1326", "text-primary": "#F8FAFC", "surface-container-highest": "#2d3449", "text-tertiary": "#64748B", "outline-variant": "#434655", "outline": "#8d90a0", "on-primary-fixed": "#00174b", "surface-bright": "#31394d", "success-container": "#064E3B", "error": "#ffb4ab", "outline-subtle": "#1E293B", "surface-container": "#1E293B", "primary-fixed": "#dbe1ff", "on-tertiary-container": "#bdffdb", "on-secondary-fixed": "#001e2c", "on-background": "#dae2fd", "tertiary-fixed": "#6ffbbe", "error-base": "EF4444", "surface-tint": "#b4c5ff", "on-primary-fixed-variant": "#003ea8", "surface-container-high": "#222a3d", "inverse-primary": "#0053db", "on-secondary-container": "#00374d", "inverse-surface": "#dae2fd", "on-error-container": "#ffdad6", "inverse-on-surface": "#283044", "surface-variant": "#2d3449", "on-surface": "#dae2fd", "text-secondary": "#94A3B8", "on-secondary-fixed-variant": "#004c69", "secondary": "#7bd0ff", "on-primary": "#002a78", "tertiary-container": "#007d55", "primary-fixed-dim": "#b4c5ff", "secondary-container": "#00a6e0", "on-tertiary-fixed": "#002113", "background": "#0b1326", "secondary-fixed-dim": "#7bd0ff", "surface-base": "#0B1120", "on-surface-variant": "#c3c6d7", "on-tertiary": "#003824", "tertiary-fixed-dim": "#4edea3", "on-primary-container": "#eeefff", "surface-container-low": "#131b2e", "on-secondary": "#00354a", "surface-container-lowest": "#060e20", "warning-base": "#F59E0B", "primary-container": "#2563eb", "outline-focus": "#38BDF8" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "space-xs": "0.5rem", "gutter": "1rem", "space-2xl": "2.5rem", "space-3xl": "3.5rem", "space-lg": "1.5rem", "space-sm": "0.75rem", "margin-tablet": "2rem", "space-xl": "2rem", "margin": "1rem", "space-2xs": "0.25rem" }, fontFamily: { "headline-sm": ["Inter"], "body-lg": ["Inter"], "title-md": ["Inter"], "label-md": ["Inter"], "metric-display-mobile": ["Inter"], "label-lg": ["Inter"], "display-lg-mobile": ["Inter"], "body-sm": ["Inter"], "display-lg": ["Inter"], "headline-md": ["Inter"], "metric-display": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"] }, fontSize: { "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }], "title-md": ["16px", { lineHeight: "24px", letterSpacing: "0.005em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }], "metric-display-mobile": ["28px", { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "display-lg-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "800" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "display-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "800" }], "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }], "metric-display": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.015em", fontWeight: "700" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0.015em", fontWeight: "400" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.03em", fontWeight: "500" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#0b1326;color:#dae2fd;}body{overscroll-behavior:none;min-height:100vh;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><main class="flex-1 flex flex-col relative w-full bg-surface pt-safe pb-safe"><div class="flex flex-col w-full px-space-md pb-space-2xl min-w-0">
+<!-- Top Offline Trust Pill (Non-intrusive status) -->
+<div class="flex items-center justify-center pt-space-xs pb-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-high text-text-secondary shadow-sm">
+<span class="material-symbols-outlined text-outline-focus text-[15px]" style="font-variation-settings: 'FILL' 1;">cloud_off</span>
+<span class="font-label-sm text-label-sm tracking-wide text-on-surface-variant">On-Device Profile • Offline Ready</span>
+</div>
+</div>
+<!-- Hero Confirmation Badge & Orbital Pulse Centerpiece -->
+<div class="relative flex flex-col items-center justify-center my-space-md">
+<!-- Orbital Glow & Radial Pulse Layers -->
+<div class="relative w-44 h-44 flex items-center justify-center">
+<!-- Ambient Backlight -->
+<div class="absolute inset-0 rounded-full bg-primary-container/20 blur-xl pointer-events-none animate-pulse"></div>
+<!-- Outer Orbital Ring -->
+<div class="absolute inset-0 rounded-full bg-surface-container-high/60 flex items-center justify-center">
+<!-- Orbit Particle Dot 1 -->
+<span class="absolute top-1 left-8 w-2 h-2 rounded-full bg-outline-focus shadow-sm"></span>
+<!-- Orbit Particle Dot 2 -->
+<span class="absolute bottom-3 right-7 w-2.5 h-2.5 rounded-full bg-primary shadow-sm"></span>
+</div>
+<!-- Mid Concentric Ring -->
+<div class="absolute inset-4 rounded-full bg-surface-container/80 flex items-center justify-center shadow-md">
+<!-- SVG Trajectory Dashes -->
+<svg class="absolute inset-0 w-full h-full -rotate-45" fill="none" viewbox="0 0 144 144">
+<circle cx="72" cy="72" opacity="0.6" r="62" stroke="#2563EB" stroke-dasharray="8 12" stroke-linecap="round" stroke-width="2"></circle>
+<circle cx="72" cy="72" opacity="0.4" r="48" stroke="#38BDF8" stroke-dasharray="4 8" stroke-width="1.5"></circle>
+</svg>
+</div>
+<!-- Core Brand Badge & Verified Check Marker -->
+<div class="relative z-10 w-24 h-24 rounded-full bg-surface-base p-1.5 flex items-center justify-center shadow-xl">
+<div class="w-full h-full rounded-full bg-surface-container flex items-center justify-center overflow-hidden relative">
+<!-- Motion Orbit Icon Asset -->
+<img alt="Motion Orbit Logo" class="w-14 h-14 object-contain select-none" src="https://lh3.googleusercontent.com/aida/AEtjO1WE2t0hXYD48CPpDJLuW7i7tqFfA0oAgz_havjuIT0muZbW-yArRgxDzS7_7jOAAx335C2A1F-BoCnm80rB8jGEPCKEz-Op3f6y9I9Sup2gIrK4BqcsdrqCEr8yBh24nw2VhyyY1P87xgTAUk08Q5sdEaIYPIpt3CEhbJBMMuFtFe-ChOxRJuR1leCWYwmgLFXub7gpFd5N59Itg0DSFMQYSwLc9PyeWTPyqaQchSKBP5KpeF-fnsnYXHjl"/>
+<!-- Animated Floated Check Pill -->
+<div class="absolute -bottom-1 -right-1 bg-primary-container text-text-primary p-1 rounded-full shadow-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Typography Hero Block -->
+<div class="flex flex-col items-center text-center mt-space-sm space-y-1">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-text-primary font-extrabold tracking-tight">
+        You're All Set
+      </h1>
+<p class="font-body-lg text-body-lg text-text-secondary max-w-[280px]">
+        Your profile is saved on this device.
+      </p>
+</div>
+</div>
+<!-- Summary Card: Stored Local Profile -->
+<div class="w-full bg-surface-container rounded-xl p-space-md shadow-md mt-space-sm">
+<!-- Card Header / Storage Status -->
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-outline-focus text-[20px]" style="font-variation-settings: 'FILL' 1;">hard_drive_2</span>
+<span class="font-label-md text-label-md text-text-primary uppercase tracking-wider">Local Profile Summary</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-success-container text-tertiary">
+        100% Offline
+      </span>
+</div>
+<!-- Parameter Key-Value Rows -->
+<div class="flex flex-col space-y-2.5">
+<!-- Row 1: Primary Goal -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-high/60">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-md bg-surface-container-highest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">fitness_center</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-text-tertiary">Starting Goal</span>
+<span class="font-title-md text-title-md text-text-primary truncate">Build Muscle</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary px-2 py-0.5 rounded bg-surface-container-highest/60">Required</span>
+</div>
+<!-- Row 2: Experience Level -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-high/60">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-md bg-surface-container-highest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">speed</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-text-tertiary">Experience</span>
+<span class="font-title-md text-title-md text-text-primary truncate">Intermediate</span>
+</div>
+</div>
+<div class="flex gap-1 items-center">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-focus"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-focus"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-highest"></span>
+</div>
+</div>
+<!-- Row 3: Equipment -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-high/60">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-md bg-surface-container-highest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">sports_gymnastics</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-text-tertiary">Equipment Configured</span>
+<span class="font-body-md text-body-md text-text-primary truncate">Bodyweight, Dumbbells</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-tertiary text-[18px]">tune</span>
+</div>
+</div>
+<!-- Quick Micro-Hint -->
+<div class="flex items-center gap-1.5 pt-space-sm text-text-tertiary justify-center">
+<span class="material-symbols-outlined text-[14px]">edit_note</span>
+<span class="font-label-sm text-label-sm">Customizable anytime under Profile tab</span>
+</div>
+</div>
+<!-- Notice Badge: Privacy & AI Model Guarantee -->
+<div class="w-full mt-space-md p-space-sm rounded-xl bg-surface-container-low flex items-start gap-space-sm shadow-sm">
+<div class="w-7 h-7 rounded-full bg-primary-container/20 flex-shrink-0 flex items-center justify-center mt-0.5">
+<span class="material-symbols-outlined text-outline-focus text-[18px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-text-primary">Zero Cloud Transmission</span>
+<p class="font-body-sm text-body-sm text-text-secondary leading-snug mt-0.5">
+        No account required. AI form tracking operates locally in Workout mode.
+      </p>
+</div>
+</div>
+<!-- Thumb Zone Action Anchor -->
+<div class="w-full mt-space-lg flex flex-col items-center">
+<!-- Primary CTA: Go to Dashboard -->
+<button class="w-full h-[52px] rounded-lg bg-primary-container active:scale-[0.98] transition-transform flex items-center justify-center gap-space-xs text-text-primary shadow-lg cursor-pointer" id="btn-dashboard">
+<span class="font-label-lg text-label-lg">Go to Dashboard</span>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
+</button>
+<!-- Subtext Brand Note -->
+<div class="flex items-center gap-2 mt-space-sm text-text-tertiary">
+<span class="font-label-sm text-label-sm tracking-widest uppercase">Motion Orbit</span>
+<span class="w-1 h-1 rounded-full bg-surface-container-highest"></span>
+<span class="font-label-sm text-label-sm">Train Smart. Move Better.</span>
+</div>
+</div>
+</div>
+<script>
+  // Micro-interaction for entering the dashboard
+  const btnDashboard = document.getElementById('btn-dashboard');
+  if (btnDashboard) {
+    btnDashboard.addEventListener('click', () => {
+      // Mark onboarding completed in local storage
+      try {
+        localStorage.setItem('motion_orbit_onboarding_complete', 'true');
+      } catch (e) {
+        // Safe fallback in restricted sandboxes
+      }
+      
+      // Haptic/visual micro-feedback animation
+      btnDashboard.classList.add('opacity-90', 'scale-[0.97]');
+      setTimeout(() => {
+        btnDashboard.classList.remove('opacity-90', 'scale-[0.97]');
+      }, 150);
+    });
+  }
+</script></main></body></html>
