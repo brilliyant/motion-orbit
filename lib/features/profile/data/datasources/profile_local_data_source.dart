@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class ProfileLocalDataSource {
   Future<String?> read();
@@ -9,16 +9,36 @@ abstract class ProfileLocalDataSource {
 class ProfileLocalDataSourceImpl implements ProfileLocalDataSource {
   const ProfileLocalDataSourceImpl();
 
-  static const _channel = MethodChannel('motion_orbit/local_profile');
+  static const _snapshotKey = 'motion_orbit/local_profile/snapshot';
+  static const _recoveredSnapshotKey =
+      'motion_orbit/local_profile/unreadable_snapshot';
 
   @override
-  Future<String?> read() => _channel.invokeMethod<String>('read');
+  Future<String?> read() async {
+    final preferences = await SharedPreferences.getInstance();
+    return preferences.getString(_snapshotKey);
+  }
 
   @override
-  Future<void> write(String snapshot) =>
-      _channel.invokeMethod<void>('write', snapshot);
+  Future<void> write(String snapshot) async {
+    final preferences = await SharedPreferences.getInstance();
+    final saved = await preferences.setString(_snapshotKey, snapshot);
+    if (!saved) throw StateError('Could not save the profile locally');
+  }
 
   @override
-  Future<void> recover() => _channel.invokeMethod<void>('recover');
+  Future<void> recover() async {
+    final preferences = await SharedPreferences.getInstance();
+    final unreadableSnapshot = preferences.getString(_snapshotKey);
+    if (unreadableSnapshot != null) {
+      final backedUp = await preferences.setString(
+        _recoveredSnapshotKey,
+        unreadableSnapshot,
+      );
+      if (!backedUp) {
+        throw StateError('Could not preserve the unreadable profile data');
+      }
+    }
+    await preferences.remove(_snapshotKey);
+  }
 }
-
