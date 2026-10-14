@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'core/theme/app_theme.dart';
 import 'features/dashboard/presentation/screens/dashboard_screen.dart';
 import 'features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'features/profile/presentation/state/profile_store.dart';
@@ -14,36 +15,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scheme =
-        ColorScheme.fromSeed(
-          seedColor: const Color(0xFF2563EB),
-          brightness: Brightness.dark,
-        ).copyWith(
-          primary: const Color(0xFF2563EB),
-          onPrimary: Colors.white,
-          surface: const Color(0xFF0B1326),
-        );
     return MaterialApp(
       title: 'Motion Orbit',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-        colorScheme: scheme,
-        scaffoldBackgroundColor: scheme.surface,
-        inputDecorationTheme: InputDecorationTheme(
-          filled: true,
-          fillColor: const Color(0xFF131B2E),
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-        ),
-        filledButtonTheme: FilledButtonThemeData(
-          style: FilledButton.styleFrom(
-            minimumSize: const Size.fromHeight(52),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-        ),
-      ),
+      theme: AppTheme.dark,
       home: const StartupScreen(),
     );
   }

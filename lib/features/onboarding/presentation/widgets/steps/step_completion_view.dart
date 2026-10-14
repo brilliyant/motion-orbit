@@ -74,7 +74,7 @@ class StepCompletionView extends StatelessWidget {
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: Color(0x66000000),
+                        color: AppColors.scrim,
                         blurRadius: 20,
                         offset: Offset(0, 8),
                       ),
@@ -106,7 +106,7 @@ class StepCompletionView extends StatelessWidget {
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: Color(0x66000000),
+                          color: AppColors.scrim,
                           blurRadius: 6,
                           offset: Offset(0, 2),
                         ),
@@ -156,7 +156,7 @@ class StepCompletionView extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
             boxShadow: const [
               BoxShadow(
-                color: Color(0x33000000),
+                color: AppColors.scrimLight,
                 blurRadius: 10,
                 offset: Offset(0, 4),
               ),

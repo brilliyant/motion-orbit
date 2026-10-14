@@ -101,13 +101,13 @@ class StepWelcomeView extends StatelessWidget {
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                        Color(0x332563EB),
+                        AppColors.primaryGlow,
                         Colors.transparent,
                       ],
                     ),
                     boxShadow: const [
                       BoxShadow(
-                        color: Color(0x66000000),
+                        color: AppColors.scrim,
                         blurRadius: 24,
                         offset: Offset(0, 8),
                       ),

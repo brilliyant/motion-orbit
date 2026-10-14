@@ -153,7 +153,7 @@ class StepAboutView extends StatelessWidget {
             textCapitalization: TextCapitalization.words,
             textInputAction: TextInputAction.next,
             style: const TextStyle(
-              color: Color.fromRGBO(248, 250, 252, 1),
+              color: AppColors.textPrimary,
               fontSize: 16,
             ),
             buildCounter: (_,
@@ -518,7 +518,7 @@ class StepAboutView extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
             boxShadow: const [
               BoxShadow(
-                color: Color(0x33000000),
+                color: AppColors.scrimLight,
                 blurRadius: 8,
                 offset: Offset(0, 2),
               ),
@@ -536,8 +536,8 @@ class StepAboutView extends StatelessWidget {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [
-                      Color(0xFF222A3D),
-                      Color(0xFF0F172A),
+                      AppColors.surfaceContainerHigh,
+                      AppColors.gradientEnd,
                     ],
                   ),
                 ),

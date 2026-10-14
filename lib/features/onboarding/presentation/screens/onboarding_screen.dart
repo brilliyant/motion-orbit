@@ -260,7 +260,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               Container(
                                 padding: const EdgeInsets.all(12),
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFF450A0A),
+                                  color: AppColors.errorContainer,
                                   borderRadius: BorderRadius.circular(12),
                                   border: Border.all(
                                     color: AppColors.error
@@ -274,7 +274,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     Text(
                                       _saveError!,
                                       style: const TextStyle(
-                                        color: Color(0xFFFFB4AB),
+                                        color: AppColors.errorText,
                                         fontSize: 13,
                                       ),
                                     ),

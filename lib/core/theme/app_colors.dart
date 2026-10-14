@@ -19,6 +19,15 @@ class AppColors {
   static const tertiary = Color(0xFF4EDEA3); // Mint green trust / success
   static const successBase = Color(0xFF10B981);
   static const successContainer = Color(0xFF064E3B);
+  static const errorContainer = Color(0xFF450A0A);
+  static const errorText = Color(0xFFFFB4AB);
+
+  static const primaryInk = Color(0xFF002A78);
+  static const gradientEnd = Color(0xFF0F172A);
+  static const divider = Color(0x1AFFFFFF);
+  static const scrim = Color(0x66000000);
+  static const scrimLight = Color(0x33000000);
+  static const primaryGlow = Color(0x332563EB);
 
   static const textPrimary = Color(0xFFF8FAFC);
   static const textSecondary = Color(0xFF94A3B8);

@@ -28,7 +28,7 @@ class OnboardingAppBar extends StatelessWidget {
         color: AppColors.bg,
         border: Border(
           bottom: BorderSide(
-            color: Color(0x1AFFFFFF),
+            color: AppColors.divider,
             width: 0.5,
           ),
         ),
@@ -77,7 +77,7 @@ class OnboardingAppBar extends StatelessWidget {
               child: Icon(
                 Icons.person,
                 size: 18,
-                color: Color(0xFF002A78),
+                color: AppColors.primaryInk,
               ),
             ),
           ),
