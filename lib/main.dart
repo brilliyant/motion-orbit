@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'core/theme/app_theme.dart';
 import 'features/dashboard/presentation/screens/dashboard_screen.dart';
 import 'features/onboarding/presentation/screens/onboarding_screen.dart';
+import 'features/profile/data/datasources/profile_records_data_source.dart';
 import 'features/profile/presentation/state/profile_store.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await MotionOrbitObjectBox.initialize();
   runApp(const MainApp());
 }
 

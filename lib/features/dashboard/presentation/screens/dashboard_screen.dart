@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_colors.dart';
-import '../../../../core/widgets/primary_button.dart';
-import '../../../onboarding/presentation/screens/onboarding_screen.dart';
+import '../../../profile/data/datasources/profile_records_data_source.dart';
+import '../../../profile/presentation/screens/body_measurement_screens.dart';
+import '../../../profile/presentation/screens/fitness_assessment_screens.dart';
+import '../../../profile/presentation/screens/personal_information_screen.dart';
+import '../../../profile/presentation/screens/progress_goals_settings_screens.dart';
 import '../../../profile/data/models/profile_model.dart';
+import '../../../profile/presentation/screens/profile_screen.dart';
 import '../../../profile/presentation/state/profile_store.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -17,27 +21,54 @@ class DashboardScreen extends StatefulWidget {
 class _DashboardScreenState extends State<DashboardScreen> {
   int _tab = 0;
   LocalProfile get p => widget.store.profile!;
+  final ProfileRecordsDataSource _records = ProfileRecordsDataSource();
 
   Future<void> _edit() async {
-    if (widget.store.draft.id != p.id) {
-      widget.store.draft = LocalProfile.fromJson(p.toJson());
-    }
     await Navigator.of(context).push(
       MaterialPageRoute<void>(
-        builder: (_) => OnboardingScreen(store: widget.store, editing: true),
+        builder: (_) => PersonalInformationScreen(
+          store: widget.store,
+          onSaved: () { if (mounted) setState(() {}); },
+        ),
       ),
     );
     if (mounted) setState(() {});
   }
 
+  void _openDestination(String destination) {
+    final Widget screen = switch (destination) {
+      'Personal Information' => PersonalInformationScreen(store: widget.store, onSaved: () { if (mounted) setState(() {}); }),
+      'Fitness Assessment' => FitnessAssessmentScreen(records: _records),
+      'Body Measurements' => BodyMeasurementsScreen(records: _records, profile: p),
+      'Progress' => ProgressOverviewScreen(records: _records),
+      'Goals' => GoalsOverviewScreen(records: _records),
+      _ => const ProfileSettingsScreen(),
+    };
+    Navigator.of(context)
+        .push<void>(MaterialPageRoute(builder: (_) => screen))
+        .then((_) { if (mounted) setState(() {}); });
+  }
+
   @override
   Widget build(BuildContext context) {
+    final measurements = _records.measurements();
+    if (_tab == 3) {
+      return ProfileScreen(
+        profile: p,
+        selectedTab: _tab,
+        onEditProfile: _edit,
+        onTabSelected: (index) => setState(() => _tab = index),
+        onOpenDestination: _openDestination,
+        latestMeasurement: measurements.isEmpty ? null : measurements.first.weightKg,
+      );
+    }
+
     return Scaffold(
       backgroundColor: AppColors.bg,
       appBar: AppBar(
         backgroundColor: AppColors.bg,
         title: Text(
-          ['Home', 'Workout', 'Progress', 'Profile'][_tab],
+          ['Home', 'Training', 'Explore', 'Profile'][_tab],
           style: const TextStyle(fontWeight: FontWeight.w700),
         ),
       ),
@@ -144,85 +175,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     textAlign: TextAlign.center,
                     style: TextStyle(color: AppColors.textSecondary),
                   ),
-                ] else ...[
-                  Container(
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: AppColors.surfaceContainer,
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          p.name.trim().isEmpty ? 'Your Profile' : p.name.trim(),
-                          style: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w700,
-                            color: AppColors.textPrimary,
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          'Goal: ${p.goal ?? "Not set"}',
-                          style:
-                              const TextStyle(color: AppColors.textSecondary),
-                        ),
-                        Text(
-                          'Level: ${p.level ?? "Not set"}',
-                          style:
-                              const TextStyle(color: AppColors.textSecondary),
-                        ),
-                        if (p.height.isNotEmpty)
-                          Text(
-                            'Height: ${p.height} cm',
-                            style: const TextStyle(
-                                color: AppColors.textSecondary),
-                          ),
-                        if (p.weight.isNotEmpty)
-                          Text(
-                            'Weight: ${p.weight} kg',
-                            style: const TextStyle(
-                                color: AppColors.textSecondary),
-                          ),
-                        if (p.age != null)
-                          Text(
-                            'Age bracket: ${p.age}',
-                            style: const TextStyle(
-                                color: AppColors.textSecondary),
-                          ),
-                        if (p.location != null)
-                          Text(
-                            'Location: ${p.location}',
-                            style: const TextStyle(
-                                color: AppColors.textSecondary),
-                          ),
-                        if (p.equipment.isNotEmpty)
-                          Text(
-                            'Equipment: ${p.equipment.join(", ")}',
-                            style: const TextStyle(
-                                color: AppColors.textSecondary),
-                          ),
-                        if (p.days.isNotEmpty)
-                          Text(
-                            'Days: ${p.days.join(", ")}',
-                            style: const TextStyle(
-                                color: AppColors.textSecondary),
-                          ),
-                        if (p.duration != null)
-                          Text(
-                            'Duration: ${p.duration}',
-                            style: const TextStyle(
-                                color: AppColors.textSecondary),
-                          ),
-                        const SizedBox(height: 16),
-                        PrimaryButton(
-                          label: 'Edit Onboarding Profile',
-                          onPressed: _edit,
-                        ),
-                      ],
-                    ),
-                  ),
                 ],
               ],
             ),
@@ -243,12 +195,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
           NavigationDestination(
             icon: Icon(Icons.fitness_center_outlined),
             selectedIcon: Icon(Icons.fitness_center, color: Colors.white),
-            label: 'Workout',
+            label: 'Training',
           ),
           NavigationDestination(
-            icon: Icon(Icons.insights_outlined),
-            selectedIcon: Icon(Icons.insights, color: Colors.white),
-            label: 'Progress',
+            icon: Icon(Icons.explore_outlined),
+            selectedIcon: Icon(Icons.explore, color: Colors.white),
+            label: 'Explore',
           ),
           NavigationDestination(
             icon: Icon(Icons.person_outline),
@@ -260,4 +212,3 @@ class _DashboardScreenState extends State<DashboardScreen> {
     );
   }
 }
-

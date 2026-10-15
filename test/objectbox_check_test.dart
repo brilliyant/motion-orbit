@@ -6,10 +6,11 @@ void main() {
   test('test openStore on Windows', () async {
     final dir = Directory.systemTemp.createTempSync('obx_test');
     try {
-      final store = await openStore(directory: dir.path);
+      final store = openStore(directory: dir.path);
       expect(store, isNotNull);
       store.close();
     } catch (e) {
+      // ignore: avoid_print
       print('ObjectBox open error: $e');
     } finally {
       if (dir.existsSync()) {
