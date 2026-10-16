@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../core/constants/profile_constants.dart';
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/widgets/primary_button.dart';
-import '../../../../profile/data/models/profile_model.dart';
+import '../../../../profile/domain/entities/user_profile.dart';
 
 class StepPreferencesView extends StatelessWidget {
   const StepPreferencesView({
@@ -15,7 +15,7 @@ class StepPreferencesView extends StatelessWidget {
     required this.onBack,
   });
 
-  final LocalProfile profile;
+  final UserProfile profile;
   final bool isEditing;
   final void Function(VoidCallback change) onChanged;
   final VoidCallback onFinish;
@@ -191,8 +191,10 @@ class StepPreferencesView extends StatelessWidget {
               }),
               borderRadius: BorderRadius.circular(999),
               child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 14,
+                  vertical: 9,
+                ),
                 decoration: BoxDecoration(
                   color: isSelected
                       ? AppColors.primary
@@ -204,7 +206,7 @@ class StepPreferencesView extends StatelessWidget {
                             color: AppColors.primary.withValues(alpha: 0.3),
                             blurRadius: 6,
                             offset: const Offset(0, 2),
-                          )
+                          ),
                         ]
                       : null,
                 ),
@@ -233,8 +235,11 @@ class StepPreferencesView extends StatelessWidget {
                     ),
                     if (isSelected) ...[
                       const SizedBox(width: 6),
-                      const Icon(Icons.check,
-                          size: 14, color: AppColors.textPrimary),
+                      const Icon(
+                        Icons.check,
+                        size: 14,
+                        color: AppColors.textPrimary,
+                      ),
                     ],
                   ],
                 ),
@@ -259,7 +264,9 @@ class StepPreferencesView extends StatelessWidget {
             Text(
               daysCountText,
               style: const TextStyle(
-                  fontSize: 12, color: AppColors.textTertiary),
+                fontSize: 12,
+                color: AppColors.textTertiary,
+              ),
             ),
           ],
         ),
@@ -290,11 +297,12 @@ class StepPreferencesView extends StatelessWidget {
                       boxShadow: isSelected
                           ? [
                               BoxShadow(
-                                color:
-                                    AppColors.primary.withValues(alpha: 0.35),
+                                color: AppColors.primary.withValues(
+                                  alpha: 0.35,
+                                ),
                                 blurRadius: 8,
                                 offset: const Offset(0, 2),
-                              )
+                              ),
                             ]
                           : null,
                     ),
@@ -308,8 +316,9 @@ class StepPreferencesView extends StatelessWidget {
                             fontWeight: FontWeight.w600,
                             color: isSelected
                                 ? AppColors.textPrimary.withValues(alpha: 0.8)
-                                : AppColors.textSecondary
-                                    .withValues(alpha: 0.6),
+                                : AppColors.textSecondary.withValues(
+                                    alpha: 0.6,
+                                  ),
                           ),
                         ),
                         Text(
@@ -365,8 +374,8 @@ class StepPreferencesView extends StatelessWidget {
                     onTap: () => onChanged(() {
                       profile.duration =
                           profile.duration == ProfileConstants.durations[0]
-                              ? null
-                              : ProfileConstants.durations[0];
+                          ? null
+                          : ProfileConstants.durations[0];
                     }),
                   ),
                 ),
@@ -379,8 +388,8 @@ class StepPreferencesView extends StatelessWidget {
                     onTap: () => onChanged(() {
                       profile.duration =
                           profile.duration == ProfileConstants.durations[1]
-                              ? null
-                              : ProfileConstants.durations[1];
+                          ? null
+                          : ProfileConstants.durations[1];
                     }),
                   ),
                 ),
@@ -397,8 +406,8 @@ class StepPreferencesView extends StatelessWidget {
                     onTap: () => onChanged(() {
                       profile.duration =
                           profile.duration == ProfileConstants.durations[2]
-                              ? null
-                              : ProfileConstants.durations[2];
+                          ? null
+                          : ProfileConstants.durations[2];
                     }),
                   ),
                 ),
@@ -411,8 +420,8 @@ class StepPreferencesView extends StatelessWidget {
                     onTap: () => onChanged(() {
                       profile.duration =
                           profile.duration == ProfileConstants.durations[3]
-                              ? null
-                              : ProfileConstants.durations[3];
+                          ? null
+                          : ProfileConstants.durations[3];
                     }),
                   ),
                 ),
@@ -481,10 +490,7 @@ class StepPreferencesView extends StatelessWidget {
             ),
             label: const Text(
               'Back',
-              style: TextStyle(
-                color: AppColors.textSecondary,
-                fontSize: 13,
-              ),
+              style: TextStyle(color: AppColors.textSecondary, fontSize: 13),
             ),
           ),
         ),
@@ -513,9 +519,7 @@ class _DurationPill extends StatelessWidget {
         height: 48,
         padding: const EdgeInsets.symmetric(horizontal: 12),
         decoration: BoxDecoration(
-          color: isSelected
-              ? AppColors.primary
-              : AppColors.surfaceContainer,
+          color: isSelected ? AppColors.primary : AppColors.surfaceContainer,
           borderRadius: BorderRadius.circular(12),
           boxShadow: isSelected
               ? [
@@ -523,7 +527,7 @@ class _DurationPill extends StatelessWidget {
                     color: AppColors.primary.withValues(alpha: 0.35),
                     blurRadius: 8,
                     offset: const Offset(0, 2),
-                  )
+                  ),
                 ]
               : null,
         ),
@@ -544,8 +548,9 @@ class _DurationPill extends StatelessWidget {
                   duration,
                   style: TextStyle(
                     fontSize: 13,
-                    fontWeight:
-                        isSelected ? FontWeight.w600 : FontWeight.normal,
+                    fontWeight: isSelected
+                        ? FontWeight.w600
+                        : FontWeight.normal,
                     color: isSelected
                         ? AppColors.textPrimary
                         : AppColors.textSecondary,
@@ -565,4 +570,3 @@ class _DurationPill extends StatelessWidget {
     );
   }
 }
-

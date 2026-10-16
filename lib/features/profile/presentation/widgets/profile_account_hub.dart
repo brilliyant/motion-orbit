@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../profile_colors.dart';
 import 'profile_svg_icon.dart';
 
 class ProfileAccountHub extends StatelessWidget {
@@ -49,6 +48,7 @@ class ProfileAccountHub extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -56,11 +56,11 @@ class ProfileAccountHub extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 4),
           child: Row(
             children: [
-              const Expanded(
+              Expanded(
                 child: Text(
                   'ACCOUNT HUB',
                   style: TextStyle(
-                    color: ProfileColors.textMuted,
+                    color: colors.onSurfaceVariant,
                     fontSize: 11,
                     fontWeight: FontWeight.w700,
                     letterSpacing: 0.7,
@@ -70,7 +70,7 @@ class ProfileAccountHub extends StatelessWidget {
               Text(
                 'Offline-first',
                 style: TextStyle(
-                  color: ProfileColors.textMuted.withValues(alpha: 0.8),
+                  color: colors.onSurfaceVariant.withValues(alpha: 0.8),
                   fontSize: 11,
                 ),
               ),
@@ -81,7 +81,7 @@ class ProfileAccountHub extends StatelessWidget {
         Container(
           clipBehavior: Clip.antiAlias,
           decoration: BoxDecoration(
-            color: ProfileColors.surface,
+            color: colors.surfaceContainerLow,
             borderRadius: BorderRadius.circular(12),
             boxShadow: const [
               BoxShadow(
@@ -99,9 +99,9 @@ class ProfileAccountHub extends StatelessWidget {
                   onTap: () => onDestinationSelected(_items[index].destination),
                 ),
                 if (index != _items.length - 1)
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16),
-                    child: Divider(height: 1, color: ProfileColors.divider),
+                    child: Divider(height: 1, color: colors.outlineVariant),
                   ),
               ],
             ],
@@ -134,6 +134,7 @@ class _ProfileHubRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
     return Material(
       color: Colors.transparent,
       child: InkWell(
@@ -148,7 +149,7 @@ class _ProfileHubRow extends StatelessWidget {
                   width: 40,
                   height: 40,
                   decoration: BoxDecoration(
-                    color: ProfileColors.divider,
+                    color: colors.surfaceContainerHigh,
                     borderRadius: BorderRadius.circular(8),
                   ),
                   alignment: Alignment.center,
@@ -168,8 +169,8 @@ class _ProfileHubRow extends StatelessWidget {
                         item.title,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
-                          color: ProfileColors.textPrimary,
+                        style: TextStyle(
+                          color: colors.onSurface,
                           fontSize: 16,
                           height: 24 / 16,
                           fontWeight: FontWeight.w700,
@@ -179,8 +180,8 @@ class _ProfileHubRow extends StatelessWidget {
                         item.subtitle,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
-                          color: ProfileColors.textSecondary,
+                        style: TextStyle(
+                          color: colors.onSurfaceVariant,
                           fontSize: 12,
                           height: 16 / 12,
                         ),
@@ -190,8 +191,8 @@ class _ProfileHubRow extends StatelessWidget {
                 ),
                 const SizedBox(width: 12),
                 SizedBox(
-                  width: 7,
-                  height: 11,
+                  width: 14,
+                  height: 14,
                   child: ProfileSvgIcon.asset(ProfileSvgIcon.chevronRight),
                 ),
               ],

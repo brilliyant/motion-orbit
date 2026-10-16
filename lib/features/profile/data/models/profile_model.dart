@@ -13,7 +13,12 @@ class ProfileModel extends UserProfile {
     super.level,
     super.location,
     super.duration,
+    super.dateOfBirth,
+    super.biologicalSex,
+    super.primaryEnvironment,
+    super.limitations,
     super.equipment,
+    super.availableEquipment,
     super.days,
     super.step,
   });
@@ -25,29 +30,57 @@ class ProfileModel extends UserProfile {
   static const equipmentOptions = ProfileConstants.equipmentOptions;
   static const dayOptions = ProfileConstants.dayOptions;
   static const durations = ProfileConstants.durations;
+  static const biologicalSexOptions = ProfileConstants.biologicalSexOptions;
+  static const environmentOptions = ProfileConstants.environmentOptions;
+  static const availableEquipmentOptions =
+      ProfileConstants.availableEquipmentOptions;
 
   static String? numericError(
     String text,
     double min,
     double max,
     String unit,
-  ) =>
-      UserProfile.numericError(text, min, max, unit);
+  ) => UserProfile.numericError(text, min, max, unit);
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        'height': height,
-        'weight': weight,
-        'age': age,
-        'goal': goal,
-        'level': level,
-        'location': location,
-        'duration': duration,
-        'equipment': equipment.toList(),
-        'days': days.toList(),
-        'step': step,
-      };
+    'id': id,
+    'name': name,
+    'height': height,
+    'weight': weight,
+    'age': age,
+    'goal': goal,
+    'level': level,
+    'location': location,
+    'duration': duration,
+    'dateOfBirth': dateOfBirth,
+    'biologicalSex': biologicalSex,
+    'primaryEnvironment': primaryEnvironment,
+    'limitations': limitations,
+    'equipment': equipment.toList(),
+    'availableEquipment': availableEquipment.toList(),
+    'days': days.toList(),
+    'step': step,
+  };
+
+  factory ProfileModel.fromEntity(UserProfile profile) => ProfileModel(
+    id: profile.id,
+    name: profile.name,
+    height: profile.height,
+    weight: profile.weight,
+    age: profile.age,
+    goal: profile.goal,
+    level: profile.level,
+    location: profile.location,
+    duration: profile.duration,
+    dateOfBirth: profile.dateOfBirth,
+    biologicalSex: profile.biologicalSex,
+    primaryEnvironment: profile.primaryEnvironment,
+    limitations: profile.limitations,
+    equipment: {...profile.equipment},
+    availableEquipment: {...profile.availableEquipment},
+    days: {...profile.days},
+    step: profile.step,
+  );
 
   factory ProfileModel.fromJson(dynamic value) {
     if (value is! Map<String, dynamic> ||
@@ -72,8 +105,25 @@ class ProfileModel extends UserProfile {
       return v;
     }
 
+    String? optionalText(String key) {
+      final v = value[key];
+      if (v == null) return null;
+      if (v is! String) throw FormatException('Invalid $key');
+      return v;
+    }
+
     void choices(String key, List<String> options, Set<String> target) {
       final v = value[key];
+      if (v is! List ||
+          v.any((item) => item is! String || !options.contains(item))) {
+        throw FormatException('Invalid $key');
+      }
+      target.addAll(v.cast<String>());
+    }
+
+    void choicesOptional(String key, List<String> options, Set<String> target) {
+      final v = value[key];
+      if (v == null) return;
       if (v is! List ||
           v.any((item) => item is! String || !options.contains(item))) {
         throw FormatException('Invalid $key');
@@ -89,7 +139,16 @@ class ProfileModel extends UserProfile {
     p.level = choice('level', ProfileConstants.levels);
     p.location = choice('location', ProfileConstants.locations);
     p.duration = choice('duration', ProfileConstants.durations);
+    p.dateOfBirth = optionalText('dateOfBirth');
+    p.biologicalSex = choice('biologicalSex', biologicalSexOptions);
+    p.primaryEnvironment = choice('primaryEnvironment', environmentOptions);
+    p.limitations = optionalText('limitations') ?? '';
     choices('equipment', ProfileConstants.equipmentOptions, p.equipment);
+    choicesOptional(
+      'availableEquipment',
+      availableEquipmentOptions,
+      p.availableEquipment,
+    );
     choices('days', ProfileConstants.dayOptions, p.days);
 
     final step = value['step'];
@@ -126,14 +185,17 @@ class LocalProfile extends ProfileModel {
   static const equipmentOptions = ProfileConstants.equipmentOptions;
   static const dayOptions = ProfileConstants.dayOptions;
   static const durations = ProfileConstants.durations;
+  static const biologicalSexOptions = ProfileModel.biologicalSexOptions;
+  static const environmentOptions = ProfileModel.environmentOptions;
+  static const availableEquipmentOptions =
+      ProfileModel.availableEquipmentOptions;
 
   static String? numericError(
     String text,
     double min,
     double max,
     String unit,
-  ) =>
-      UserProfile.numericError(text, min, max, unit);
+  ) => UserProfile.numericError(text, min, max, unit);
 
   factory LocalProfile.fromJson(dynamic value) {
     final model = ProfileModel.fromJson(value);
@@ -146,10 +208,14 @@ class LocalProfile extends ProfileModel {
     p.level = model.level;
     p.location = model.location;
     p.duration = model.duration;
+    p.dateOfBirth = model.dateOfBirth;
+    p.biologicalSex = model.biologicalSex;
+    p.primaryEnvironment = model.primaryEnvironment;
+    p.limitations = model.limitations;
     p.equipment.addAll(model.equipment);
+    p.availableEquipment.addAll(model.availableEquipment);
     p.days.addAll(model.days);
     p.step = model.step;
     return p;
   }
 }
-

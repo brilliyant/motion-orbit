@@ -1,36 +1,13 @@
 import 'dart:convert';
 
-import 'package:path/path.dart' as path;
-import 'package:path_provider/path_provider.dart';
-
 import '../../../../objectbox.g.dart';
+import 'objectbox_data_source.dart';
 import '../models/profile_box_entity.dart';
 import '../models/profile_records.dart';
 
-class MotionOrbitObjectBox {
-  MotionOrbitObjectBox._();
-
-  static Store? _store;
-
-  static Future<void> initialize() async {
-    if (_store != null) return;
-
-    final appSupportDirectory = await getApplicationSupportDirectory();
-    final objectBoxDirectory = path.join(appSupportDirectory.path, 'objectbox');
-    _store ??= openStore(directory: objectBoxDirectory);
-  }
-
-  static Store get store {
-    final value = _store;
-    if (value == null) {
-      throw StateError('ObjectBox has not been initialized');
-    }
-    return value;
-  }
-}
-
 class ProfileRecordsDataSource {
-  ProfileRecordsDataSource({Store? store}) : _store = store ?? MotionOrbitObjectBox.store;
+  ProfileRecordsDataSource({Store? store})
+    : _store = store ?? MotionOrbitObjectBox.store;
 
   final Store _store;
 
@@ -51,18 +28,18 @@ class ProfileRecordsDataSource {
   }
 
   void _write(String key, List<Map<String, Object?>> data) {
-    final prior = _box.query(ProfileBoxEntity_.key.equals(key)).build().findFirst();
-    _box.put(ProfileBoxEntity(
-      id: prior?.id ?? 0,
-      key: key,
-      value: jsonEncode(data),
-    ));
+    final prior = _box
+        .query(ProfileBoxEntity_.key.equals(key))
+        .build()
+        .findFirst();
+    _box.put(
+      ProfileBoxEntity(id: prior?.id ?? 0, key: key, value: jsonEncode(data)),
+    );
   }
 
-  List<AssessmentRecord> assessments() => _read('profile/assessments')
-      .map(AssessmentRecord.fromJson)
-      .toList()
-    ..sort((a, b) => b.date.compareTo(a.date));
+  List<AssessmentRecord> assessments() =>
+      _read('profile/assessments').map(AssessmentRecord.fromJson).toList()
+        ..sort((a, b) => b.date.compareTo(a.date));
 
   void saveAssessment(AssessmentRecord record) {
     final rows = _read('profile/assessments')
@@ -71,10 +48,9 @@ class ProfileRecordsDataSource {
     _write('profile/assessments', rows);
   }
 
-  List<MeasurementRecord> measurements() => _read('profile/measurements')
-      .map(MeasurementRecord.fromJson)
-      .toList()
-    ..sort((a, b) => b.date.compareTo(a.date));
+  List<MeasurementRecord> measurements() =>
+      _read('profile/measurements').map(MeasurementRecord.fromJson).toList()
+        ..sort((a, b) => b.date.compareTo(a.date));
 
   void saveMeasurement(MeasurementRecord record) {
     final rows = _read('profile/measurements')
@@ -83,10 +59,34 @@ class ProfileRecordsDataSource {
     _write('profile/measurements', rows);
   }
 
-  List<FitnessGoal> goals() => _read('profile/goals')
-      .map(FitnessGoal.fromJson)
-      .toList()
-    ..sort((a, b) => (b.isPrimary ? 1 : 0).compareTo(a.isPrimary ? 1 : 0));
+  /// Adds a single local example so the measurement screens have useful
+  /// history to show on a fresh install. Existing user records are preserved.
+  void seedSampleMeasurementIfEmpty() {
+    if (measurements().isNotEmpty) return;
+    final date = DateTime.now().subtract(const Duration(days: 7));
+    saveMeasurement(
+      MeasurementRecord(
+        id: 'sample-body-measurement',
+        date: DateTime(date.year, date.month, date.day),
+        weightKg: 76,
+        waistCm: 98,
+        hipsCm: 104,
+        chestCm: 99,
+        leftArmCm: 32,
+        rightArmCm: 32,
+        leftThighCm: 57,
+        rightThighCm: 57,
+        bodyFatPercent: 27,
+        muscleMassKg: 52,
+        bodyFatSource: 'Sample Data',
+        note: 'Example measurement history',
+      ),
+    );
+  }
+
+  List<FitnessGoal> goals() =>
+      _read('profile/goals').map(FitnessGoal.fromJson).toList()
+        ..sort((a, b) => (b.isPrimary ? 1 : 0).compareTo(a.isPrimary ? 1 : 0));
 
   void saveGoal(FitnessGoal goal) {
     final rows = _read('profile/goals')

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../core/constants/profile_constants.dart';
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/widgets/primary_button.dart';
-import '../../../../profile/data/models/profile_model.dart';
+import '../../../../profile/domain/entities/user_profile.dart';
 
 class StepAboutView extends StatelessWidget {
   const StepAboutView({
@@ -21,7 +21,7 @@ class StepAboutView extends StatelessWidget {
     required this.onBack,
   });
 
-  final LocalProfile profile;
+  final UserProfile profile;
   final TextEditingController nameController;
   final TextEditingController heightController;
   final TextEditingController weightController;
@@ -82,7 +82,11 @@ class StepAboutView extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 child: const Center(
-                  child: Icon(Icons.security, size: 16, color: AppColors.tertiary),
+                  child: Icon(
+                    Icons.security,
+                    size: 16,
+                    color: AppColors.tertiary,
+                  ),
                 ),
               ),
               const SizedBox(width: 10),
@@ -152,21 +156,21 @@ class StepAboutView extends StatelessWidget {
             maxLength: 24,
             textCapitalization: TextCapitalization.words,
             textInputAction: TextInputAction.next,
-            style: const TextStyle(
-              color: AppColors.textPrimary,
-              fontSize: 16,
-            ),
-            buildCounter: (_,
-                    {required currentLength,
-                    required isFocused,
-                    maxLength}) =>
-                null,
+            style: const TextStyle(color: AppColors.textPrimary, fontSize: 16),
+            buildCounter: (
+              _, {
+              required currentLength,
+              required isFocused,
+              maxLength,
+            }) => null,
             decoration: const InputDecoration(
               hintText: 'e.g. Alex',
               hintStyle: TextStyle(color: AppColors.textTertiary, fontSize: 15),
               border: InputBorder.none,
-              contentPadding:
-                  EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+              contentPadding: EdgeInsets.symmetric(
+                horizontal: 16,
+                vertical: 14,
+              ),
             ),
             onChanged: (v) => onChanged(() => profile.name = v),
           ),
@@ -179,8 +183,11 @@ class StepAboutView extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(Icons.calendar_month,
-                    size: 16, color: AppColors.textTertiary),
+                Icon(
+                  Icons.calendar_month,
+                  size: 16,
+                  color: AppColors.textTertiary,
+                ),
                 SizedBox(width: 6),
                 Text(
                   'Age Range',
@@ -229,10 +236,12 @@ class StepAboutView extends StatelessWidget {
                       boxShadow: isSelected
                           ? [
                               BoxShadow(
-                                color: AppColors.primary.withValues(alpha: 0.35),
+                                color: AppColors.primary.withValues(
+                                  alpha: 0.35,
+                                ),
                                 blurRadius: 8,
                                 offset: const Offset(0, 2),
-                              )
+                              ),
                             ]
                           : null,
                     ),
@@ -348,13 +357,18 @@ class StepAboutView extends StatelessWidget {
                     const SizedBox(height: 4),
                     Row(
                       children: [
-                        const Icon(Icons.error,
-                            size: 12, color: AppColors.error),
+                        const Icon(
+                          Icons.error,
+                          size: 12,
+                          color: AppColors.error,
+                        ),
                         const SizedBox(width: 4),
                         Text(
                           'Valid: 80–250 cm',
                           style: TextStyle(
-                              color: AppColors.error, fontSize: 11),
+                            color: AppColors.error,
+                            fontSize: 11,
+                          ),
                         ),
                       ],
                     ),
@@ -403,8 +417,7 @@ class StepAboutView extends StatelessWidget {
                         Expanded(
                           child: TextField(
                             controller: weightController,
-                            keyboardType:
-                                const TextInputType.numberWithOptions(
+                            keyboardType: const TextInputType.numberWithOptions(
                               decimal: true,
                             ),
                             textInputAction: TextInputAction.done,
@@ -453,13 +466,18 @@ class StepAboutView extends StatelessWidget {
                     const SizedBox(height: 4),
                     Row(
                       children: [
-                        const Icon(Icons.error,
-                            size: 12, color: AppColors.error),
+                        const Icon(
+                          Icons.error,
+                          size: 12,
+                          color: AppColors.error,
+                        ),
                         const SizedBox(width: 4),
                         Text(
                           'Valid: 30–300 kg',
                           style: TextStyle(
-                              color: AppColors.error, fontSize: 11),
+                            color: AppColors.error,
+                            fontSize: 11,
+                          ),
                         ),
                       ],
                     ),
@@ -494,8 +512,7 @@ class StepAboutView extends StatelessWidget {
                     ),
                     children: [
                       TextSpan(
-                        text:
-                            '— used to calibrate workout volume and energy metrics locally. You can update or purge this anytime in Settings.',
+                        text: '— used to calibrate workout volume and energy metrics locally. You can update or purge this anytime in Settings.',
                         style: TextStyle(
                           color: AppColors.textSecondary,
                           fontWeight: FontWeight.normal,
@@ -608,4 +625,3 @@ class StepAboutView extends StatelessWidget {
     );
   }
 }
-

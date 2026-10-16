@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/widgets/motion_orbit_logo.dart';
 import '../../../../../core/widgets/primary_button.dart';
-import '../../../../profile/data/models/profile_model.dart';
+import '../../../../profile/domain/entities/user_profile.dart';
 
 class StepCompletionView extends StatelessWidget {
   const StepCompletionView({
@@ -12,7 +12,7 @@ class StepCompletionView extends StatelessWidget {
     required this.onGoToDashboard,
   });
 
-  final LocalProfile profile;
+  final UserProfile profile;
   final VoidCallback onGoToDashboard;
 
   @override
@@ -88,9 +88,7 @@ class StepCompletionView extends StatelessWidget {
                         color: AppColors.surfaceContainer,
                         shape: BoxShape.circle,
                       ),
-                      child: const Center(
-                        child: MotionOrbitLogoMark(size: 52),
-                      ),
+                      child: const Center(child: MotionOrbitLogoMark(size: 52)),
                     ),
                   ),
                 ),
@@ -141,10 +139,7 @@ class StepCompletionView extends StatelessWidget {
         const Text(
           'Your profile is saved on this device.',
           textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 15,
-            color: AppColors.textSecondary,
-          ),
+          style: TextStyle(fontSize: 15, color: AppColors.textSecondary),
         ),
         const SizedBox(height: 18),
 
@@ -170,8 +165,11 @@ class StepCompletionView extends StatelessWidget {
                 children: [
                   const Row(
                     children: [
-                      Icon(Icons.storage,
-                          size: 18, color: AppColors.outlineFocus),
+                      Icon(
+                        Icons.storage,
+                        size: 18,
+                        color: AppColors.outlineFocus,
+                      ),
                       SizedBox(width: 6),
                       Text(
                         'LOCAL PROFILE SUMMARY',
@@ -185,8 +183,10 @@ class StepCompletionView extends StatelessWidget {
                     ],
                   ),
                   Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 3,
+                    ),
                     decoration: BoxDecoration(
                       color: AppColors.successContainer,
                       borderRadius: BorderRadius.circular(999),
@@ -210,11 +210,14 @@ class StepCompletionView extends StatelessWidget {
                 label: 'Starting Goal',
                 value: profile.goal ?? 'Not set',
                 trailing: Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 2,
+                  ),
                   decoration: BoxDecoration(
-                    color:
-                        AppColors.surfaceContainerHighest.withValues(alpha: 0.6),
+                    color: AppColors.surfaceContainerHighest.withValues(
+                      alpha: 0.6,
+                    ),
                     borderRadius: BorderRadius.circular(6),
                   ),
                   child: const Text(
@@ -289,7 +292,11 @@ class StepCompletionView extends StatelessWidget {
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.edit_note, size: 14, color: AppColors.textTertiary),
+                  Icon(
+                    Icons.edit_note,
+                    size: 14,
+                    color: AppColors.textTertiary,
+                  ),
                   SizedBox(width: 4),
                   Text(
                     'Customizable anytime under Profile tab',
@@ -392,10 +399,7 @@ class StepCompletionView extends StatelessWidget {
               ),
               const Text(
                 'Train Smart. Move Better.',
-                style: TextStyle(
-                  fontSize: 11,
-                  color: AppColors.textTertiary,
-                ),
+                style: TextStyle(fontSize: 11, color: AppColors.textTertiary),
               ),
             ],
           ),
@@ -470,4 +474,3 @@ class _SummaryRow extends StatelessWidget {
     );
   }
 }
-

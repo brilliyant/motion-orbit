@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../dashboard/presentation/screens/dashboard_screen.dart';
-import '../../../profile/data/models/profile_model.dart';
+import '../../../profile/domain/entities/user_profile.dart';
 import '../../../profile/presentation/state/profile_store.dart';
+import '../../../settings/presentation/state/settings_store.dart';
 import '../widgets/onboarding_app_bar.dart';
 import '../widgets/step_progress_indicator.dart';
 import '../widgets/steps/step_about_view.dart';
@@ -16,10 +17,12 @@ class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({
     super.key,
     required this.store,
+    required this.settingsStore,
     this.editing = false,
   });
 
   final ProfileStore store;
+  final SettingsStore settingsStore;
   final bool editing;
 
   @override
@@ -31,7 +34,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   late final TextEditingController _height;
   late final TextEditingController _weight;
 
-  LocalProfile get p => widget.store.draft;
+  UserProfile get p => widget.store.draft;
 
   bool _busy = false;
   bool _requiredErrors = false;
@@ -61,8 +64,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   void _validateAnthropometrics() {
-    _heightError = LocalProfile.numericError(_height.text, 80, 250, 'cm');
-    _weightError = LocalProfile.numericError(_weight.text, 30, 300, 'kg');
+    _heightError = UserProfile.numericError(_height.text, 80, 250, 'cm');
+    _weightError = UserProfile.numericError(_weight.text, 30, 300, 'kg');
   }
 
   void _change(VoidCallback change) {
@@ -80,8 +83,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     } catch (_) {
       if (mounted && revision == _revision) {
         setState(
-          () => _saveError =
-              'Your latest changes could not be saved. Keep this screen open and retry.',
+          () => _saveError = 'Your latest changes could not be saved. Keep this screen open and retry.',
         );
       }
     }
@@ -102,9 +104,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     } catch (_) {
       p.step = previous;
       if (mounted) {
-        setState(
-          () => _saveError = 'Could not save your place. Please retry.',
-        );
+        setState(() => _saveError = 'Could not save your place. Please retry.');
       }
     } finally {
       if (mounted) setState(() => _busy = false);
@@ -166,8 +166,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     } catch (_) {
       if (mounted) {
         setState(
-          () => _saveError =
-              'Setup could not be saved. Your inputs are still here. Please retry Finish Setup.',
+          () => _saveError = 'Setup could not be saved. Your inputs are still here. Please retry Finish Setup.',
         );
       }
     } finally {
@@ -176,11 +175,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   void _dashboard() => Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute<void>(
-          builder: (_) => DashboardScreen(store: widget.store),
-        ),
-        (_) => false,
-      );
+    MaterialPageRoute<void>(
+      builder: (_) => DashboardScreen(
+        store: widget.store,
+        settingsStore: widget.settingsStore,
+      ),
+    ),
+    (_) => false,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -197,10 +199,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             child: Column(
               children: [
                 if (p.step > 0 && !_complete)
-                  OnboardingAppBar(
-                    step: p.step,
-                    onBack: _busy ? null : _back,
-                  ),
+                  OnboardingAppBar(step: p.step, onBack: _busy ? null : _back),
                 Expanded(
                   child: Center(
                     child: ConstrainedBox(
@@ -222,9 +221,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 onGoToDashboard: _dashboard,
                               )
                             else if (p.step == 0)
-                              StepWelcomeView(
-                                onGetStarted: () => _move(1),
-                              )
+                              StepWelcomeView(onGetStarted: () => _move(1))
                             else if (p.step == 1)
                               StepAboutView(
                                 profile: p,
@@ -263,13 +260,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   color: AppColors.errorContainer,
                                   borderRadius: BorderRadius.circular(12),
                                   border: Border.all(
-                                    color: AppColors.error
-                                        .withValues(alpha: 0.5),
+                                    color: AppColors.error.withValues(
+                                      alpha: 0.5,
+                                    ),
                                   ),
                                 ),
                                 child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       _saveError!,
@@ -319,4 +316,3 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     );
   }
 }
-

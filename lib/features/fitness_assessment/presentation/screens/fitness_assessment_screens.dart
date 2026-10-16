@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../data/datasources/profile_records_data_source.dart';
-import '../../data/models/profile_records.dart';
-import '../profile_colors.dart';
-import '../widgets/profile_module_widgets.dart';
+import 'package:motion_orbit/features/profile/data/datasources/profile_records_data_source.dart';
+import 'package:motion_orbit/features/profile/data/models/profile_records.dart';
+import 'package:motion_orbit/features/profile/presentation/profile_colors.dart';
+import 'package:motion_orbit/features/profile/presentation/widgets/profile_module_widgets.dart';
 
 class FitnessAssessmentScreen extends StatefulWidget {
   const FitnessAssessmentScreen({super.key, required this.records});

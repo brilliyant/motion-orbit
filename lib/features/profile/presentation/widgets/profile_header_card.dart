@@ -19,11 +19,12 @@ class ProfileHeaderCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
     return Container(
       padding: const EdgeInsets.all(16),
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
-        color: ProfileColors.surface,
+        color: colors.surfaceContainerLow,
         borderRadius: BorderRadius.circular(12),
         boxShadow: const [
           BoxShadow(
@@ -96,8 +97,8 @@ class ProfileHeaderCard extends StatelessWidget {
                                 name.isEmpty ? 'Your Profile' : name,
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                  color: ProfileColors.textPrimary,
+                                style: TextStyle(
+                                  color: colors.onSurface,
                                   fontSize: 20,
                                   height: 28 / 20,
                                   fontWeight: FontWeight.w700,
@@ -114,7 +115,7 @@ class ProfileHeaderCard extends StatelessWidget {
                                   vertical: 6,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFFF1F5F9),
+                                  color: colors.surfaceContainerHigh,
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 child: Row(
@@ -128,10 +129,10 @@ class ProfileHeaderCard extends StatelessWidget {
                                       ),
                                     ),
                                     const SizedBox(width: 4),
-                                    const Text(
+                                    Text(
                                       'Edit',
                                       style: TextStyle(
-                                        color: ProfileColors.blue,
+                                        color: colors.primary,
                                         fontSize: 11,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -150,13 +151,10 @@ class ProfileHeaderCard extends StatelessWidget {
                             _ProfileBadge(
                               icon: ProfileSvgIcon.beginner,
                               label: level,
-                              color: ProfileColors.beginner,
                             ),
                             _ProfileBadge(
                               icon: ProfileSvgIcon.goal,
                               label: goal,
-                              color: const Color(0xFFDBE1FF),
-                              textColor: const Color(0xFF003EA8),
                             ),
                           ],
                         ),
@@ -172,7 +170,7 @@ class ProfileHeaderCard extends StatelessWidget {
                   vertical: 8,
                 ),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF1F5F9),
+                  color: colors.surfaceContainerHigh,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Row(
@@ -183,20 +181,20 @@ class ProfileHeaderCard extends StatelessWidget {
                       child: ProfileSvgIcon.asset(ProfileSvgIcon.offline),
                     ),
                     const SizedBox(width: 8),
-                    const Expanded(
+                    Expanded(
                       child: Text(
                         'Offline profile • Stored on this device',
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                          color: ProfileColors.textSecondary,
+                          color: colors.onSurfaceVariant,
                           fontSize: 12,
                           height: 16 / 12,
                         ),
                       ),
                     ),
                     const SizedBox(width: 8),
-                    const Text(
+                    Text(
                       'Saved',
                       style: TextStyle(
                         color: ProfileColors.green,
@@ -219,21 +217,18 @@ class _ProfileBadge extends StatelessWidget {
   const _ProfileBadge({
     required this.icon,
     required this.label,
-    required this.color,
-    this.textColor = const Color(0xFF3F465C),
   });
 
   final String icon;
   final String label;
-  final Color color;
-  final Color textColor;
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
       decoration: BoxDecoration(
-        color: color,
+        color: colors.primaryContainer,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
@@ -246,7 +241,7 @@ class _ProfileBadge extends StatelessWidget {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
-              color: textColor,
+              color: colors.onPrimaryContainer,
               fontSize: 11,
               height: 14 / 11,
               fontWeight: FontWeight.w600,

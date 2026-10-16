@@ -51,6 +51,9 @@ class MeasurementRecord {
     this.rightArmCm,
     this.leftThighCm,
     this.rightThighCm,
+    this.bodyFatPercent,
+    this.muscleMassKg,
+    this.bodyFatSource = 'Manual Entry',
     this.note = '',
   });
 
@@ -64,6 +67,9 @@ class MeasurementRecord {
   final double? rightArmCm;
   final double? leftThighCm;
   final double? rightThighCm;
+  final double? bodyFatPercent;
+  final double? muscleMassKg;
+  final String bodyFatSource;
   final String note;
 
   Map<String, Object?> toJson() => {
@@ -77,6 +83,9 @@ class MeasurementRecord {
         'rightArmCm': rightArmCm,
         'leftThighCm': leftThighCm,
         'rightThighCm': rightThighCm,
+        'bodyFatPercent': bodyFatPercent,
+        'muscleMassKg': muscleMassKg,
+        'bodyFatSource': bodyFatSource,
         'note': note,
       };
 
@@ -92,6 +101,9 @@ class MeasurementRecord {
         rightArmCm: (json['rightArmCm'] as num?)?.toDouble(),
         leftThighCm: (json['leftThighCm'] as num?)?.toDouble(),
         rightThighCm: (json['rightThighCm'] as num?)?.toDouble(),
+        bodyFatPercent: (json['bodyFatPercent'] as num?)?.toDouble(),
+        muscleMassKg: (json['muscleMassKg'] as num?)?.toDouble(),
+        bodyFatSource: json['bodyFatSource'] as String? ?? 'Manual Entry',
         note: json['note'] as String? ?? '',
       );
 }

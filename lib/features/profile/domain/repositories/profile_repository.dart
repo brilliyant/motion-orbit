@@ -1,9 +1,8 @@
-import '../../data/models/profile_model.dart';
+import '../entities/user_profile.dart';
 
 abstract class ProfileRepository {
-  Future<({LocalProfile? profile, LocalProfile draft})?> loadProfile();
-  Future<void> saveDraft(LocalProfile draft, LocalProfile? profile);
-  Future<LocalProfile> completeProfile(LocalProfile draft);
+  Future<({UserProfile? profile, UserProfile draft})?> loadProfile();
+  Future<void> saveDraft(UserProfile draft, UserProfile? profile);
+  Future<UserProfile> completeProfile(UserProfile draft);
   Future<void> recover();
 }
-

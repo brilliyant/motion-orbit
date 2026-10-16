@@ -43,4 +43,14 @@ class AppTheme {
       ),
     ),
   );
+
+  static final ThemeData light = ThemeData(
+    useMaterial3: true,
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: const Color(0xFF2563EB),
+      brightness: Brightness.light,
+      surface: const Color(0xFFF7F9FB),
+    ),
+    scaffoldBackgroundColor: const Color(0xFFF7F9FB),
+  );
 }

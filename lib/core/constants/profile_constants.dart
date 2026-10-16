@@ -34,6 +34,17 @@ class ProfileConstants {
 
   static const durations = ['15–30 min', '30–45 min', '45–60 min', '60+ min'];
 
+  static const biologicalSexOptions = ['male', 'female', 'unspecified'];
+  static const environmentOptions = ['Gym', 'Home', 'Outdoor', 'Hybrid'];
+  static const availableEquipmentOptions = [
+    'Dumbbells',
+    'Barbell',
+    'Pull-up Bar',
+    'Resistance Bands',
+    'Kettlebell',
+    'Bodyweight Only',
+  ];
+
   // Day abbreviations and full names
   static const dayKeys = [
     'Monday',
@@ -49,4 +60,3 @@ class ProfileConstants {
 
   static const dayInitials = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 }
-

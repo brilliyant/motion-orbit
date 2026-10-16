@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/widgets/primary_button.dart';
-import '../../../../profile/data/models/profile_model.dart';
+import '../../../../profile/domain/entities/user_profile.dart';
 
 class StepFitnessView extends StatelessWidget {
   const StepFitnessView({
@@ -13,7 +13,7 @@ class StepFitnessView extends StatelessWidget {
     required this.onContinue,
   });
 
-  final LocalProfile profile;
+  final UserProfile profile;
   final bool showErrors;
   final void Function(VoidCallback change) onChanged;
   final VoidCallback onContinue;
@@ -44,11 +44,7 @@ class StepFitnessView extends StatelessWidget {
     ];
 
     const levelsData = [
-      (
-        title: 'Beginner',
-        badge: 'Level 1',
-        desc: 'New to structured training',
-      ),
+      (title: 'Beginner', badge: 'Level 1', desc: 'New to structured training'),
       (
         title: 'Intermediate',
         badge: 'Level 2',
@@ -131,8 +127,10 @@ class StepFitnessView extends StatelessWidget {
               onTap: () => onChanged(() => profile.goal = g.title),
               borderRadius: BorderRadius.circular(14),
               child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 14,
+                  vertical: 12,
+                ),
                 decoration: BoxDecoration(
                   color: isSelected
                       ? AppColors.surfaceContainer
@@ -276,8 +274,10 @@ class StepFitnessView extends StatelessWidget {
               onTap: () => onChanged(() => profile.level = l.title),
               borderRadius: BorderRadius.circular(14),
               child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 14,
+                  vertical: 12,
+                ),
                 decoration: BoxDecoration(
                   color: isSelected
                       ? AppColors.surfaceContainer
@@ -453,4 +453,3 @@ class StepFitnessView extends StatelessWidget {
     );
   }
 }
-

@@ -14,12 +14,18 @@ class UserProfile {
     this.level,
     this.location,
     this.duration,
+    this.dateOfBirth,
+    this.biologicalSex,
+    this.primaryEnvironment,
+    this.limitations = '',
     Set<String>? equipment,
+    Set<String>? availableEquipment,
     Set<String>? days,
     this.step = 0,
-  })  : id = id ?? generateId(),
-        equipment = equipment ?? {},
-        days = days ?? {};
+  }) : id = id ?? generateId(),
+       equipment = equipment ?? {},
+       availableEquipment = availableEquipment ?? {},
+       days = days ?? {};
 
   final String id;
   String name;
@@ -30,7 +36,12 @@ class UserProfile {
   String? level;
   String? location;
   String? duration;
+  String? dateOfBirth;
+  String? biologicalSex;
+  String? primaryEnvironment;
+  String limitations;
   final Set<String> equipment;
+  final Set<String> availableEquipment;
   final Set<String> days;
   int step;
 
@@ -61,5 +72,24 @@ class UserProfile {
       ProfileConstants.levels.contains(level) &&
       numericError(height, 80, 250, 'cm') == null &&
       numericError(weight, 30, 300, 'kg') == null;
-}
 
+  UserProfile copy() => UserProfile(
+    id: id,
+    name: name,
+    height: height,
+    weight: weight,
+    age: age,
+    goal: goal,
+    level: level,
+    location: location,
+    duration: duration,
+    dateOfBirth: dateOfBirth,
+    biologicalSex: biologicalSex,
+    primaryEnvironment: primaryEnvironment,
+    limitations: limitations,
+    equipment: {...equipment},
+    availableEquipment: {...availableEquipment},
+    days: {...days},
+    step: step,
+  );
+}

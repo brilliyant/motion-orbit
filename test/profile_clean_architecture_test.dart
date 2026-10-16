@@ -5,6 +5,7 @@ import 'package:motion_orbit/features/profile/data/datasources/profile_local_dat
 import 'package:motion_orbit/features/profile/data/models/profile_model.dart';
 import 'package:motion_orbit/features/profile/data/repositories/profile_repository_impl.dart';
 import 'package:motion_orbit/features/profile/domain/entities/user_profile.dart';
+import 'package:motion_orbit/features/profile/domain/usecases/profile_use_cases.dart';
 import 'package:motion_orbit/features/profile/presentation/state/profile_store.dart';
 
 class FakeProfileLocalDataSource implements ProfileLocalDataSource {
@@ -75,7 +76,12 @@ void main() {
     test('ProfileStore saves draft and completes profile', () async {
       final fakeDataSource = FakeProfileLocalDataSource();
       final repository = ProfileRepositoryImpl(dataSource: fakeDataSource);
-      final store = ProfileStore(repository: repository);
+      final store = ProfileStore(
+        loadProfile: LoadProfile(repository),
+        saveDraft: SaveProfileDraft(repository),
+        completeProfile: CompleteProfile(repository),
+        recoverProfile: RecoverProfile(repository),
+      );
 
       store.draft.name = 'Alex';
       store.draft.goal = 'Build Muscle';

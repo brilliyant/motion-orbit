@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../profile_colors.dart';
 import 'profile_svg_icon.dart';
 
 class ProfileMetricCard extends StatelessWidget {
@@ -11,7 +10,7 @@ class ProfileMetricCard extends StatelessWidget {
     required this.value,
     required this.unit,
     required this.caption,
-    this.valueColor = ProfileColors.textPrimary,
+    this.valueColor,
   });
 
   final String label;
@@ -19,14 +18,15 @@ class ProfileMetricCard extends StatelessWidget {
   final String value;
   final String unit;
   final String caption;
-  final Color valueColor;
+  final Color? valueColor;
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: ProfileColors.surface,
+        color: colors.surfaceContainerLow,
         borderRadius: BorderRadius.circular(12),
         boxShadow: const [
           BoxShadow(
@@ -47,8 +47,8 @@ class ProfileMetricCard extends StatelessWidget {
                   label,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    color: ProfileColors.textMuted,
+                  style: TextStyle(
+                    color: colors.onSurfaceVariant,
                     fontSize: 11,
                     fontWeight: FontWeight.w600,
                     letterSpacing: 0.33,
@@ -74,7 +74,7 @@ class ProfileMetricCard extends StatelessWidget {
                   Text(
                     value,
                     style: TextStyle(
-                      color: valueColor,
+                      color: valueColor ?? colors.onSurface,
                       fontSize: 28,
                       height: 1,
                       fontWeight: FontWeight.w700,
@@ -85,8 +85,8 @@ class ProfileMetricCard extends StatelessWidget {
                     const SizedBox(width: 2),
                     Text(
                       unit,
-                      style: const TextStyle(
-                        color: ProfileColors.textSecondary,
+                      style: TextStyle(
+                        color: colors.onSurfaceVariant,
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
                       ),
@@ -98,10 +98,10 @@ class ProfileMetricCard extends StatelessWidget {
           ),
           Text(
             caption,
-            maxLines: 2,
+            maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: const TextStyle(
-              color: ProfileColors.textMuted,
+            style: TextStyle(
+              color: colors.onSurfaceVariant,
               fontSize: 12,
               height: 16 / 12,
             ),
