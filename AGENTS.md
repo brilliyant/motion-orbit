@@ -115,6 +115,7 @@ Before writing code, identify (1) user-requested tab/flow, (2) affected existing
 ## Working Style
 
 * Prefer targeted edits over broad refactors.
+* Every public `StatelessWidget` and `StatefulWidget` constructor must accept a named `Key? key` and forward it to `super` (prefer `super.key`).
 * Do not explore unrelated features or directories.
 * Do not modify files outside the task scope.
 * When a reference implementation already exists, follow that pattern.

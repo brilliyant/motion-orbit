@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-fixed-dim": "rgb(var(--mo-secondary-fixed-dim) / <alpha-value>)", "tertiary-container": "#d6e3f8", "on-surface": "rgb(var(--mo-on-surface) / <alpha-value>)", "secondary": "#d3fbff", "secondary-container": "rgb(var(--mo-secondary-container) / <alpha-value>)", "on-background": "rgb(var(--mo-on-background) / <alpha-value>)", "on-error": "#690005", "on-primary-container": "rgb(var(--mo-on-primary-container) / <alpha-value>)", "secondary-fixed": "rgb(var(--mo-secondary-fixed) / <alpha-value>)", "tertiary-fixed-dim": "#bac7dc", "primary-fixed-dim": "rgb(var(--mo-primary-fixed-dim) / <alpha-value>)", "outline-variant": "rgb(var(--mo-outline-variant) / <alpha-value>)", "on-tertiary-fixed-variant": "#3b4858", "on-primary": "rgb(var(--mo-on-primary) / <alpha-value>)", "on-primary-fixed-variant": "#3e4c00", "on-secondary-fixed": "#002022", "surface-container-highest": "rgb(var(--mo-surface-container-highest) / <alpha-value>)", "on-secondary": "#00363a", "surface-container-high": "rgb(var(--mo-surface-container-high) / <alpha-value>)", "primary": "rgb(var(--mo-primary) / <alpha-value>)", "on-tertiary-container": "#596577", "on-secondary-container": "rgb(var(--mo-on-secondary-container) / <alpha-value>)", "on-error-container": "#ffdad6", "inverse-on-surface": "#2f3034", "surface-container-low": "rgb(var(--mo-surface-container-low) / <alpha-value>)", "error-container": "rgb(var(--mo-error-container) / <alpha-value>)", "on-tertiary-fixed": "#0f1c2b", "background": "rgb(var(--mo-background) / <alpha-value>)", "primary-container": "rgb(var(--mo-primary-container) / <alpha-value>)", "surface-tint": "#b0d500", "surface-dim": "rgb(var(--mo-surface-dim) / <alpha-value>)", "on-primary-fixed": "rgb(var(--mo-on-primary-fixed) / <alpha-value>)", "surface-container-lowest": "rgb(var(--mo-surface-container-lowest) / <alpha-value>)", "inverse-surface": "#e2e2e6", "error": "rgb(var(--mo-error) / <alpha-value>)", "surface": "rgb(var(--mo-surface) / <alpha-value>)", "on-tertiary": "#253141", "primary-fixed": "rgb(var(--mo-primary-fixed) / <alpha-value>)", "on-secondary-fixed-variant": "#004f54", "surface-variant": "rgb(var(--mo-surface-variant) / <alpha-value>)", "tertiary": "#ffffff", "surface-bright": "rgb(var(--mo-surface-bright) / <alpha-value>)", "inverse-primary": "#536600", "outline": "rgb(var(--mo-outline) / <alpha-value>)", "tertiary-fixed": "#d6e3f8", "surface-container": "rgb(var(--mo-surface-container) / <alpha-value>)", "on-surface-variant": "rgb(var(--mo-on-surface-variant) / <alpha-value>)" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "space-sm": "0.5rem", "margin-tablet": "2rem", "gutter": "1rem", "margin-desktop": "3rem", "space-lg": "1.5rem", "gutter-tablet": "1.5rem", "space-md": "1rem", "space-xl": "2rem", "margin": "1rem" }, "fontFamily": { "headline-lg": ["Plus Jakarta Sans"], "body-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "display-num": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "label-lg": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "label-md": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "label-sm": ["Inter"], "display-lg-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "display-num": ["48px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "display-lg": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700" }], "display-lg-mobile": ["40px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+.app-page {display:none;} .app-page.active {display:block;}
+.app-page:not(.active) * {pointer-events:none;}
+.app-page.active > main {min-height:100dvh;}
+@media (min-width:768px){.app-page.active > main > div:first-child {max-width:780px;margin-left:auto;margin-right:auto;}}
+</style><title>Motion Orbit | Training Plans</title><style id="motion-orbit-theme">
+:root {--mo-primary-container:132 204 22;--mo-primary-fixed:132 204 22;--mo-primary-fixed-dim:132 204 22;--mo-on-primary-container:15 23 42;--mo-on-primary-fixed:15 23 42;--mo-primary:248 250 252;--mo-on-primary:15 23 42;--mo-secondary-fixed-dim:52 211 153;--mo-secondary-fixed:52 211 153;--mo-secondary-container:6 78 59;--mo-on-secondary-container:167 243 208;--mo-on-surface:248 250 252;--mo-on-surface-variant:148 163 184;--mo-on-background:248 250 252;--mo-background:15 17 23;--mo-surface:15 17 23;--mo-surface-dim:15 17 23;--mo-surface-container-lowest:15 17 23;--mo-surface-container-low:24 27 38;--mo-surface-container:24 27 38;--mo-surface-container-high:34 38 54;--mo-surface-container-highest:47 52 67;--mo-surface-bright:40 44 57;--mo-surface-variant:47 52 67;--mo-outline-variant:51 65 85;--mo-outline:71 85 105;--mo-error:251 113 133;--mo-error-container:90 24 38; }
+html.light {--mo-primary-container:101 163 13;--mo-primary-fixed:101 163 13;--mo-primary-fixed-dim:101 163 13;--mo-on-primary-container:255 255 255;--mo-on-primary-fixed:255 255 255;--mo-primary:15 23 42;--mo-on-primary:255 255 255;--mo-secondary-fixed-dim:5 150 105;--mo-secondary-fixed:5 150 105;--mo-secondary-container:209 250 229;--mo-on-secondary-container:6 95 70;--mo-on-surface:15 23 42;--mo-on-surface-variant:100 116 139;--mo-on-background:15 23 42;--mo-background:248 250 252;--mo-surface:248 250 252;--mo-surface-dim:248 250 252;--mo-surface-container-lowest:248 250 252;--mo-surface-container-low:255 255 255;--mo-surface-container:241 245 249;--mo-surface-container-high:226 232 240;--mo-surface-container-highest:203 213 225;--mo-surface-bright:241 245 249;--mo-surface-variant:226 232 240;--mo-outline-variant:203 213 225;--mo-outline:148 163 184;--mo-error:220 38 38;--mo-error-container:254 226 226; }
+html,body {font-family:Inter,sans-serif;}
+.font-headline-sm,.font-headline-md,.font-headline-lg,.font-headline-lg-mobile {font-family:"Space Grotesk",Inter,sans-serif !important;}
+html.light .text-primary-container {color: #65A30D;}
+#page-list .plan-card {border:1px solid rgb(var(--mo-outline-variant) / .55);}
+#page-list .plan-card:hover {border-color:rgb(var(--mo-primary-container) / .5);}
+</style><script>(function(){try{document.documentElement.className=localStorage.getItem('motion-orbit-theme')==='dark'?'dark':'light'}catch(_){document.documentElement.className='light'}})();</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col"><div class="app-page active" id="page-list"><main class="flex flex-col relative w-full bg-surface min-h-screen pt-5"><div class="flex flex-col w-full px-margin pb-space-xl max-w-lg mx-auto">
+<!-- Internal Navigation & Action Bar -->
+<div class="flex items-center justify-between py-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Go to Training Overview" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface active:scale-95 transition-transform" onclick="if(window.parent!==window &amp;&amp; typeof window.parent.motionOrbitClosePlans==='function'){window.parent.motionOrbitClosePlans()}else{window.location.href='training_overview(2).html'}" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed-dim">YOUR WORKOUTS</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">My Training Plans</h2>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+
+<button aria-label="Toggle Search focus" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:text-primary-container active:scale-95 transition-all" id="searchFocusBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</button>
+</div>
+</div>
+<!-- Search Input Bar -->
+<div class="relative w-full mb-space-md">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full h-12 pl-11 pr-10 bg-surface-container text-on-surface placeholder:text-on-surface-variant rounded-xl font-body-md text-body-md focus:outline-none focus:bg-surface-container-high transition-colors" id="planSearchInput" placeholder="Search saved plans, exercises, or tags..." type="search"/>
+<button class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-on-surface-variant hover:text-on-surface" id="clearSearchBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Horizontal Filter Chips -->
+<div class="flex items-center gap-space-sm overflow-x-auto pb-space-sm -mx-margin px-margin no-scrollbar">
+<button class="filter-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md font-bold shadow-sm shrink-0 transition-transform active:scale-95" data-filter="all" type="button">
+<span>All</span>
+<span class="bg-on-primary-container/20 px-1.5 py-0.5 rounded-full text-[10px] leading-tight">5</span>
+</button>
+<button class="filter-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md shrink-0 transition-all hover:text-on-surface active:scale-95" data-filter="strength" type="button">
+<span>Strength</span>
+<span class="bg-surface-container-highest px-1.5 py-0.5 rounded-full text-[10px] leading-tight">3</span>
+</button>
+<button class="filter-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md shrink-0 transition-all hover:text-on-surface active:scale-95" data-filter="running" type="button">
+<span>Running</span>
+<span class="bg-surface-container-highest px-1.5 py-0.5 rounded-full text-[10px] leading-tight">1</span>
+</button>
+<button class="filter-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md shrink-0 transition-all hover:text-on-surface active:scale-95" data-filter="walking" type="button">
+<span>Walking</span>
+</button>
+<button class="filter-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md shrink-0 transition-all hover:text-on-surface active:scale-95" data-filter="cycling" type="button">
+<span>Cycling</span>
+</button>
+
+</div>
+<!-- Primary CTAs -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm mt-space-sm mb-space-lg">
+<button class="w-full h-[52px] bg-primary-container text-on-primary-container font-label-lg text-label-lg font-bold rounded-xl flex items-center justify-center gap-space-sm shadow-sm active:scale-[0.98] transition-transform" type="button">
+<span class="material-symbols-outlined text-[22px]">add_circle</span>
+<span>Create Training Plan</span>
+</button>
+<button class="w-full h-[52px] bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-space-sm active:scale-[0.98] transition-all" id="openJsonDrawer" type="button">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-[20px]">data_object</span>
+<span>Import from JSON</span>
+</button>
+</div>
+<!-- Plan List Section -->
+<div class="flex flex-col gap-space-md" id="plansDeck">
+<!-- CARD 1: ACTIVE / FEATURED -->
+<article class="plan-card relative bg-surface-container rounded-2xl overflow-hidden p-space-md transition-all active:scale-[0.99]" data-type="strength">
+<!-- Left accent kinetic spine -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex items-start gap-space-md pl-1">
+<!-- Thumbnail exercise imagery -->
+<div class="relative w-20 h-20 rounded-xl overflow-hidden shrink-0 bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Athletic male performing an explosive barbell row inside a low-key gym with dark obsidian surroundings and rim neon chartreuse lighting. Dynamic perspective, sweaty skin texture, high-precision training telemetric aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNPkpz72GGnV9ZoCZv4AuzFcb3T8eurCvQYyL4yVFIaaGZFl0ZBPNBS3U4utPAHI8R_2DlURSgMAh0E-CHzaJf8z8MpZmfho_4uVkT_qspYwueHqjyC9x0SN2HCb8MwOQnPrRsw5-r2cWxV9jjdA9bo1-qkE__3ojqWtvUgX_xqkw1rdUaTDklI6u0A6dvXxtZcnJ7sx6GpAcrBbodUUxxG-lHky94DU2WIiMvbcAhkkZzZOSHSubZ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<span class="absolute bottom-1 right-1 text-[9px] font-label-sm font-bold bg-primary-container text-on-primary-container px-1 py-0.2 rounded">RPE 6</span>
+</div>
+<!-- Info details -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container font-bold">Strength</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Pre-Race Taper</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono text-[11px]">Oct 19</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight mt-0.5 truncate">
+            Upper Body — Race Week
+          </h3>
+<div class="flex flex-wrap items-center gap-x-space-sm gap-y-1 mt-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed-dim">timer</span>
+<span>50 min</span>
+</span>
+<span>•</span>
+<span class="flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary-container">fitness_center</span>
+<span>9 exercises (4 Warm, 5 Main)</span>
+</span>
+</div>
+<div class="mt-2 text-[11px] font-mono text-secondary-fixed-dim flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+<span>Target RPE 5–6 (RIR 3–4)</span>
+</div>
+</div>
+</div>
+<!-- Quick Action Toolbar -->
+<div class="flex items-center justify-between pt-space-sm mt-space-sm pl-1 border-t border-surface-container-highest/60">
+<div class="flex items-center gap-space-xs">
+<button aria-label="Edit Upper Body" class="p-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button aria-label="Duplicate Plan" class="p-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<button aria-label="Delete Plan" class="p-2 rounded-lg bg-surface-container-high hover:bg-error-container text-on-surface-variant hover:text-error active:scale-95 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<button class="flex items-center gap-1 text-primary-container font-label-md text-label-md font-semibold px-2.5 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest active:scale-95 transition-all" type="button">
+<span>Start Plan</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- CARD 2: PUSH DAY -->
+<article class="plan-card relative bg-surface-container rounded-2xl overflow-hidden p-space-md transition-all active:scale-[0.99]" data-type="strength">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex items-start gap-space-md pl-1">
+<div class="relative w-20 h-20 rounded-xl overflow-hidden shrink-0 bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Dumbbell incline press executed with muscular tension against a black matte workout bench. Moody studio flash with neon cyan rim lights and sharp depth of field, focused fitness precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVNggMhSVO9bdFGe29tT4cHqNjN8vQsT5la6iVqDdGE_-bmjMO_bMNVdqGfmvvkIomP6lZlIKgDbG1KJuQTyRsMPKvMHweUI4Z6pjGXRWrk2EeQ4X6XRHvqyuYvFDQrPxlMXts90VgHDKPh_WCFhBLJdgbZp1q4pCGreI5zOyuBbx0e65BU31bJBoJAmPeOaUgvltQgqXssi0HCzQbrSOHLHqyKvVoQvET7MZljSXMQO5tJxnjbEBP"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<span class="absolute bottom-1 right-1 text-[9px] font-label-sm font-bold bg-error-container text-error px-1 py-0.2 rounded">RPE 9</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container font-bold">Strength</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Chest &amp; Shoulders</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono text-[11px]">Oct 14</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight mt-0.5 truncate">
+            Push Day — Hypertrophy
+          </h3>
+<div class="flex flex-wrap items-center gap-x-space-sm gap-y-1 mt-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed-dim">timer</span>
+<span>65 min</span>
+</span>
+<span>•</span>
+<span class="flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary-container">fitness_center</span>
+<span>7 exercises</span>
+</span>
+</div>
+<div class="mt-2 text-[11px] font-mono text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span>
+<span>Target RPE 8–9 (High Intensity)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-sm mt-space-sm pl-1 border-t border-surface-container-highest/60">
+<div class="flex items-center gap-space-xs">
+<button aria-label="Edit Push Day" class="p-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button aria-label="Duplicate Plan" class="p-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<button aria-label="Delete Plan" class="p-2 rounded-lg bg-surface-container-high hover:bg-error-container text-on-surface-variant hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<button class="flex items-center gap-1 text-primary-container font-label-md text-label-md font-semibold px-2.5 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest transition-all" type="button">
+<span>Start Plan</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- CARD 3: RUNNING 5K -->
+<article class="plan-card relative bg-surface-container rounded-2xl overflow-hidden p-space-md transition-all active:scale-[0.99]" data-type="running">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary-fixed-dim"></div>
+<div class="flex items-start gap-space-md pl-1">
+<div class="relative w-20 h-20 rounded-xl overflow-hidden shrink-0 bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Athletic runner pacing on an outdoor wet track at dusk with cyan motion blurs and glowing digital watch display, high-contrast sports photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7ewEAi9PCDgySOIFiNdXj_annwj253pt1EykF0AWjVz6OqoKeThjJAJHraxfFWojhBVkhHKyAHLw-rB0FRlP-mwdQ0_4zMnSo5EmDYxDSThwcKPQHVVVrrkK6rf8o409OLQ6GAxHgY01hsUBfWe9wy826twtItCxP9qE_hOesOU8ujKjKA2Wgh5bXiW5Qt3MODr5F7bzF18N53jhGJsQfw3yW-LBmQazl9HAi02CAtS_huKJdxsH8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<span class="absolute bottom-1 right-1 text-[9px] font-label-sm font-bold bg-secondary-fixed-dim text-on-secondary-fixed px-1 py-0.2 rounded">RPE 7</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed-dim font-bold">Running</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Tempo Intervals</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono text-[11px]">Oct 11</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight mt-0.5 truncate">
+            Running 5K Pace Prep
+          </h3>
+<div class="flex flex-wrap items-center gap-x-space-sm gap-y-1 mt-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed-dim">timer</span>
+<span>35 min</span>
+</span>
+<span>•</span>
+<span class="flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed">sprint</span>
+<span>4 sections</span>
+</span>
+</div>
+<div class="mt-2 text-[11px] font-mono text-secondary-fixed flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">speed</span>
+<span>Target RPE 7 (Threshold)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-sm mt-space-sm pl-1 border-t border-surface-container-highest/60">
+<div class="flex items-center gap-space-xs">
+<button aria-label="Edit Running Plan" class="p-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button aria-label="Duplicate Plan" class="p-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<button aria-label="Delete Plan" class="p-2 rounded-lg bg-surface-container-high hover:bg-error-container text-on-surface-variant hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<button class="flex items-center gap-1 text-secondary-fixed-dim font-label-md text-label-md font-semibold px-2.5 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest transition-all" type="button">
+<span>Start Plan</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- CARD 4: LEG DAY & CORE -->
+<article class="plan-card relative bg-surface-container rounded-2xl overflow-hidden p-space-md transition-all active:scale-[0.99]" data-type="strength">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex items-start gap-space-md pl-1">
+<div class="relative w-20 h-20 rounded-xl overflow-hidden shrink-0 bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Close up athletic quad muscle contraction during barbell squat in a modern performance facility with tactical dark aesthetic and chartreuse accent lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1lVOIkS-Q86LUxHVKlaITRTcGI_MIYDc0eoGyR7DNGE11GOGd65owoiCVxuHGZmUOuPZ_0vitOPX2Kjhd5_j_ffyKmdmgqn1bAc4gXC62gUw9fF1ALuO4jkWLQ5kaAqATB2EoC6Bb-pHVQcJCNLY0toAND7lQnPmW5jIVGdA_3xN0Ph--4suEXBuISeJHcjJ8gFPHeTaeJlWyMzaLxgOx0C8KYMChoi4v2YWC4xV2rAnSlCXcSEp1"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<span class="absolute bottom-1 right-1 text-[9px] font-label-sm font-bold bg-error-container text-error px-1 py-0.2 rounded">RPE 8</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container font-bold">Strength</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Quads &amp; Hams</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono text-[11px]">Oct 08</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight mt-0.5 truncate">
+            Leg Day &amp; Core Stability
+          </h3>
+<div class="flex flex-wrap items-center gap-x-space-sm gap-y-1 mt-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed-dim">timer</span>
+<span>55 min</span>
+</span>
+<span>•</span>
+<span class="flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary-container">fitness_center</span>
+<span>8 exercises</span>
+</span>
+</div>
+<div class="mt-2 text-[11px] font-mono text-primary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">sports_gymnastics</span>
+<span>Target RPE 8 (Stability Focus)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-sm mt-space-sm pl-1 border-t border-surface-container-highest/60">
+<div class="flex items-center gap-space-xs">
+<button aria-label="Edit Leg Day" class="p-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button aria-label="Duplicate Plan" class="p-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<button aria-label="Delete Plan" class="p-2 rounded-lg bg-surface-container-high hover:bg-error-container text-on-surface-variant hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<button class="flex items-center gap-1 text-primary-container font-label-md text-label-md font-semibold px-2.5 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest transition-all" type="button">
+<span>Start Plan</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</article>
+</div>
+<!-- EMPTY STATE CONTAINER (Hidden by default, can be toggled) -->
+<div class="hidden flex flex-col items-center justify-center text-center p-space-xl bg-surface-container rounded-2xl my-space-md" id="emptyStateView">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-primary-container mb-space-md">
+<span class="material-symbols-outlined text-[36px]">folder_off</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-xs">No training plans saved yet</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs mb-space-lg">
+      Create a single workout session plan or import from JSON to get started with deterministic offline tracking.
+    </p>
+<div class="flex flex-col sm:flex-row items-center gap-space-sm w-full max-w-xs">
+<button class="w-full h-11 bg-primary-container text-on-primary-container font-label-md text-label-md font-bold rounded-xl flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Create Plan</span>
+</button>
+<button class="w-full h-11 bg-surface-container-high text-on-surface font-label-md text-label-md rounded-xl flex items-center justify-center gap-2" id="restorePlansBtn" type="button">
+<span>Restore List</span>
+</button>
+</div>
+</div>
+<!-- Inline Import from JSON Modal / Drawer -->
+<div class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/80 backdrop-blur-sm p-0 sm:p-margin" id="jsonDrawer">
+<div class="w-full max-w-md bg-surface-container-high rounded-t-2xl sm:rounded-2xl p-space-lg shadow-2xl flex flex-col max-h-[85vh]">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container-highest mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-[22px]">code_blocks</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Import Workout JSON</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface" id="closeJsonDrawer" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+        Paste structured Motion Orbit plan schema or upload a raw workout JSON file. Offline parser verifies integrity instantly.
+      </p>
+<!-- Drag & Drop Zone -->
+<label class="flex flex-col items-center justify-center w-full h-24 rounded-xl bg-surface-container hover:bg-surface-bright cursor-pointer transition-colors mb-space-sm text-center px-4">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-[24px] mb-1">upload_file</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Drop .json file or Browse</span>
+<span class="font-body-sm text-[10px] text-on-surface-variant">Workout JSON file</span>
+<input accept=".json" class="hidden" id="jsonFileInput" type="file"/>
+</label>
+<!-- Raw Text Area -->
+<div class="flex flex-col flex-1 min-h-[140px] mb-space-md">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Or paste raw JSON payload:</span>
+<button class="text-primary-container font-label-sm text-label-sm hover:underline" id="loadSampleJsonBtn" type="button">Insert Sample</button>
+</div>
+<textarea class="w-full flex-1 p-space-sm bg-surface text-on-surface font-mono text-[11px] rounded-xl focus:outline-none focus:ring-1 focus:ring-secondary-fixed-dim resize-none" id="jsonPayloadArea" placeholder='{"version": 2, "planName": "Sprint Cycle", "sets": [...]}'></textarea>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-sm">
+<button class="flex-1 h-11 bg-surface-container hover:bg-surface text-on-surface font-label-md text-label-md font-semibold rounded-xl transition-colors" id="cancelJsonBtn" type="button">
+          Cancel
+        </button>
+<button class="flex-1 h-11 bg-primary-container text-on-primary-container font-label-md text-label-md font-bold rounded-xl flex items-center justify-center gap-1 active:scale-[0.98] transition-transform" id="commitJsonBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">download_done</span>
+<span>Parse &amp; Save</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Toast Notification -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 hidden bg-surface-container-highest px-4 py-2.5 rounded-full shadow-lg border border-primary-container/20 items-center gap-2" id="toastNotification">
+<span class="material-symbols-outlined text-primary-container text-[18px]">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold" id="toastMessage">Plan updated</span>
+</div>
+</div>
+</main></div><div class="app-page" id="page-detail"><main class="flex flex-col relative w-full bg-surface min-h-screen pt-5"><div class="mx-auto w-full max-w-lg px-4 pb-3 flex items-center gap-3"><button aria-label="Go back" class="w-10 h-10 shrink-0 rounded-xl bg-surface-container flex items-center justify-center text-on-surface" type="button"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface font-bold">Training Plan Details</h1></div><div class="flex flex-col w-full pb-36 max-w-lg mx-auto">
+<!-- Interactive Top Action Rail (Embedded Sub-bar under Shell Header) -->
+<div class="px-margin pt-space-xs pb-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-secondary-fixed-dim">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed-dim">Targeted Taper Block</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button aria-label="Share Plan" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">ios_share</span>
+</button>
+<button aria-label="More Options" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Plan Header Hero Section -->
+<div class="px-margin flex flex-col gap-space-md">
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-md shadow-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="inline-flex items-center gap-space-xs bg-surface-container px-space-sm py-1 rounded-full self-start">
+<span class="material-symbols-outlined text-[14px] text-primary-container">event</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Scheduled: October 19, 2026</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">Upper Body — Race Week</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Low volume, peak neurological stimulus. Preserves neuromuscular recruitment while clearing systemic fatigue.</p>
+</div>
+<!-- Athletic Telemetry Grid -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-container rounded-lg p-space-sm flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Duration</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">50</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">MIN</span>
+</div>
+</div>
+<div class="bg-surface-container rounded-lg p-space-sm flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary-container uppercase tracking-wider">Intensity</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">RPE 5–6</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal">RIR 3–4</span>
+</div>
+</div>
+<div class="bg-surface-container rounded-lg p-space-sm flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Activities</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">11</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">TOTAL</span>
+</div>
+</div>
+<div class="bg-surface-container rounded-lg p-space-sm flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-wider">Target Phase</span>
+<div class="flex items-center gap-1 truncate">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate font-semibold">Tapering</span>
+</div>
+</div>
+</div>
+<!-- Target Event Banner -->
+<div class="bg-surface-container-high rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary-fixed-dim">
+<span class="material-symbols-outlined text-[18px]">sports_score</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-wider">Primary Target</span>
+<span class="font-label-lg text-label-lg text-on-surface truncate">JRF 10K • Oct 25, 2026</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary-container bg-surface-container px-space-sm py-1 rounded-full whitespace-nowrap">6d Out</span>
+</div>
+</div>
+</div>
+<!-- Coach's Strategic Guidance Alert Card -->
+<div class="px-margin mt-space-md">
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container"></div>
+<div class="flex items-center gap-space-xs text-primary-container">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary-container">Coach Tactical Directives</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+        Strict limit: avoid muscular failure at all costs. Target velocity and kinetic smoothness on all presses and pulls. Leave at least 3 clean reps in reserve on every set to prime recovery for Sunday.
+      </p>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<div class="w-6 h-6 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-bold text-[10px]">
+          MC
+        </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Coach Marcus • Orbit Performance Lab</span>
+</div>
+</div>
+</div>
+<!-- Visual Break / Atmosphere Banner -->
+<div class="px-margin mt-space-lg">
+<div class="relative w-full h-24 rounded-xl overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover opacity-40" data-alt="High contrast atmospheric aesthetic gym interior with minimal neon ambient lighting, focused athletic conditioning space with pristine black dumbbells and steel cables, high contrast dark cinematic sports photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb1vUdkO_FFJnHoMWgaoyeckirN1c6K-g0X3Xw_tyoSLQOD6_WbJA1SpcDry1ANLlANQ7_sItRmt_WWcUoHurXVXjlXuIC4qozsacp2cG8-4UeptZ180aRRZXvRuCEUYqCjQigVOSISE1Z4bshCt2Fq18gCwSCJ2yUy1voTaYEqBJLwR1jOKgZT40yhvcevsTiGOQBvjIFPR1eJ3wUmxtFkJOVnTMFZ6OICbLe31UHuVX5EiWpWm8V"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-low via-surface-container-low/70 to-transparent p-space-md flex flex-col justify-center">
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-wider">Neuromuscular Primer</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Precision &amp; Rhythm</span>
+</div>
+</div>
+</div>
+<!-- SECTION 1: WARM-UP -->
+<div class="px-margin mt-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed-dim">ecg_heart</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Warm-Up</h3>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container px-space-sm py-1 rounded-full text-on-surface-variant">4 Activities • ~10 min</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Activity Item 1 -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[20px]">directions_walk</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Treadmill Incline Walk</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">3 min • Zone 1 Aerobic Elevation</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">check_circle_outline</span>
+</div>
+<!-- Activity Item 2 -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[20px]">sync</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Dynamic Arm Circles</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">60 sec • 30s forward / 30s reverse</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">check_circle_outline</span>
+</div>
+<!-- Activity Item 3 -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[20px]">expand</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Resistance Band Pull-Apart</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">15 reps • Scapular retraction focus</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">check_circle_outline</span>
+</div>
+<!-- Activity Item 4 -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[20px]">fitness_center</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Light Chest Press Flow</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2 sets × 10 reps • Empty bar / minimal load</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">check_circle_outline</span>
+</div>
+</div>
+</div>
+<!-- SECTION 2: MAIN WORKOUT -->
+<div class="px-margin mt-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-primary-container">exercise</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Main Exercises</h3>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container px-space-sm py-1 rounded-full text-on-surface-variant">5 Exercises</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Exercise Card 1 -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary-container uppercase tracking-wider">Exercise 01</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• Machine</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Chest Press Machine</h4>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[16px]">info</span>
+</button>
+</div>
+<div class="grid grid-cols-3 gap-space-xs bg-surface-container p-space-xs rounded-lg text-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">VOLUME</span>
+<span class="font-label-lg text-label-lg text-on-surface">2 × 10–12</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">REST</span>
+<span class="font-label-lg text-label-lg text-on-surface">90 SEC</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">LOAD INTENT</span>
+<span class="font-label-lg text-label-lg text-primary-container font-semibold">Moderate</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed-dim">speed</span>
+<span>Controlled concentric cadence; avoid lockout grinding.</span>
+</div>
+</div>
+<!-- Exercise Card 2 -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary-fixed-dim"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-wider">Exercise 02</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• Cable Stack</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Lat Pulldown</h4>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[16px]">info</span>
+</button>
+</div>
+<div class="grid grid-cols-3 gap-space-xs bg-surface-container p-space-xs rounded-lg text-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">VOLUME</span>
+<span class="font-label-lg text-label-lg text-on-surface">2 × 10–12</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">REST</span>
+<span class="font-label-lg text-label-lg text-on-surface">90 SEC</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SETUP</span>
+<span class="font-label-lg text-label-lg text-on-surface">Wide Pronated</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed-dim">center_focus_strong</span>
+<span>Full humeral depression, pull toward clavicle.</span>
+</div>
+</div>
+<!-- Exercise Card 3 -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary-fixed-dim"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-wider">Exercise 03</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• Cable Machine</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Seated Cable Row</h4>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[16px]">info</span>
+</button>
+</div>
+<div class="grid grid-cols-3 gap-space-xs bg-surface-container p-space-xs rounded-lg text-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">VOLUME</span>
+<span class="font-label-lg text-label-lg text-on-surface">2 × 10–12</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">REST</span>
+<span class="font-label-lg text-label-lg text-on-surface">90 SEC</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">CUE</span>
+<span class="font-label-lg text-label-lg text-on-surface">Scapular Control</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed-dim">sync_alt</span>
+<span>Neutral grip attachment; 1s hold at full contraction.</span>
+</div>
+</div>
+<!-- Exercise Card 4 -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-outline-variant"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Exercise 04</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• Free Weight</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Dumbbell Lateral Raise</h4>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[16px]">info</span>
+</button>
+</div>
+<div class="grid grid-cols-3 gap-space-xs bg-surface-container p-space-xs rounded-lg text-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">VOLUME</span>
+<span class="font-label-lg text-label-lg text-on-surface">2 × 12</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">REST</span>
+<span class="font-label-lg text-label-lg text-on-surface">60 SEC</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">TEMPO</span>
+<span class="font-label-lg text-label-lg text-on-surface">2-0-1-0</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed-dim">offline_pin</span>
+<span>Keep shoulders depressed, lead smoothly with elbows.</span>
+</div>
+</div>
+<!-- Exercise Card 5 -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-outline-variant"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Exercise 05</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• Free Weight</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Dumbbell Biceps Curl</h4>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[16px]">info</span>
+</button>
+</div>
+<div class="grid grid-cols-3 gap-space-xs bg-surface-container p-space-xs rounded-lg text-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">VOLUME</span>
+<span class="font-label-lg text-label-lg text-on-surface">2 × 12</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">REST</span>
+<span class="font-label-lg text-label-lg text-on-surface">60 SEC</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">GRIP</span>
+<span class="font-label-lg text-label-lg text-on-surface">Supinated</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed-dim">offline_pin</span>
+<span>Strict isolation, minimal torso momentum.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 3: COOL-DOWN -->
+<div class="px-margin mt-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed">self_improvement</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Cool-Down Recovery</h3>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container px-space-sm py-1 rounded-full text-on-surface-variant">4 Activities • ~5 min</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between p-space-sm hover:bg-surface-container rounded-lg transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed-dim">air</span>
+<span class="font-body-md text-body-md text-on-surface">Easy Recovery Walk</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 min</span>
+</div>
+<div class="flex items-center justify-between p-space-sm hover:bg-surface-container rounded-lg transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed-dim">accessibility_new</span>
+<span class="font-body-md text-body-md text-on-surface">Doorway Chest Stretch</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">30s hold / side</span>
+</div>
+<div class="flex items-center justify-between p-space-sm hover:bg-surface-container rounded-lg transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed-dim">accessibility</span>
+<span class="font-body-md text-body-md text-on-surface">Cross-Body Shoulder Stretch</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">30s hold / side</span>
+</div>
+<div class="flex items-center justify-between p-space-sm hover:bg-surface-container rounded-lg transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed-dim">sports_gymnastics</span>
+<span class="font-body-md text-body-md text-on-surface">Overhead Lat &amp; Back Stretch</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">30s hold</span>
+</div>
+</div>
+</div>
+<!-- FLOATING / STICKY BOTTOM ACTION BAR -->
+<div class="fixed bottom-0 inset-x-0 z-40 bg-surface/90 backdrop-blur-xl border-t-0 p-space-md flex flex-col gap-space-xs pb-safe">
+<!-- Primary CTA Button -->
+<button class="w-full h-[52px] bg-primary-container hover:bg-primary-fixed-dim text-on-primary-fixed font-headline-sm text-headline-sm rounded-xl flex items-center justify-center gap-space-xs shadow-lg shadow-primary-container/10 active:scale-[0.98] transition-all" id="startWorkoutBtn">
+<span class="material-symbols-outlined text-[24px]">play_arrow</span>
+<span>Start Workout</span>
+</button>
+<!-- Secondary Row Actions -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<button class="h-11 bg-surface-container-high hover:bg-surface-container-highest text-on-surface rounded-lg flex items-center justify-center gap-space-xs font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Edit Plan</span>
+</button>
+<button class="h-11 bg-surface-container-high hover:bg-surface-container-highest text-on-surface rounded-lg flex items-center justify-center gap-space-xs font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span>Duplicate Plan</span>
+</button>
+</div>
+</div>
+</div>
+</main></div><div class="app-page" id="page-edit"><main class="flex flex-col relative w-full bg-surface min-h-screen pt-5"><div class="mx-auto w-full max-w-lg px-4 pb-3 flex items-center gap-3"><button aria-label="Go back" class="w-10 h-10 shrink-0 rounded-xl bg-surface-container flex items-center justify-center text-on-surface" type="button"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface font-bold">Create / Edit Plan</h1></div><div class="flex flex-col w-full pb-32 max-w-lg mx-auto">
+<!-- Interactive Form Canvas -->
+<form class="flex flex-col gap-space-lg px-margin pt-space-md" id="trainingPlanForm" onsubmit="event.preventDefault();">
+<!-- 1. GENERAL INFORMATION -->
+<section class="bg-surface-container rounded-xl p-space-md flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-primary-container rounded-full"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">General Information</h2>
+</div>
+<span class="font-label-sm text-label-sm text-primary-container bg-surface-container-high px-space-sm py-0.5 rounded-full uppercase tracking-wider">Required</span>
+</div>
+<!-- Workout Name -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1" for="workoutName">
+          Workout Name <span class="text-primary-container">*</span>
+</label>
+<div class="relative flex items-center">
+<input class="w-full h-[52px] bg-surface-container-high text-on-surface font-body-lg text-body-lg rounded-lg px-space-md focus:bg-surface-container-highest focus:text-primary transition-colors outline-none" id="workoutName" name="workoutName" placeholder="e.g., Heavy Push &amp; Core" required="" type="text" value="Upper Body — Race Week"/>
+<span class="material-symbols-outlined absolute right-space-md text-on-surface-variant text-[20px] pointer-events-none">fitness_center</span>
+</div>
+</div>
+<!-- Workout Type Selector -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Workout Modality</label>
+<div class="flex items-center gap-space-sm overflow-x-auto no-scrollbar py-1">
+<button class="workout-type-pill flex-shrink-0 px-space-md py-2 rounded-full font-label-md text-label-md bg-primary-container text-on-primary-container transition-all flex items-center gap-1.5 shadow-sm" data-selected="true" type="button">
+<span class="material-symbols-outlined text-[16px]">sports_martial_arts</span> Strength
+          </button>
+<button class="workout-type-pill flex-shrink-0 px-space-md py-2 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1.5" data-selected="false" type="button">
+<span class="material-symbols-outlined text-[16px]">directions_run</span> Running
+          </button>
+<button class="workout-type-pill flex-shrink-0 px-space-md py-2 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1.5" data-selected="false" type="button">
+<span class="material-symbols-outlined text-[16px]">nordic_walking</span> Walking
+          </button>
+<button class="workout-type-pill flex-shrink-0 px-space-md py-2 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1.5" data-selected="false" type="button">
+<span class="material-symbols-outlined text-[16px]">directions_bike</span> Cycling
+          </button>
+<button class="workout-type-pill flex-shrink-0 px-space-md py-2 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1.5" data-selected="false" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span> Custom
+          </button>
+</div>
+</div>
+<!-- Date & Duration Grid -->
+<div class="grid grid-cols-2 gap-space-sm pt-1">
+<!-- Date Picker -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Scheduled Date</label>
+<div class="h-[52px] bg-surface-container-high rounded-lg px-space-md flex items-center justify-between text-on-surface cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span class="font-body-md text-body-md font-semibold">Oct 19, 2026</span>
+<span class="material-symbols-outlined text-secondary-fixed-dim text-[20px]">calendar_today</span>
+</div>
+</div>
+<!-- Duration Stepper -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Duration</label>
+<div class="h-[52px] bg-surface-container-high rounded-lg px-space-sm flex items-center justify-between">
+<button aria-label="Decrease time" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-lowest active:scale-95 transition-transform" onclick="adjustDuration(-5)" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="font-headline-sm text-headline-sm text-on-surface" id="durationVal">50 <span class="font-label-sm text-label-sm text-on-surface-variant">MIN</span></span>
+<button aria-label="Increase time" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-lowest active:scale-95 transition-transform" onclick="adjustDuration(5)" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Target Intensity: RPE & RIR -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface-variant" for="rpeRange">Target Intensity (RPE &amp; RIR)</label>
+<span class="font-label-sm text-label-sm text-on-secondary-container bg-secondary-container/20 px-space-sm py-0.5 rounded-full font-bold" id="rpeBadge">RPE 5–6 (Moderate)</span>
+</div>
+<div class="bg-surface-container-high p-space-sm rounded-lg flex flex-col gap-space-xs">
+<input class="w-full accent-primary-container bg-surface-container h-2 rounded-lg cursor-pointer" id="rpeRange" max="10" min="1" oninput="handleRpeChange(this.value)" step="1" type="range" value="6"/>
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm pt-1">
+<span>RPE 1 (Rest)</span>
+<span class="text-secondary-fixed-dim font-semibold" id="rirDisplay">3–4 RIR</span>
+<span>RPE 10 (Max)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. WARM-UP (Expandable Section) -->
+<section class="bg-surface-container rounded-xl overflow-hidden transition-all duration-300 shadow-sm" id="warmupSection">
+<div class="p-space-md flex items-center justify-between cursor-pointer select-none" onclick="toggleSection('warmupContent', 'warmupIcon')">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary-fixed-dim">
+<span class="material-symbols-outlined text-[18px]">timer</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Warm-up</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">3 Preparation exercises</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant px-space-sm py-0.5 rounded-full">~6 min</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[24px] transform transition-transform duration-200" id="warmupIcon">expand_less</span>
+</div>
+</div>
+<!-- Warm-up Content -->
+<div class="px-space-md pb-space-md flex flex-col gap-space-sm" id="warmupContent">
+<div class="flex flex-col gap-space-xs" id="warmupList">
+<!-- Item 1 -->
+<div class="warmup-item flex items-center gap-space-sm p-space-sm bg-surface-container-high rounded-lg hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant cursor-grab text-[20px] select-none">drag_indicator</span>
+<div class="flex-1 min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate block">Treadmill Walking</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Gradual incline, aerobic prime</span>
+</div>
+<div class="bg-surface-container px-space-sm py-1 rounded-md text-on-surface font-label-sm text-label-sm flex items-center">
+              3 min
+            </div>
+<button aria-label="Remove item" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-error transition-colors" onclick="removeItem(this)" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<!-- Item 2 -->
+<div class="warmup-item flex items-center gap-space-sm p-space-sm bg-surface-container-high rounded-lg hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant cursor-grab text-[20px] select-none">drag_indicator</span>
+<div class="flex-1 min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate block">Arm Circles</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dynamic glenohumeral mobility</span>
+</div>
+<div class="bg-surface-container px-space-sm py-1 rounded-md text-on-surface font-label-sm text-label-sm flex items-center">
+              60 sec
+            </div>
+<button aria-label="Remove item" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-error transition-colors" onclick="removeItem(this)" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<!-- Item 3 -->
+<div class="warmup-item flex items-center gap-space-sm p-space-sm bg-surface-container-high rounded-lg hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant cursor-grab text-[20px] select-none">drag_indicator</span>
+<div class="flex-1 min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate block">Band Pull-Apart</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Scapular activation</span>
+</div>
+<div class="bg-surface-container px-space-sm py-1 rounded-md text-on-surface font-label-sm text-label-sm flex items-center">
+              15 reps
+            </div>
+<button aria-label="Remove item" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-error transition-colors" onclick="removeItem(this)" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Add Warm-up Button -->
+<button class="w-full h-11 border border-dashed border-outline/40 hover:border-primary-container rounded-lg flex items-center justify-center gap-space-xs text-on-surface-variant hover:text-primary-container transition-all active:scale-[0.99] mt-1 bg-surface-container-high/40" onclick="addActivityPlaceholder('warmupList', 'Dynamic Mobility', '45 sec')" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span class="font-label-md text-label-md">Add Warm-up Activity</span>
+</button>
+</div>
+</section>
+<!-- 3. MAIN EXERCISES -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-primary-container rounded-full"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Main Exercises</h2>
+<span class="ml-1 bg-surface-container-highest text-primary-container font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold" id="exerciseCountTag">3</span>
+</div>
+<button class="h-9 px-space-md rounded-full bg-surface-container hover:bg-surface-container-high text-primary-container font-label-sm text-label-sm flex items-center gap-1 transition-colors" onclick="openExerciseSelector()" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span> Add Exercise
+        </button>
+</div>
+<!-- Exercise Cards Container -->
+<div class="flex flex-col gap-space-sm" id="exerciseDeck">
+<!-- Exercise Card 1 -->
+<div class="exercise-card bg-surface-container rounded-xl overflow-hidden relative shadow-sm">
+<!-- Intensity Accent Spine -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container"></div>
+<div class="p-space-md pl-space-md flex flex-col gap-space-sm">
+<!-- Card Header -->
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant cursor-grab text-[22px] select-none mt-0.5">drag_handle</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Chest Press Machine</h3>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="bg-surface-container-highest text-secondary-fixed-dim px-2 py-0.5 rounded-full font-label-sm text-label-sm">Chest</span>
+<span class="bg-surface-container-highest text-on-surface-variant px-2 py-0.5 rounded-full font-label-sm text-label-sm">Triceps</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Exercise settings" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<button aria-label="Remove exercise" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-error transition-colors" onclick="removeItem(this.closest('.exercise-card'))" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Quick Telemetry Row -->
+<div class="grid grid-cols-4 gap-space-xs bg-surface-container-high p-space-sm rounded-lg text-center">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SETS</span>
+<input class="w-full text-center bg-transparent font-headline-sm text-headline-sm text-on-surface focus:text-primary-container outline-none" type="text" value="2"/>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">REPS</span>
+<input class="w-full text-center bg-transparent font-headline-sm text-headline-sm text-on-surface focus:text-primary-container outline-none" type="text" value="10-12"/>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">TARGET WT</span>
+<input class="w-full text-center bg-transparent font-headline-sm text-headline-sm text-primary-container focus:text-primary-container outline-none" type="text" value="60 kg"/>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">REST</span>
+<input class="w-full text-center bg-transparent font-headline-sm text-headline-sm text-on-surface focus:text-primary-container outline-none" type="text" value="90s"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Exercise Card 2 -->
+<div class="exercise-card bg-surface-container rounded-xl overflow-hidden relative shadow-sm">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary-fixed-dim"></div>
+<div class="p-space-md pl-space-md flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant cursor-grab text-[22px] select-none mt-0.5">drag_handle</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Lat Pulldown</h3>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="bg-surface-container-highest text-secondary-fixed-dim px-2 py-0.5 rounded-full font-label-sm text-label-sm">Back</span>
+<span class="bg-surface-container-highest text-on-surface-variant px-2 py-0.5 rounded-full font-label-sm text-label-sm">Biceps</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Exercise settings" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<button aria-label="Remove exercise" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-error transition-colors" onclick="removeItem(this.closest('.exercise-card'))" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Quick Telemetry Row -->
+<div class="grid grid-cols-4 gap-space-xs bg-surface-container-high p-space-sm rounded-lg text-center">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SETS</span>
+<input class="w-full text-center bg-transparent font-headline-sm text-headline-sm text-on-surface focus:text-primary-container outline-none" type="text" value="2"/>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">REPS</span>
+<input class="w-full text-center bg-transparent font-headline-sm text-headline-sm text-on-surface focus:text-primary-container outline-none" type="text" value="10-12"/>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">TARGET WT</span>
+<input class="w-full text-center bg-transparent font-headline-sm text-headline-sm text-primary-container focus:text-primary-container outline-none" type="text" value="52 kg"/>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">REST</span>
+<input class="w-full text-center bg-transparent font-headline-sm text-headline-sm text-on-surface focus:text-primary-container outline-none" type="text" value="90s"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Exercise Card 3 -->
+<div class="exercise-card bg-surface-container rounded-xl overflow-hidden relative shadow-sm">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary-fixed-dim"></div>
+<div class="p-space-md pl-space-md flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant cursor-grab text-[22px] select-none mt-0.5">drag_handle</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Seated Cable Row</h3>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="bg-surface-container-highest text-secondary-fixed-dim px-2 py-0.5 rounded-full font-label-sm text-label-sm">Upper Back</span>
+<span class="bg-surface-container-highest text-on-surface-variant px-2 py-0.5 rounded-full font-label-sm text-label-sm">Rhomboids</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Exercise settings" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<button aria-label="Remove exercise" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-error transition-colors" onclick="removeItem(this.closest('.exercise-card'))" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Quick Telemetry Row -->
+<div class="grid grid-cols-4 gap-space-xs bg-surface-container-high p-space-sm rounded-lg text-center">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SETS</span>
+<input class="w-full text-center bg-transparent font-headline-sm text-headline-sm text-on-surface focus:text-primary-container outline-none" type="text" value="2"/>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">REPS</span>
+<input class="w-full text-center bg-transparent font-headline-sm text-headline-sm text-on-surface focus:text-primary-container outline-none" type="text" value="10-12"/>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">TARGET WT</span>
+<input class="w-full text-center bg-transparent font-headline-sm text-headline-sm text-primary-container focus:text-primary-container outline-none" type="text" value="45 kg"/>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">REST</span>
+<input class="w-full text-center bg-transparent font-headline-sm text-headline-sm text-on-surface focus:text-primary-container outline-none" type="text" value="90s"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Exercise Library Sheet Teaser Button -->
+<button class="w-full py-space-sm bg-surface-container hover:bg-surface-container-high rounded-xl flex items-center justify-center gap-space-sm text-secondary-fixed-dim transition-all active:scale-[0.99] mt-1 shadow-sm" onclick="openExerciseSelector()" type="button">
+<span class="material-symbols-outlined text-[20px]">library_add</span>
+<span class="font-label-lg text-label-lg">Select from Exercise Library...</span>
+</button>
+</section>
+<!-- 4. COOL-DOWN (Expandable Section) -->
+<section class="bg-surface-container rounded-xl overflow-hidden transition-all duration-300 shadow-sm" id="cooldownSection">
+<div class="p-space-md flex items-center justify-between cursor-pointer select-none" onclick="toggleSection('cooldownContent', 'cooldownIcon')">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">self_improvement</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Cool-down</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">3 Post-session routines</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant px-space-sm py-0.5 rounded-full">~5 min</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[24px] transform transition-transform duration-200" id="cooldownIcon">expand_less</span>
+</div>
+</div>
+<!-- Cool-down Content -->
+<div class="px-space-md pb-space-md flex flex-col gap-space-sm" id="cooldownContent">
+<div class="flex flex-col gap-space-xs" id="cooldownList">
+<!-- Item 1 -->
+<div class="cooldown-item flex items-center gap-space-sm p-space-sm bg-surface-container-high rounded-lg hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant cursor-grab text-[20px] select-none">drag_indicator</span>
+<div class="flex-1 min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate block">Easy Walking</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">HR recovery &amp; lactate clearance</span>
+</div>
+<div class="bg-surface-container px-space-sm py-1 rounded-md text-on-surface font-label-sm text-label-sm flex items-center">
+              2 min
+            </div>
+<button aria-label="Remove item" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-error transition-colors" onclick="removeItem(this)" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<!-- Item 2 -->
+<div class="cooldown-item flex items-center gap-space-sm p-space-sm bg-surface-container-high rounded-lg hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant cursor-grab text-[20px] select-none">drag_indicator</span>
+<div class="flex-1 min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate block">Chest Stretch</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Static doorframe hold</span>
+</div>
+<div class="bg-surface-container px-space-sm py-1 rounded-md text-on-surface font-label-sm text-label-sm flex items-center">
+              45 sec
+            </div>
+<button aria-label="Remove item" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-error transition-colors" onclick="removeItem(this)" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<!-- Item 3 -->
+<div class="cooldown-item flex items-center gap-space-sm p-space-sm bg-surface-container-high rounded-lg hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant cursor-grab text-[20px] select-none">drag_indicator</span>
+<div class="flex-1 min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate block">Shoulder Stretch</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cross-body posterior capsule</span>
+</div>
+<div class="bg-surface-container px-space-sm py-1 rounded-md text-on-surface font-label-sm text-label-sm flex items-center">
+              45 sec
+            </div>
+<button aria-label="Remove item" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-error transition-colors" onclick="removeItem(this)" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Add Cool-down Button -->
+<button class="w-full h-11 border border-dashed border-outline/40 hover:border-primary-container rounded-lg flex items-center justify-center gap-space-xs text-on-surface-variant hover:text-primary-container transition-all active:scale-[0.99] mt-1 bg-surface-container-high/40" onclick="addActivityPlaceholder('cooldownList', 'Hamstring Flush', '60 sec')" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span class="font-label-md text-label-md">Add Cool-down Activity</span>
+</button>
+</div>
+</section>
+<!-- 5. ADDITIONAL NOTES & EVENT -->
+<section class="bg-surface-container rounded-xl p-space-md flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-primary-container rounded-full"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Target Event &amp; Notes</h2>
+</div>
+<!-- Notes Field -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="workoutNotes">Workout Tactical Notes</label>
+<textarea class="w-full bg-surface-container-high text-on-surface font-body-md text-body-md rounded-lg p-space-md focus:bg-surface-container-highest transition-colors outline-none resize-none" id="workoutNotes" placeholder="Specific form cues, prep notes or tapering directives..." rows="3">Avoid muscle failure before race day.</textarea>
+</div>
+<!-- Optional Target Event Link -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Target Event</label>
+<div class="h-[52px] bg-surface-container-high rounded-lg px-space-md flex items-center justify-between text-on-surface">
+<input class="bg-transparent font-body-lg text-body-lg text-on-surface outline-none w-full" placeholder="Optional event" type="text" value="JRF 10K"/>
+<span class="material-symbols-outlined text-secondary-fixed-dim text-[18px]">flag</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Event Date</label>
+<div class="h-[52px] bg-surface-container-high rounded-lg px-space-md flex items-center justify-between text-on-surface cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span class="font-body-md text-body-md">Oct 25, 2026</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">event</span>
+</div>
+</div>
+</div>
+</section>
+</form>
+<!-- Sticky Bottom Bar -->
+<div class="fixed bottom-0 inset-x-0 z-40 bg-surface/90 backdrop-blur-xl px-margin py-3 pb-safe">
+<div class="w-full max-w-xl mx-auto flex items-center gap-space-sm">
+<button class="flex-1 h-[52px] bg-primary-container text-on-primary-container rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-space-xs shadow-md active:scale-[0.98] transition-transform" onclick="saveWorkoutPlan()" type="button">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+<span>Save Training Plan</span>
+</button>
+</div>
+</div>
+<!-- Toast Notification (Interactive Feedback) -->
+<div class="fixed top-16 left-1/2 -translate-x-1/2 z-50 bg-surface-container-highest text-on-surface px-space-md py-2.5 rounded-full font-label-md text-label-md shadow-xl flex items-center gap-space-sm opacity-0 pointer-events-none transition-all duration-300" id="saveToast">
+<span class="material-symbols-outlined text-primary-container text-[20px]">offline_pin</span>
+<span>Plan saved &amp; cached to local storage</span>
+</div>
+</div>
+</main></div><script>
+  (function() {
+    // Search functionality
+    const searchInput = document.getElementById('planSearchInput');
+    const clearBtn = document.getElementById('clearSearchBtn');
+    const cards = document.querySelectorAll('.plan-card');
+    const plansDeck = document.getElementById('plansDeck');
+    const emptyState = document.getElementById('emptyStateView');
+
+    function filterPlans() {
+      const query = (searchInput.value || '').toLowerCase().trim();
+      let matchCount = 0;
+
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const matches = text.includes(query);
+        if (matches) {
+          card.classList.remove('hidden');
+          matchCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (matchCount === 0 && query.length > 0) {
+        emptyState.classList.remove('hidden');
+        plansDeck.classList.add('hidden');
+      } else if (!emptyState.dataset.manualEmpty) {
+        emptyState.classList.add('hidden');
+        plansDeck.classList.remove('hidden');
+      }
+
+      if (query.length > 0) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+    }
+
+    searchInput?.addEventListener('input', filterPlans);
+    clearBtn?.addEventListener('click', () => {
+      searchInput.value = '';
+      filterPlans();
+      searchInput.focus();
+    });
+
+    document.getElementById('searchFocusBtn')?.addEventListener('click', () => {
+      searchInput?.focus();
+    });
+
+    // Category Filter Chips
+    const chips = document.querySelectorAll('.filter-chip');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => {
+          c.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-bold');
+          c.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        chip.classList.add('bg-primary-container', 'text-on-primary-container', 'font-bold');
+        chip.classList.remove('bg-surface-container', 'text-on-surface-variant');
+
+        const filter = chip.getAttribute('data-filter');
+        cards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-type') === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Simulate Empty State Toggle
+    const previewEmptyToggle = document.getElementById('previewEmptyToggle');
+    const restorePlansBtn = document.getElementById('restorePlansBtn');
+
+    function toggleEmpty(showEmpty) {
+      if (showEmpty) {
+        emptyState.dataset.manualEmpty = 'true';
+        emptyState.classList.remove('hidden');
+        plansDeck.classList.add('hidden');
+      } else {
+        delete emptyState.dataset.manualEmpty;
+        emptyState.classList.add('hidden');
+        plansDeck.classList.remove('hidden');
+      }
+    }
+
+    previewEmptyToggle?.addEventListener('click', () => toggleEmpty(true));
+    restorePlansBtn?.addEventListener('click', () => toggleEmpty(false));
+
+    // JSON Drawer Behavior
+    const openJsonDrawer = document.getElementById('openJsonDrawer');
+    const closeJsonDrawer = document.getElementById('closeJsonDrawer');
+    const cancelJsonBtn = document.getElementById('cancelJsonBtn');
+    const jsonDrawer = document.getElementById('jsonDrawer');
+    const jsonPayloadArea = document.getElementById('jsonPayloadArea');
+    const loadSampleJsonBtn = document.getElementById('loadSampleJsonBtn');
+    const commitJsonBtn = document.getElementById('commitJsonBtn');
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+
+    function showToast(text) {
+      if (!toast || !toastMsg) return;
+      toastMsg.textContent = text;
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('flex');
+      }, 2600);
+    }
+
+    function toggleDrawer(open) {
+      if (open) {
+        jsonDrawer.classList.remove('hidden');
+      } else {
+        jsonDrawer.classList.add('hidden');
+      }
+    }
+
+    openJsonDrawer?.addEventListener('click', () => toggleDrawer(true));
+    closeJsonDrawer?.addEventListener('click', () => toggleDrawer(false));
+    cancelJsonBtn?.addEventListener('click', () => toggleDrawer(false));
+
+    loadSampleJsonBtn?.addEventListener('click', () => {
+      jsonPayloadArea.value = JSON.stringify({
+        version: "2.4",
+        name: "HIIT Tabata Protocol",
+        type: "Strength",
+        durationMinutes: 45,
+        targetRPE: "8-9",
+        exercisesCount: 6,
+        synced: true
+      }, null, 2);
+    });
+
+    commitJsonBtn?.addEventListener('click', () => {
+      toggleDrawer(false);
+      showToast('Plan successfully parsed & cached offline');
+    });
+
+    // Duplicate & Delete Micro-actions
+    document.querySelectorAll('[aria-label="Duplicate Plan"]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showToast('Plan cloned to drafts');
+      });
+    });
+
+    document.querySelectorAll('[aria-label="Delete Plan"]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const article = btn.closest('article');
+        if (article) {
+          article.style.opacity = '0';
+          article.style.transform = 'scale(0.95)';
+          article.style.transition = 'all 0.2s ease-out';
+          setTimeout(() => {
+            article.remove();
+            showToast('Training plan deleted');
+          }, 200);
+        }
+      });
+    });
+  })();
+</script><script>
+  // Simple haptic tactile feedback effect on primary button tap
+  const startBtn = document.getElementById('startWorkoutBtn');
+  if (startBtn) {
+    startBtn.addEventListener('click', () => {
+      startBtn.classList.add('opacity-90', 'scale-[0.97]');
+      setTimeout(() => {
+        startBtn.classList.remove('opacity-90', 'scale-[0.97]');
+      }, 150);
+    });
+  }
+</script><script>
+  // Modality Selection Toggle
+  document.querySelectorAll('.workout-type-pill').forEach(pill => {
+    pill.addEventListener('click', function() {
+      document.querySelectorAll('.workout-type-pill').forEach(btn => {
+        btn.classList.remove('bg-primary-container', 'text-on-primary-container');
+        btn.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        btn.dataset.selected = "false";
+      });
+      this.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+      this.classList.add('bg-primary-container', 'text-on-primary-container');
+      this.dataset.selected = "true";
+    });
+  });
+
+  // Duration adjustments
+  function adjustDuration(delta) {
+    const durationSpan = document.getElementById('durationVal');
+    let current = parseInt(durationSpan.innerText);
+    current = Math.max(10, Math.min(180, current + delta));
+    durationSpan.innerHTML = current + ' <span class="font-label-sm text-label-sm text-on-surface-variant">MIN</span>';
+  }
+
+  // RPE & RIR Dynamic Updates
+  function handleRpeChange(val) {
+    const rpeBadge = document.getElementById('rpeBadge');
+    const rirDisplay = document.getElementById('rirDisplay');
+    const v = parseInt(val);
+    
+    if (v <= 4) {
+      rpeBadge.innerText = 'RPE ' + v + ' (Light)';
+      rirDisplay.innerText = '5+ RIR';
+    } else if (v <= 6) {
+      rpeBadge.innerText = 'RPE ' + v + ' (Moderate)';
+      rirDisplay.innerText = (10 - v) + '–' + (11 - v) + ' RIR';
+    } else if (v <= 8) {
+      rpeBadge.innerText = 'RPE ' + v + ' (Hard)';
+      rirDisplay.innerText = (10 - v) + ' RIR';
+    } else {
+      rpeBadge.innerText = 'RPE ' + v + ' (Maximal)';
+      rirDisplay.innerText = '0–1 RIR';
+    }
+  }
+
+  // Expand / Collapse Section
+  function toggleSection(contentId, iconId) {
+    const content = document.getElementById(contentId);
+    const icon = document.getElementById(iconId);
+    if (!content || !icon) return;
+
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      icon.classList.remove('rotate-180');
+    } else {
+      content.classList.add('hidden');
+      icon.classList.add('rotate-180');
+    }
+  }
+
+  // Activity Removal Helper
+  function removeItem(element) {
+    const parent = element.closest('.warmup-item, .cooldown-item, .exercise-card');
+    if (parent) {
+      parent.style.opacity = '0';
+      parent.style.transform = 'scale(0.95)';
+      parent.style.transition = 'all 0.2s ease-out';
+      setTimeout(() => {
+        parent.remove();
+        updateExerciseCounter();
+      }, 200);
+    }
+  }
+
+  // Add warm-up / cool-down item
+  function addActivityPlaceholder(listId, title, duration) {
+    const list = document.getElementById(listId);
+    if (!list) return;
+
+    const div = document.createElement('div');
+    div.className = listId.includes('warmup') ? 'warmup-item' : 'cooldown-item';
+    div.className += ' flex items-center gap-space-sm p-space-sm bg-surface-container-high rounded-lg hover:bg-surface-container-highest transition-colors opacity-0';
+    div.innerHTML = `
+      <span class="material-symbols-outlined text-on-surface-variant cursor-grab text-[20px] select-none">drag_indicator</span>
+      <div class="flex-1 min-w-0">
+        <span class="font-label-lg text-label-lg text-on-surface truncate block">${title}</span>
+        <span class="font-body-sm text-body-sm text-on-surface-variant">Custom protocol</span>
+      </div>
+      <div class="bg-surface-container px-space-sm py-1 rounded-md text-on-surface font-label-sm text-label-sm flex items-center">
+        ${duration}
+      </div>
+      <button type="button" onclick="removeItem(this)" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-error transition-colors" aria-label="Remove item">
+        <span class="material-symbols-outlined text-[18px]">delete</span>
+      </button>
+    `;
+    list.appendChild(div);
+
+    requestAnimationFrame(() => {
+      div.style.transition = 'all 0.25s ease-out';
+      div.classList.remove('opacity-0');
+    });
+  }
+
+  // Update exercise count display
+  function updateExerciseCounter() {
+    const count = document.querySelectorAll('#exerciseDeck .exercise-card').length;
+    const tag = document.getElementById('exerciseCountTag');
+    if (tag) tag.innerText = count;
+  }
+
+  // Quick exercise library append simulation
+  function openExerciseSelector() {
+    const deck = document.getElementById('exerciseDeck');
+    const newCard = document.createElement('div');
+    newCard.className = 'exercise-card bg-surface-container rounded-xl overflow-hidden relative shadow-sm opacity-0 translate-y-2 transition-all duration-300';
+    newCard.innerHTML = `
+      <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container"></div>
+      <div class="p-space-md pl-space-md flex flex-col gap-space-sm">
+        <div class="flex items-start justify-between">
+          <div class="flex items-start gap-space-sm">
+            <span class="material-symbols-outlined text-on-surface-variant cursor-grab text-[22px] select-none mt-0.5">drag_handle</span>
+            <div>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface">Dumbbell Lateral Raise</h3>
+              <div class="flex items-center gap-space-xs mt-1">
+                <span class="bg-surface-container-highest text-secondary-fixed-dim px-2 py-0.5 rounded-full font-label-sm text-label-sm">Delts</span>
+                <span class="bg-surface-container-highest text-on-surface-variant px-2 py-0.5 rounded-full font-label-sm text-label-sm">Isolation</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center gap-1">
+            <button type="button" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" aria-label="Exercise settings">
+              <span class="material-symbols-outlined text-[18px]">more_vert</span>
+            </button>
+            <button type="button" onclick="removeItem(this.closest('.exercise-card'))" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-error transition-colors" aria-label="Remove exercise">
+              <span class="material-symbols-outlined text-[18px]">delete</span>
+            </button>
+          </div>
+        </div>
+        <div class="grid grid-cols-4 gap-space-xs bg-surface-container-high p-space-sm rounded-lg text-center">
+          <div class="flex flex-col items-center">
+            <span class="font-label-sm text-label-sm text-on-surface-variant">SETS</span>
+            <input type="text" value="3" class="w-full text-center bg-transparent font-headline-sm text-headline-sm text-on-surface focus:text-primary-container outline-none" />
+          </div>
+          <div class="flex flex-col items-center">
+            <span class="font-label-sm text-label-sm text-on-surface-variant">REPS</span>
+            <input type="text" value="12-15" class="w-full text-center bg-transparent font-headline-sm text-headline-sm text-on-surface focus:text-primary-container outline-none" />
+          </div>
+          <div class="flex flex-col items-center">
+            <span class="font-label-sm text-label-sm text-on-surface-variant">TARGET WT</span>
+            <input type="text" value="12 kg" class="w-full text-center bg-transparent font-headline-sm text-headline-sm text-primary-container focus:text-primary-container outline-none" />
+          </div>
+          <div class="flex flex-col items-center">
+            <span class="font-label-sm text-label-sm text-on-surface-variant">REST</span>
+            <input type="text" value="60s" class="w-full text-center bg-transparent font-headline-sm text-headline-sm text-on-surface focus:text-primary-container outline-none" />
+          </div>
+        </div>
+      </div>
+    `;
+    deck.appendChild(newCard);
+    requestAnimationFrame(() => {
+      newCard.classList.remove('opacity-0', 'translate-y-2');
+    });
+    updateExerciseCounter();
+  }
+
+  // Save interaction
+  function saveWorkoutPlan() {
+    const toast = document.getElementById('saveToast');
+    if (!toast) return;
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-2');
+    
+    setTimeout(() => {
+      toast.classList.remove('translate-y-2');
+      toast.classList.add('opacity-0', 'pointer-events-none');
+    }, 2400);
+  }
+</script><script>
+(function(){
+  const pageIds=['page-list','page-detail','page-edit'];
+  let prior='page-list';
+  function show(page,addHistory=true){
+    if(!pageIds.includes(page))return;
+    pageIds.forEach(id=>document.getElementById(id).classList.toggle('active',id===page));
+    window.scrollTo(0,0);
+    if(addHistory)history.pushState({motionPage:page},'', '#'+page.replace('page-',''));
+  }
+  function toast(msg){
+    const toast=document.getElementById('toastNotification'),span=document.getElementById('toastMessage');
+    if(!toast||!span)return;
+    span.textContent=msg;toast.classList.remove('hidden');toast.classList.add('flex');
+    clearTimeout(window.__toastTimer);
+    window.__toastTimer=setTimeout(()=>{toast.classList.add('hidden');toast.classList.remove('flex')},2200);
+  }
+  function openEdit(){prior=document.querySelector('#page-detail.active')?'page-detail':'page-list';show('page-edit')}
+  const list=document.getElementById('page-list'),detail=document.getElementById('page-detail'),edit=document.getElementById('page-edit');
+  // Connect navigation without replacing the three original layouts.
+  list.addEventListener('click',e=>{
+    const b=e.target.closest('button');
+    if(b && /Create (Training )?Plan/i.test(b.textContent)){openEdit();return;}
+    if(b && b.getAttribute('aria-label')?.startsWith('Edit ')){e.stopPropagation();openEdit();return;}
+    if(b && b.getAttribute('aria-label')==='Duplicate Plan')return;
+    if(b && b.getAttribute('aria-label')==='Delete Plan')return;
+    if(b && b.closest('.plan-card') && /Start Plan/.test(b.textContent)){e.stopPropagation();show('page-detail');return;}
+    const card=e.target.closest('.plan-card');
+    if(card && !(b && b.closest('[aria-label]'))){show('page-detail');return;}
+  });
+  detail.addEventListener('click',e=>{
+    const b=e.target.closest('button');if(!b)return;
+    if(b.getAttribute('aria-label')==='Go back'){e.preventDefault();show('page-list');return;}
+    if(/Edit Plan/.test(b.textContent)){openEdit();return;}
+    if(/Duplicate Plan/.test(b.textContent)){prior='page-list';show('page-edit');toast('Edit the duplicated plan, then save');return;}
+    if(b.id==='startWorkoutBtn'){
+      // There is no live workout screen among the provided source files.
+      toast('Workout session screen is not included in this prototype');return;
+    }
+  });
+  edit.addEventListener('click',e=>{
+    const b=e.target.closest('button');
+    if(b?.getAttribute('aria-label')==='Go back'){e.preventDefault();show(prior);return;}
+  });
+  // Replace the source form's visual-only save with persistent local storage for a lightweight HTML prototype.
+  window.saveWorkoutPlan=function(){
+    const name=document.getElementById('workoutName');
+    if(!name?.value.trim()){name?.focus();name?.reportValidity();return;}
+    const data={name:name.value.trim(),type:document.querySelector('.workout-type-pill[data-selected="true"]')?.textContent.trim()||'Strength',duration:parseInt(document.getElementById('durationVal')?.textContent)||50,rpe:Number(document.getElementById('rpeRange')?.value||6),notes:document.getElementById('workoutNotes')?.value||'',exercises:[...document.querySelectorAll('#exerciseDeck .exercise-card')].map(c=>({name:c.querySelector('h3')?.textContent.trim(),values:[...c.querySelectorAll('input')].map(i=>i.value)}))};
+    try{localStorage.setItem('motion_orbit_training_plan_demo',JSON.stringify(data));}catch(err){toast('Could not save locally: storage unavailable');return;}
+    const first=list.querySelector('.plan-card h3'); if(first)first.textContent=data.name;
+    const title=detail.querySelector('h2.font-headline-lg-mobile');if(title)title.textContent=data.name;
+    const label=list.querySelector('.plan-card .font-mono.text-\\[11px\\]');
+    toast('Training plan saved locally');show('page-list');
+  };
+  // Fix original remove helper for exercise cards passed as the element itself.
+  window.removeItem=function(element){
+    const node=element?.matches?.('.warmup-item,.cooldown-item,.exercise-card')?element:element?.closest?.('.warmup-item,.cooldown-item,.exercise-card');
+    if(!node)return;
+    node.remove();if(typeof window.updateExerciseCounter==='function')window.updateExerciseCounter();
+  };
+  // Use the source pages' original behaviors and restore the last saved plan title.
+  try{
+    const saved=JSON.parse(localStorage.getItem('motion_orbit_training_plan_demo')||'null');
+    if(saved){
+      const name=document.getElementById('workoutName');if(name)name.value=saved.name||name.value;
+      const first=list.querySelector('.plan-card h3');if(first)first.textContent=saved.name;
+      const title=detail.querySelector('h2.font-headline-lg-mobile');if(title)title.textContent=saved.name;
+    }
+  }catch(err){}
+  window.addEventListener('popstate',e=>show(e.state?.motionPage||'page-list',false));
+  const start=location.hash.slice(1);if(['list','detail','edit'].includes(start))show('page-'+start,false);
+})();
+</script></body></html>
