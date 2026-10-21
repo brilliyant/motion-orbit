@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../training_plan/presentation/screens/training_plans_screen.dart';
 import 'training_overview_palette.dart';
 
 class TodayWorkoutSection extends StatelessWidget {
@@ -104,12 +105,14 @@ class QuickWorkoutSection extends StatelessWidget {
   Widget build(BuildContext context) => Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      Text('Quick Workout', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: palette.text)),
+      Text('Start Training', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: palette.text)),
       const SizedBox(height: 2),
-      Text('Log a workout outside your plan', style: TextStyle(fontSize: 11, color: palette.secondary)),
+      Text('Choose a plan or start a quick workout', style: TextStyle(fontSize: 11, color: palette.secondary)),
       const SizedBox(height: 10),
       Row(
         children: [
+          Expanded(child: QuickWorkoutTile(title: 'Plans', subtitle: 'Saved plans', icon: Icons.assignment_outlined, tint: const Color(0xFF65A30D), palette: palette, onTap: () => Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => const TrainingPlansScreen())))),
+          const SizedBox(width: 9),
           Expanded(child: QuickWorkoutTile(title: 'Lifting', subtitle: 'Free log', icon: Icons.fitness_center, tint: const Color(0xFF65A30D), palette: palette)),
           const SizedBox(width: 9),
           Expanded(child: QuickWorkoutTile(title: 'Running', subtitle: 'GPS pace', icon: Icons.directions_run, tint: const Color(0xFF059669), palette: palette)),
@@ -122,19 +125,20 @@ class QuickWorkoutSection extends StatelessWidget {
 }
 
 class QuickWorkoutTile extends StatelessWidget {
-  const QuickWorkoutTile({super.key, required this.title, required this.subtitle, required this.icon, required this.tint, required this.palette});
+  const QuickWorkoutTile({super.key, required this.title, required this.subtitle, required this.icon, required this.tint, required this.palette, this.onTap});
   final String title;
   final String subtitle;
   final IconData icon;
   final Color tint;
   final TrainingPalette palette;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) => Material(
     color: palette.card,
     borderRadius: BorderRadius.circular(16),
     child: InkWell(
-      onTap: () => showTrainingMessage(context, '$title logging is coming soon.'),
+      onTap: onTap ?? () => showTrainingMessage(context, '$title logging is coming soon.'),
       borderRadius: BorderRadius.circular(16),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 4),

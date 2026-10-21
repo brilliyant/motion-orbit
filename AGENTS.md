@@ -6,7 +6,7 @@
 
 - **App:** Motion Orbit — *Train Smart. Move Better.*
 - **Positioning:** Offline-first personal fitness and lifestyle tracker, with **Training Plans as the core product experience**. It is a tracker and planning tool, not an application that constantly pressures the user to exercise.
-- **Platform:** Android, Flutter. Follow existing project patterns and its current storage technology (ObjectBox where already established); do not introduce packages or reorganize architecture without a task-specific need.
+- **Platform:** Android, Flutter. Use Clean Architecture for code in this project, following its layer boundaries and dependency direction. Keep changes scoped to the requested feature and follow established project patterns and storage technology (ObjectBox where already established); do not introduce packages or broadly reorganize existing code without a task-specific need.
 - **Offline-first:** Primary flows must work without internet. Persist personal data locally. Do not require sign-in.
 - **Authentication roadmap (not current implementation scope):** MVP local/guest profile; later local export/import; then optional Google Sign-In, cloud backup, and cross-device sync. Never gate local tracking behind Google login.
 - **Branding direction:** Electric Blue `#2563EB`, Deep Navy `#0F172A`; consistent light/dark theming including relevant icons, illustrations, surfaces, and states. Follow an existing design system when present rather than forcing these colors.
@@ -88,6 +88,16 @@ Before the first populated dashboard, onboarding collects the necessary basic pr
 
 `home` aggregates. Independent concerns may map to existing or eventual features such as `training_plans`, `strength_training`, `running`, `nutrition`, `sleep`, `recovery`, `explore`, `profile`, and `fitness_progress`. **These are conceptual boundaries, not instructions to create directories, new layers, or dependencies.** Examine only files relevant to the explicit task.
 
+## Local ObjectBox Admin (Debug)
+
+ObjectBox Admin starts automatically when the app runs as a debug build on Android. To view the local database from the development computer, forward the Admin port from the connected device:
+
+```bash
+adb forward tcp:8090 tcp:8090
+```
+
+Then open `http://localhost:8090` in a browser. The same address is used on each run; the app must be open and the device connected. Database records persist locally on that device across debug runs. Admin is included only in the Android debug build.
+
 ## Scope and Delivery Checklist
 
 Before writing code, identify (1) user-requested tab/flow, (2) affected existing files, (3) existing components/models that can be reused, and (4) any unavailable data/models that require an honest empty state. After editing, summarize changed files and behavior, and disclose what was **not** validated. Do not run tests, builds, analysis, or package installation unless expressly requested.
@@ -105,8 +115,9 @@ Before writing code, identify (1) user-requested tab/flow, (2) affected existing
 * Only open files directly related to the requested task.
 * Do NOT refactor unrelated code.
 * Do NOT rename or move files unless required by the task.
-* Do NOT introduce new architecture, abstractions, helpers, or dependencies unless necessary.
-* Reuse the existing project architecture and patterns.
+* For this project, implement code using Clean Architecture. Keep presentation, domain, and data responsibilities in their appropriate layers, with dependencies directed inward. Apply this instruction only to this project.
+* Do NOT add abstractions, helpers, or dependencies beyond what Clean Architecture and the requested task require.
+* Reuse existing project patterns and implementations within the Clean Architecture boundaries.
 * Make the minimum code changes required to complete the task.
 * Before editing, identify the smallest set of files that need modification.
 * Reuse existing implementations instead of creating duplicate implementations.

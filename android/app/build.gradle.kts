@@ -38,6 +38,18 @@ android {
     }
 }
 
+// Replace the standard Android native library in debug builds with the
+// matching build that includes the ObjectBox Admin browser.
+configurations {
+    named("debugImplementation") {
+        exclude(group = "io.objectbox", module = "objectbox-android")
+    }
+}
+
+dependencies {
+    debugImplementation("io.objectbox:objectbox-android-objectbrowser:5.4.2")
+}
+
 kotlin {
     compilerOptions {
         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17

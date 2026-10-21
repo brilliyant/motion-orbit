@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
 
@@ -7,6 +8,7 @@ class MotionOrbitObjectBox {
   MotionOrbitObjectBox._();
 
   static Store? _store;
+  static Admin? _admin;
 
   static Future<void> initialize() async {
     if (_store != null) return;
@@ -14,6 +16,15 @@ class MotionOrbitObjectBox {
     final appSupportDirectory = await getApplicationSupportDirectory();
     final objectBoxDirectory = path.join(appSupportDirectory.path, 'objectbox');
     _store ??= openStore(directory: objectBoxDirectory);
+
+    if (!kDebugMode) return;
+
+    final adminAvailable = Admin.isAvailable();
+    debugPrint('ObjectBox Admin available: $adminAvailable');
+    if (!adminAvailable) return;
+
+    _admin ??= Admin(_store!);
+    debugPrint('ObjectBox Admin listening on port ${_admin!.port}');
   }
 
   static Store get store {
