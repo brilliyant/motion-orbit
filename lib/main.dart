@@ -35,7 +35,10 @@ Future<void> main() async {
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key, required this.settingsStore});
+  const MainApp({
+    super.key,
+    required this.settingsStore,
+  });
   final SettingsStore settingsStore;
 
   @override
@@ -59,7 +62,10 @@ class MainApp extends StatelessWidget {
 }
 
 class StartupScreen extends StatefulWidget {
-  const StartupScreen({super.key, required this.settingsStore});
+  const StartupScreen({
+    super.key,
+    required this.settingsStore,
+  });
   final SettingsStore settingsStore;
   @override
   State<StartupScreen> createState() => _StartupScreenState();

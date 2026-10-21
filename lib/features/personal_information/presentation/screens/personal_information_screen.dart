@@ -426,7 +426,7 @@ class _PersonalInformationScreenState extends State<PersonalInformationScreen> {
                         SizedBox(width: 9),
                         Expanded(
                           child: Text(
-                            'Your physical notes are kept strictly offline on this device to help adapt training plan suggestions safely.',
+                            'Your physical notes are kept strictly offline on this device.',
                             style: TextStyle(
                               fontSize: 12,
                               height: 1.35,

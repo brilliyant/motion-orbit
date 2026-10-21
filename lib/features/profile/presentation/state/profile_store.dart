@@ -3,14 +3,11 @@ import '../../domain/usecases/profile_use_cases.dart';
 
 class ProfileStore {
   ProfileStore({
-    required LoadProfile loadProfile,
-    required SaveProfileDraft saveDraft,
-    required CompleteProfile completeProfile,
-    required RecoverProfile recoverProfile,
-  }) : _loadProfile = loadProfile,
-       _saveDraft = saveDraft,
-       _completeProfile = completeProfile,
-       _recoverProfile = recoverProfile;
+    required this._loadProfile,
+    required this._saveDraft,
+    required this._completeProfile,
+    required this._recoverProfile,
+  });
 
   final LoadProfile _loadProfile;
   final SaveProfileDraft _saveDraft;

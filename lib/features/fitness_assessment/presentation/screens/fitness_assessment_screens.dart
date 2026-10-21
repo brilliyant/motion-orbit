@@ -127,7 +127,7 @@ class _RecordAssessmentScreenState extends State<RecordAssessmentScreen> {
               const Text('Assessment details', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: ProfileColors.textPrimary)),
               const SizedBox(height: 16),
               DropdownButtonFormField<String>(
-                value: _test,
+                initialValue: _test,
                 decoration: const InputDecoration(labelText: 'Test type'),
                 items: _tests.map((item) => DropdownMenuItem(value: item, child: Text(item))).toList(),
                 onChanged: (value) => setState(() => _test = value ?? _test),

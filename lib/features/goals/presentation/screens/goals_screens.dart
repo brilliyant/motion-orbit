@@ -159,7 +159,7 @@ class _CreateEditGoalScreenState extends State<CreateEditGoalScreen> {
             TextFormField(controller: _title, decoration: const InputDecoration(labelText: 'Goal name'), validator: (value) => (value ?? '').trim().isEmpty ? 'Enter a goal name.' : null),
             const SizedBox(height: 12),
             DropdownButtonFormField<GoalMetric>(
-              value: _metric,
+              initialValue: _metric,
               decoration: const InputDecoration(labelText: 'Measure progress with'),
               items: const [
                 DropdownMenuItem(value: GoalMetric.assessment, child: Text('Fitness assessment')),
@@ -170,7 +170,7 @@ class _CreateEditGoalScreenState extends State<CreateEditGoalScreen> {
             ),
             if (_metric == GoalMetric.assessment) ...[
               const SizedBox(height: 12),
-              DropdownButtonFormField<String>(value: _test, decoration: const InputDecoration(labelText: 'Assessment test'), items: _tests.map((test) => DropdownMenuItem(value: test, child: Text(test))).toList(), onChanged: (value) => setState(() => _test = value ?? _test)),
+              DropdownButtonFormField<String>(initialValue: _test, decoration: const InputDecoration(labelText: 'Assessment test'), items: _tests.map((test) => DropdownMenuItem(value: test, child: Text(test))).toList(), onChanged: (value) => setState(() => _test = value ?? _test)),
             ],
             const SizedBox(height: 12),
             TextFormField(controller: _target, keyboardType: const TextInputType.numberWithOptions(decimal: true), decoration: InputDecoration(labelText: 'Target', suffixText: _goalUnit(FitnessGoal(id: '', title: '', metric: _metric, target: 0, startingValue: null, targetDate: _date, assessmentTest: _test))), validator: (value) { final number = double.tryParse((value ?? '').trim().replaceAll(',', '.')); return number == null || !number.isFinite || number <= 0 ? 'Enter a target greater than zero.' : null; }),

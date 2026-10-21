@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/widgets/app_bottom_navigation_bar.dart';
 import '../../domain/entities/user_profile.dart';
 import '../widgets/profile_account_hub.dart';
 import '../widgets/profile_header_card.dart';
@@ -11,17 +10,13 @@ class ProfileScreen extends StatelessWidget {
   const ProfileScreen({
     super.key,
     required this.profile,
-    required this.selectedTab,
     required this.onEditProfile,
-    required this.onTabSelected,
     required this.onOpenDestination,
     this.latestMeasurement,
   });
 
   final UserProfile profile;
-  final int selectedTab;
   final VoidCallback onEditProfile;
-  final ValueChanged<int> onTabSelected;
   final ValueChanged<String> onOpenDestination;
   final double? latestMeasurement;
 
@@ -34,75 +29,70 @@ class ProfileScreen extends StatelessWidget {
     );
     final height = _heightValue(profile.height);
 
-    return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      body: SafeArea(
-        bottom: false,
+    return SafeArea(
+      bottom: false,
+      child: Center(
         child: ListView(
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
           children: [
-              const SizedBox(height: 12),
-              ProfileHeaderCard(
-                name: name,
-                level: profile.level ?? 'Level not set',
-                goal: profile.goal ?? 'Goal not set',
-                onEdit: onEditProfile,
-              ),
-              const SizedBox(height: 12),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: ProfileMetricCard(
-                      label: 'WEIGHT',
-                      icon: ProfileSvgIcon.weight,
-                      value: weight,
-                      unit: weight == '—' ? '' : 'kg',
-                      caption: weight == '—'
-                          ? 'Add in profile'
-                          : latestMeasurement == null
-                          ? 'Profile value'
-                          : 'Latest measurement',
-                    ),
+            const SizedBox(height: 12),
+            ProfileHeaderCard(
+              name: name,
+              level: profile.level ?? 'Level not set',
+              goal: profile.goal ?? 'Goal not set',
+              onEdit: onEditProfile,
+            ),
+            const SizedBox(height: 12),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: ProfileMetricCard(
+                    label: 'WEIGHT',
+                    icon: ProfileSvgIcon.weight,
+                    value: weight,
+                    unit: weight == '—' ? '' : 'kg',
+                    caption: weight == '—'
+                        ? 'Add in profile'
+                        : latestMeasurement == null
+                        ? 'Profile value'
+                        : 'Latest measurement',
                   ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: ProfileMetricCard(
-                      label: 'HEIGHT',
-                      icon: ProfileSvgIcon.height,
-                      value: height,
-                      unit: height == '—' ? '' : 'cm',
-                      caption: height == '—'
-                          ? 'Add in profile'
-                          : 'Profile standard',
-                    ),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: ProfileMetricCard(
+                    label: 'HEIGHT',
+                    icon: ProfileSvgIcon.height,
+                    value: height,
+                    unit: height == '—' ? '' : 'cm',
+                    caption: height == '—'
+                        ? 'Add in profile'
+                        : 'Profile standard',
                   ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: ProfileMetricCard(
-                      label: 'WORKOUTS',
-                      icon: ProfileSvgIcon.workout,
-                      value: '—',
-                      unit: '',
-                      caption: 'No session data yet',
-                      valueColor: colors.primary,
-                    ),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: ProfileMetricCard(
+                    label: 'WORKOUTS',
+                    icon: ProfileSvgIcon.workout,
+                    value: '—',
+                    unit: '',
+                    caption: 'No session data yet',
+                    valueColor: colors.primary,
                   ),
-                ],
-              ),
-              const SizedBox(height: 12),
-              const _ConsistencyCard(),
-              const SizedBox(height: 12),
-              ProfileAccountHub(
-                onDestinationSelected: (destination) =>
-                    onOpenDestination(destination),
-              ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 12),
+            const _ConsistencyCard(),
+            const SizedBox(height: 12),
+            ProfileAccountHub(
+              onDestinationSelected: (destination) =>
+                  onOpenDestination(destination),
+            ),
           ],
         ),
-      ),
-      bottomNavigationBar: AppBottomNavigationBar(
-        selectedIndex: selectedTab,
-        onDestinationSelected: onTabSelected,
       ),
     );
   }

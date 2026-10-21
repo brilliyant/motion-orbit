@@ -22,7 +22,7 @@ class AppBottomNavigationBar extends StatelessWidget {
         NavigationDestination(
           icon: Icon(Icons.home_outlined),
           selectedIcon: Icon(Icons.home, color: Colors.white),
-          label: 'Home',
+          label: 'Dashboard',
         ),
         NavigationDestination(
           icon: Icon(Icons.fitness_center_outlined),

@@ -171,6 +171,7 @@ class ProfileModel extends UserProfile {
     return p;
   }
 
+  @override
   ProfileModel copy() => ProfileModel.fromJson(toJson());
 }
 

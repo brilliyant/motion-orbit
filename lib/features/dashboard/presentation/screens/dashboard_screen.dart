@@ -15,6 +15,7 @@ import '../../../profile/domain/entities/user_profile.dart';
 import '../../../profile/presentation/screens/profile_screen.dart';
 import '../../../profile/presentation/state/profile_store.dart';
 import '../../../settings/presentation/state/settings_store.dart';
+import '../../../training/presentation/screens/training_overview_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({
@@ -35,10 +36,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
   final ProfileRecordsDataSource _records = ProfileRecordsDataSource();
   late final BodyMeasurementRepositoryImpl _measurementRepository =
       BodyMeasurementRepositoryImpl(records: _records);
-  late final GetBodyMeasurements _getMeasurements =
-      GetBodyMeasurements(_measurementRepository);
-  late final SaveBodyMeasurement _saveMeasurement =
-      SaveBodyMeasurement(_measurementRepository);
+  late final GetBodyMeasurements _getMeasurements = GetBodyMeasurements(
+    _measurementRepository,
+  );
+  late final SaveBodyMeasurement _saveMeasurement = SaveBodyMeasurement(
+    _measurementRepository,
+  );
 
   @override
   void initState() {
@@ -102,6 +105,114 @@ class _DashboardScreenState extends State<DashboardScreen> {
     if (mounted) setState(() {});
   }
 
+  Widget _buildTabBody(ColorScheme colors) => switch (_tab) {
+    0 => _buildHomeBody(colors),
+    1 => const TrainingOverviewScreen(),
+    2 => _buildExploreBody(colors),
+    3 => ProfileScreen(
+      profile: p,
+      onEditProfile: _edit,
+      onOpenDestination: _openDestination,
+      latestMeasurement: _latestWeight,
+    ),
+    _ => const SizedBox.shrink(),
+  };
+
+  Widget _buildHomeBody(ColorScheme colors) => SafeArea(
+    child: Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 550),
+        child: ListView(
+          padding: const EdgeInsets.all(20),
+          children: [
+            Text(
+              p.name.trim().isEmpty
+                  ? 'Welcome to Motion Orbit'
+                  : 'Welcome, ${p.name.trim()}',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w700,
+                color: colors.onSurface,
+              ),
+            ),
+            const SizedBox(height: 12),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: colors.surfaceContainerLow,
+                borderRadius: BorderRadius.circular(14),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Starting Goal: ${p.goal ?? "Not set"}',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: colors.onSurface,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    'Experience Level: ${p.level ?? "Not set"}',
+                    style: TextStyle(fontSize: 13, color: colors.secondary),
+                  ),
+                  if (p.weight.trim().isNotEmpty) ...[
+                    const SizedBox(height: 4),
+                    Text(
+                      'Current Weight: ${p.weight} kg',
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: colors.onSurfaceVariant,
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              'No workouts yet.',
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                color: colors.onSurface,
+              ),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              'Workout planning will be available here as the app grows.',
+              style: TextStyle(color: colors.onSurfaceVariant),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+
+  Widget _buildExploreBody(ColorScheme colors) => SafeArea(
+    child: Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 550),
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.insights, size: 56, color: colors.secondary),
+              const SizedBox(height: 16),
+              Text(
+                'Progress tracking will appear here after workout sessions are completed.',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: colors.onSurfaceVariant),
+              ),
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
+
   void _openDestination(String destination) {
     final Widget screen = switch (destination) {
       'Personal Information' => PersonalInformationScreen(
@@ -143,133 +254,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
-    final measurements = _records.measurements();
-    if (_tab == 3) {
-      return ProfileScreen(
-        profile: p,
-        selectedTab: _tab,
-        onEditProfile: _edit,
-        onTabSelected: (index) => setState(() => _tab = index),
-        onOpenDestination: _openDestination,
-        latestMeasurement: measurements.isEmpty
-            ? null
-            : measurements.first.weightKg,
-      );
-    }
-
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        title: Text(
-          ['Home', 'Training', 'Explore', 'Profile'][_tab],
-          style: TextStyle(
-            fontWeight: FontWeight.w700,
-            color: colors.onSurface,
-          ),
-        ),
-      ),
-      body: SafeArea(
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 550),
-            child: ListView(
-              padding: const EdgeInsets.all(20),
-              children: [
-                if (_tab == 0) ...[
-                  Text(
-                    p.name.trim().isEmpty
-                        ? 'Welcome to Motion Orbit'
-                        : 'Welcome, ${p.name.trim()}',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
-                      color: colors.onSurface,
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  Container(
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: colors.surfaceContainerLow,
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Starting Goal: ${p.goal ?? "Not set"}',
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w600,
-                            color: colors.onSurface,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          'Experience Level: ${p.level ?? "Not set"}',
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: colors.secondary,
-                          ),
-                        ),
-                        if (p.weight.trim().isNotEmpty) ...[
-                          const SizedBox(height: 4),
-                          Text(
-                            'Current Weight: ${p.weight} kg',
-                            style: TextStyle(
-                              fontSize: 13,
-                              color: colors.onSurfaceVariant,
-                            ),
-                          ),
-                        ],
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  Text(
-                    'No workouts yet.',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: colors.onSurface,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    'Workout planning will be available here as the app grows.',
-                    style: TextStyle(color: colors.onSurfaceVariant),
-                  ),
-                ] else if (_tab == 1) ...[
-                  Icon(Icons.fitness_center, size: 56, color: colors.secondary),
-                  const SizedBox(height: 16),
-                  Text(
-                    'Workout planning is not implemented yet.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: colors.onSurface,
-                    ),
-                  ),
-                  const SizedBox(height: 6),
-                  Text(
-                    'Optional AI form tracking will be available inside Workout.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: colors.onSurfaceVariant),
-                  ),
-                ] else if (_tab == 2) ...[
-                  Icon(Icons.insights, size: 56, color: colors.secondary),
-                  const SizedBox(height: 16),
-                  Text(
-                    'Progress tracking will appear here after workout sessions are completed.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: colors.onSurfaceVariant),
-                  ),
-                ],
-              ],
-            ),
-          ),
-        ),
-      ),
+
+      body: _buildTabBody(colors),
       bottomNavigationBar: AppBottomNavigationBar(
         selectedIndex: _tab,
         onDestinationSelected: (i) => setState(() => _tab = i),
