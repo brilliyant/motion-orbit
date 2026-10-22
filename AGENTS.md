@@ -90,6 +90,17 @@ Before the first populated dashboard, onboarding collects the necessary basic pr
 
 ## Local ObjectBox Admin (Debug)
 
+### Mandatory persistence and migration rules
+
+- Use one ObjectBox Store with dedicated feature-owned `@Entity` classes in the feature data layers. Store each independently managed domain record separately, using typed properties and real child relationships where needed.
+- Never store Profile, onboarding state, Measurements, Training Plans, Assessments, Goals, sessions, or other domain aggregates in a shared generic key + JSON entity or a collection-sized JSON array. Key-value storage is limited to simple preferences, migration metadata, and retained legacy/recovery payloads.
+- Preserve stable business IDs separately from ObjectBox integer IDs, along with all fields, timestamps, units, child order/relationships, onboarding completion, and sample flags. Reject and report unmapped fields rather than silently dropping them.
+- A persistence schema change that replaces existing storage MUST implement an idempotent startup migration before repositories expose data, onboarding checks run, or samples are seeded. Validate before writing; migrate atomically where feasible; confirm readback before recording completion. A failed migration must retain legacy data, leave completion unset, surface a recoverable error, and block accidental blank-profile onboarding or seeding.
+- Retain legacy records for rollback on the first upgrade. Never clear the database, reset profiles, or unconditionally re-seed samples as a migration shortcut. After migration, domain reads and writes must use dedicated boxes exclusively; update backup/export/import/reset and observers to use the same source of truth.
+- Updating one record must not load and rewrite its entire collection. Do not create speculative entities for features that do not persist data yet.
+- Preserve existing ObjectBox model UIDs. Do not hand-edit generated bindings or regenerate ObjectBox code without explicit authorization. When generation is pending, report the exact command and state that compilation, runtime migration, and Admin visibility remain unverified.
+- Do not create or run tests, builds, analysis, package fetching, or code generation without an explicit request. See `docs/prompts/Motion_Orbit_ObjectBox_Entity_Migration.md` for the migration requirements.
+
 ObjectBox Admin starts automatically when the app runs as a debug build on Android. To view the local database from the development computer, forward the Admin port from the connected device:
 
 ```bash

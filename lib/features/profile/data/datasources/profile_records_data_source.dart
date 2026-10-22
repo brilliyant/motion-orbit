@@ -1,97 +1,83 @@
-import 'dart:convert';
-
-import '../../../../objectbox.g.dart';
+﻿import '../../../../objectbox.g.dart';
+import '../../../body_measurements/data/models/body_measurement_entity.dart';
+import '../../../fitness_assessment/data/models/fitness_assessment_entity.dart';
+import '../../../goals/data/models/fitness_goal_entity.dart';
 import 'objectbox_data_source.dart';
-import '../models/profile_box_entity.dart';
 import '../models/profile_records.dart';
 
+/// Compatibility facade for existing consumers. Each record now belongs to
+/// its feature-specific box; individual saves never rewrite a collection.
 class ProfileRecordsDataSource {
   ProfileRecordsDataSource({Store? store})
     : _store = store ?? MotionOrbitObjectBox.store;
 
   final Store _store;
 
-  Box<ProfileBoxEntity> get _box => _store.box<ProfileBoxEntity>();
+  List<Map<String, dynamic>> assessmentRows() => _store
+      .box<FitnessAssessmentEntity>().getAll().map((row) => row.toJson()).toList();
 
-  List<Map<String, Object?>> _read(String key) {
-    final entity = _box
-        .query(ProfileBoxEntity_.key.equals(key))
-        .build()
-        .findFirst();
-    if (entity == null || entity.value.isEmpty) return [];
-    final decoded = jsonDecode(entity.value);
-    if (decoded is! List) throw const FormatException('Invalid local records');
-    return decoded.map((item) {
-      if (item is! Map) throw const FormatException('Invalid local record');
-      return item.map((key, value) => MapEntry(key as String, value));
-    }).toList();
-  }
+  List<Map<String, dynamic>> measurementRows() => _store
+      .box<BodyMeasurementEntity>().getAll().map((row) => row.toJson()).toList();
 
-  void _write(String key, List<Map<String, Object?>> data) {
-    final prior = _box
-        .query(ProfileBoxEntity_.key.equals(key))
-        .build()
-        .findFirst();
-    _box.put(
-      ProfileBoxEntity(id: prior?.id ?? 0, key: key, value: jsonEncode(data)),
-    );
-  }
+  List<Map<String, dynamic>> goalRows() => _store
+      .box<FitnessGoalEntity>().getAll().map((row) => row.toJson()).toList();
 
   List<AssessmentRecord> assessments() =>
-      _read('profile/assessments').map(AssessmentRecord.fromJson).toList()
+      assessmentRows().map(AssessmentRecord.fromJson).toList()
         ..sort((a, b) => b.date.compareTo(a.date));
 
-  void saveAssessment(AssessmentRecord record) {
-    final rows = _read('profile/assessments')
-      ..removeWhere((item) => item['id'] == record.id)
-      ..add(record.toJson());
-    _write('profile/assessments', rows);
+  void putAssessment(FitnessAssessmentEntity entity) {
+    final box = _store.box<FitnessAssessmentEntity>();
+    final query = box.query(
+        FitnessAssessmentEntity_.businessId.equals(entity.businessId)).build();
+    try {
+      entity.id = query.findFirst()?.id ?? 0;
+      box.put(entity);
+    } finally {
+      query.close();
+    }
   }
+
+  void saveAssessment(AssessmentRecord record) =>
+      _store.runInTransaction(TxMode.write, () =>
+          putAssessment(FitnessAssessmentEntity.fromJson(record.toJson())));
 
   List<MeasurementRecord> measurements() =>
-      _read('profile/measurements').map(MeasurementRecord.fromJson).toList()
+      measurementRows().map(MeasurementRecord.fromJson).toList()
         ..sort((a, b) => b.date.compareTo(a.date));
 
-  void saveMeasurement(MeasurementRecord record) {
-    final rows = _read('profile/measurements')
-      ..removeWhere((item) => item['id'] == record.id)
-      ..add(record.toJson());
-    _write('profile/measurements', rows);
+  void putMeasurement(BodyMeasurementEntity entity) {
+    final box = _store.box<BodyMeasurementEntity>();
+    final query = box.query(
+        BodyMeasurementEntity_.businessId.equals(entity.businessId)).build();
+    try {
+      entity.id = query.findFirst()?.id ?? 0;
+      box.put(entity);
+    } finally {
+      query.close();
+    }
   }
 
-  /// Adds a single local example so the measurement screens have useful
-  /// history to show on a fresh install. Existing user records are preserved.
-  void seedSampleMeasurementIfEmpty() {
-    if (measurements().isNotEmpty) return;
-    final date = DateTime.now().subtract(const Duration(days: 7));
-    saveMeasurement(
-      MeasurementRecord(
-        id: 'sample-body-measurement',
-        date: DateTime(date.year, date.month, date.day),
-        weightKg: 76,
-        waistCm: 98,
-        hipsCm: 104,
-        chestCm: 99,
-        leftArmCm: 32,
-        rightArmCm: 32,
-        leftThighCm: 57,
-        rightThighCm: 57,
-        bodyFatPercent: 27,
-        muscleMassKg: 52,
-        bodyFatSource: 'Sample Data',
-        note: 'Example measurement history',
-      ),
-    );
+  void saveMeasurement(MeasurementRecord record) =>
+      _store.runInTransaction(TxMode.write, () =>
+          putMeasurement(BodyMeasurementEntity.fromJson(record.toJson())));
+
+  List<FitnessGoal> goals() => goalRows().map(FitnessGoal.fromJson).toList()
+    ..sort((a, b) => (b.isPrimary ? 1 : 0).compareTo(a.isPrimary ? 1 : 0));
+
+  void putGoal(FitnessGoalEntity entity) {
+    final box = _store.box<FitnessGoalEntity>();
+    final query = box.query(
+        FitnessGoalEntity_.businessId.equals(entity.businessId)).build();
+    try {
+      entity.id = query.findFirst()?.id ?? 0;
+      box.put(entity);
+    } finally {
+      query.close();
+    }
   }
 
-  List<FitnessGoal> goals() =>
-      _read('profile/goals').map(FitnessGoal.fromJson).toList()
-        ..sort((a, b) => (b.isPrimary ? 1 : 0).compareTo(a.isPrimary ? 1 : 0));
-
-  void saveGoal(FitnessGoal goal) {
-    final rows = _read('profile/goals')
-      ..removeWhere((item) => item['id'] == goal.id)
-      ..add(goal.toJson());
-    _write('profile/goals', rows);
-  }
+  void saveGoal(FitnessGoal goal) =>
+      _store.runInTransaction(TxMode.write, () =>
+          putGoal(FitnessGoalEntity.fromJson(goal.toJson())));
 }

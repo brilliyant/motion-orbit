@@ -324,7 +324,7 @@ class TrainingPlansScreen extends StatefulWidget {
 
 class _TrainingPlansScreenState extends State<TrainingPlansScreen> {
   final _dataSource = TrainingPlanLocalDataSource();
-  List<TrainingPlan> _plans = _samplePlans;
+  List<TrainingPlan> _plans = [];
   Map<String, int> _planTypeCounts = const {'All': 0};
   String _query = '';
   String _category = 'All';
@@ -342,7 +342,10 @@ class _TrainingPlansScreenState extends State<TrainingPlansScreen> {
         _dataSource.writePlans(
           _samplePlans.map((plan) => plan.toJson()).toList(),
         );
-        setState(() => _planTypeCounts = _dataSource.readPlanTypeCounts());
+        setState(() {
+          _plans = _samplePlans;
+          _planTypeCounts = _dataSource.readPlanTypeCounts();
+        });
         return;
       }
       setState(() {
@@ -359,7 +362,16 @@ class _TrainingPlansScreenState extends State<TrainingPlansScreen> {
 
   Future<void> _savePlans(List<TrainingPlan> plans) async {
     try {
-      _dataSource.writePlans(plans.map((plan) => plan.toJson()).toList());
+      final previous = {for (final plan in _plans) plan.id: plan};
+      final incomingIds = plans.map((plan) => plan.id).toSet();
+      if (incomingIds.length != plans.length) {
+        throw const FormatException('Training plan IDs must be unique.');
+      }
+      _dataSource.applyChanges(
+        upserts: [for (final plan in plans)
+          if (!identical(previous[plan.id], plan)) plan.toJson()],
+        deletedIds: previous.keys.where((id) => !incomingIds.contains(id)).toList(),
+      );
       if (!mounted) return;
       setState(() {
         _plans = plans;

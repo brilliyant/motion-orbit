@@ -43,12 +43,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
     _measurementRepository,
   );
 
-  @override
-  void initState() {
-    super.initState();
-    _records.seedSampleMeasurementIfEmpty();
-  }
-
   double? get _latestWeight {
     final values = _records.measurements().where(
       (item) => item.weightKg != null,

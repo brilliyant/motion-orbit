@@ -12,8 +12,14 @@ import 'package:flat_buffers/flat_buffers.dart' as fb;
 import 'package:objectbox/internal.dart'
     as obx_int; // generated code can access "internal" functionality
 import 'package:objectbox/objectbox.dart' as obx;
+import 'package:objectbox_flutter_libs/objectbox_flutter_libs.dart';
 
+import 'features/body_measurements/data/models/body_measurement_entity.dart';
+import 'features/fitness_assessment/data/models/fitness_assessment_entity.dart';
+import 'features/goals/data/models/fitness_goal_entity.dart';
 import 'features/profile/data/models/profile_box_entity.dart';
+import 'features/profile/data/models/profile_entity.dart';
+import 'features/training_plan/data/models/training_plan_entity.dart';
 
 export 'package:objectbox/objectbox.dart'; // so that callers only have to import this file
 
@@ -53,6 +59,647 @@ final _entities = <obx_int.ModelEntity>[
     relations: <obx_int.ModelRelation>[],
     backlinks: <obx_int.ModelBacklink>[],
   ),
+  obx_int.ModelEntity(
+    id: const obx_int.IdUid(2, 7107254534212933905),
+    name: 'BodyMeasurementEntity',
+    lastPropertyId: const obx_int.IdUid(16, 447871497900882856),
+    flags: 0,
+    properties: <obx_int.ModelProperty>[
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(1, 5136290689987921238),
+        name: 'id',
+        type: 6,
+        flags: 1,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(2, 1528278911268677023),
+        name: 'businessId',
+        type: 9,
+        flags: 2080,
+        indexId: const obx_int.IdUid(2, 5951119523554336679),
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(3, 6780151696918532064),
+        name: 'fields',
+        type: 30,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(4, 7503637016531119123),
+        name: 'dateIso',
+        type: 9,
+        flags: 2048,
+        indexId: const obx_int.IdUid(3, 2867999614771681146),
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(5, 5482487650872039318),
+        name: 'weightKg',
+        type: 8,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(6, 8727334664389912393),
+        name: 'waistCm',
+        type: 8,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(7, 1542321197363151360),
+        name: 'chestCm',
+        type: 8,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(8, 4666859496223568694),
+        name: 'hipsCm',
+        type: 8,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(9, 6387641213865056963),
+        name: 'leftArmCm',
+        type: 8,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(10, 4005856989394388658),
+        name: 'rightArmCm',
+        type: 8,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(11, 5464732293350287170),
+        name: 'leftThighCm',
+        type: 8,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(12, 6226495853344901233),
+        name: 'rightThighCm',
+        type: 8,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(13, 5241377512077407809),
+        name: 'bodyFatPercent',
+        type: 8,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(14, 5848932437754865218),
+        name: 'muscleMassKg',
+        type: 8,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(15, 949572503674675817),
+        name: 'bodyFatSource',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(16, 447871497900882856),
+        name: 'note',
+        type: 9,
+        flags: 0,
+      ),
+    ],
+    relations: <obx_int.ModelRelation>[],
+    backlinks: <obx_int.ModelBacklink>[],
+  ),
+  obx_int.ModelEntity(
+    id: const obx_int.IdUid(3, 1040803129230557205),
+    name: 'FitnessAssessmentEntity',
+    lastPropertyId: const obx_int.IdUid(8, 3300829031974458354),
+    flags: 0,
+    properties: <obx_int.ModelProperty>[
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(1, 6705506031485478259),
+        name: 'id',
+        type: 6,
+        flags: 1,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(2, 2186849404693550978),
+        name: 'businessId',
+        type: 9,
+        flags: 2080,
+        indexId: const obx_int.IdUid(4, 3207544483907181440),
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(3, 8030095783447060883),
+        name: 'fields',
+        type: 30,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(4, 1463266311061445),
+        name: 'test',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(5, 5748242157369602578),
+        name: 'metric',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(6, 2580385637769357753),
+        name: 'value',
+        type: 8,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(7, 6542278362325936939),
+        name: 'dateIso',
+        type: 9,
+        flags: 2048,
+        indexId: const obx_int.IdUid(5, 3231084040055855258),
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(8, 3300829031974458354),
+        name: 'note',
+        type: 9,
+        flags: 0,
+      ),
+    ],
+    relations: <obx_int.ModelRelation>[],
+    backlinks: <obx_int.ModelBacklink>[],
+  ),
+  obx_int.ModelEntity(
+    id: const obx_int.IdUid(4, 2289362756139414603),
+    name: 'FitnessGoalEntity',
+    lastPropertyId: const obx_int.IdUid(11, 3890058441137007710),
+    flags: 0,
+    properties: <obx_int.ModelProperty>[
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(1, 3520707676957607252),
+        name: 'id',
+        type: 6,
+        flags: 1,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(2, 1774062665305057077),
+        name: 'businessId',
+        type: 9,
+        flags: 2080,
+        indexId: const obx_int.IdUid(6, 5590828099362559995),
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(3, 7671759499881516419),
+        name: 'fields',
+        type: 30,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(4, 1630955996625803188),
+        name: 'title',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(5, 4825870198855790163),
+        name: 'metric',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(6, 559103244443999157),
+        name: 'target',
+        type: 8,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(7, 7456370141162167720),
+        name: 'startingValue',
+        type: 8,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(8, 2064410653360563738),
+        name: 'targetDateIso',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(9, 7732028372738050041),
+        name: 'assessmentTest',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(10, 3071336809721408291),
+        name: 'isPrimary',
+        type: 1,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(11, 3890058441137007710),
+        name: 'isComplete',
+        type: 1,
+        flags: 0,
+      ),
+    ],
+    relations: <obx_int.ModelRelation>[],
+    backlinks: <obx_int.ModelBacklink>[],
+  ),
+  obx_int.ModelEntity(
+    id: const obx_int.IdUid(5, 1036359564411157031),
+    name: 'ProfileEntity',
+    lastPropertyId: const obx_int.IdUid(20, 4631627374921658465),
+    flags: 0,
+    properties: <obx_int.ModelProperty>[
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(1, 3502002384175067222),
+        name: 'id',
+        type: 6,
+        flags: 1,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(2, 1354566165282105309),
+        name: 'slot',
+        type: 9,
+        flags: 2080,
+        indexId: const obx_int.IdUid(7, 8521973993122805424),
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(3, 863761248866165472),
+        name: 'businessId',
+        type: 9,
+        flags: 2048,
+        indexId: const obx_int.IdUid(8, 419071772917438666),
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(4, 2383066018043697326),
+        name: 'fields',
+        type: 30,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(5, 7151778033937883790),
+        name: 'name',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(6, 6604594348212253444),
+        name: 'height',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(7, 6444292796314580219),
+        name: 'weight',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(8, 8308517076099171417),
+        name: 'age',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(9, 2939341847737529896),
+        name: 'goal',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(10, 1437260120117897264),
+        name: 'level',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(11, 8174962213456299371),
+        name: 'location',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(12, 1046687705678317360),
+        name: 'duration',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(13, 3746433751904885781),
+        name: 'dateOfBirth',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(14, 1073559307145011050),
+        name: 'biologicalSex',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(15, 6718965301789293054),
+        name: 'primaryEnvironment',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(16, 2989052254062957505),
+        name: 'limitations',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(17, 5493873581778012552),
+        name: 'equipment',
+        type: 30,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(18, 5737902344980131638),
+        name: 'availableEquipment',
+        type: 30,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(19, 8585502607999289970),
+        name: 'days',
+        type: 30,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(20, 4631627374921658465),
+        name: 'step',
+        type: 6,
+        flags: 0,
+      ),
+    ],
+    relations: <obx_int.ModelRelation>[],
+    backlinks: <obx_int.ModelBacklink>[],
+  ),
+  obx_int.ModelEntity(
+    id: const obx_int.IdUid(6, 6545353812560300830),
+    name: 'ProfileStateEntity',
+    lastPropertyId: const obx_int.IdUid(3, 3076505198122260661),
+    flags: 0,
+    properties: <obx_int.ModelProperty>[
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(1, 5684630122949773011),
+        name: 'id',
+        type: 6,
+        flags: 129,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(2, 6893751945702850774),
+        name: 'version',
+        type: 6,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(3, 3076505198122260661),
+        name: 'completed',
+        type: 1,
+        flags: 0,
+      ),
+    ],
+    relations: <obx_int.ModelRelation>[],
+    backlinks: <obx_int.ModelBacklink>[],
+  ),
+  obx_int.ModelEntity(
+    id: const obx_int.IdUid(7, 8528076869529367071),
+    name: 'TrainingPlanActivityEntity',
+    lastPropertyId: const obx_int.IdUid(14, 540986890637674205),
+    flags: 0,
+    properties: <obx_int.ModelProperty>[
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(1, 6357529725963720193),
+        name: 'id',
+        type: 6,
+        flags: 1,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(2, 4836339462972468469),
+        name: 'recordKey',
+        type: 9,
+        flags: 2080,
+        indexId: const obx_int.IdUid(9, 5254874055970005971),
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(3, 2331063428902601368),
+        name: 'planId',
+        type: 11,
+        flags: 520,
+        indexId: const obx_int.IdUid(10, 3586448867785471892),
+        relationField: 'plan',
+        relationTarget: 'TrainingPlanEntity',
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(4, 617269663419970004),
+        name: 'section',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(5, 1720861449306980375),
+        name: 'position',
+        type: 6,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(6, 9019945731882026212),
+        name: 'fields',
+        type: 30,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(7, 6933106812314323032),
+        name: 'name',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(8, 9007958589980260989),
+        name: 'muscles',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(9, 4743386979335341760),
+        name: 'sets',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(10, 6739141889699505219),
+        name: 'reps',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(11, 2131232427773787703),
+        name: 'weight',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(12, 1258544813073338812),
+        name: 'rest',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(13, 3662485781240265585),
+        name: 'duration',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(14, 540986890637674205),
+        name: 'notes',
+        type: 9,
+        flags: 0,
+      ),
+    ],
+    relations: <obx_int.ModelRelation>[],
+    backlinks: <obx_int.ModelBacklink>[],
+  ),
+  obx_int.ModelEntity(
+    id: const obx_int.IdUid(8, 6905279468846091847),
+    name: 'TrainingPlanEntity',
+    lastPropertyId: const obx_int.IdUid(21, 6642931129699050555),
+    flags: 0,
+    properties: <obx_int.ModelProperty>[
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(1, 5432638957726101746),
+        name: 'id',
+        type: 6,
+        flags: 1,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(2, 3005256051117791507),
+        name: 'businessId',
+        type: 9,
+        flags: 2080,
+        indexId: const obx_int.IdUid(11, 2144622174546774466),
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(3, 4566747388817236413),
+        name: 'fields',
+        type: 30,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(4, 6654850914288215382),
+        name: 'position',
+        type: 6,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(5, 4039163256545789121),
+        name: 'isSample',
+        type: 1,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(6, 6623145806243611843),
+        name: 'title',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(7, 3075650835755480865),
+        name: 'type',
+        type: 9,
+        flags: 2048,
+        indexId: const obx_int.IdUid(12, 221238471021171161),
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(8, 1907020744689147218),
+        name: 'focus',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(9, 4297904330231954857),
+        name: 'date',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(10, 940024896872666351),
+        name: 'duration',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(11, 3249320709259229538),
+        name: 'volume',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(12, 4616041947157608461),
+        name: 'effort',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(13, 1551851524157506044),
+        name: 'rpe',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(14, 6284396268255560346),
+        name: 'imageUrl',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(15, 4572865028369739465),
+        name: 'iconCodePoint',
+        type: 6,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(16, 2190854116835468363),
+        name: 'accent',
+        type: 6,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(17, 8146222984875560907),
+        name: 'description',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(18, 2951581463197687762),
+        name: 'notes',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(19, 7420558482330055588),
+        name: 'targetEvent',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(20, 109732184924498390),
+        name: 'eventDateIso',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(21, 6642931129699050555),
+        name: 'scheduledDateIso',
+        type: 9,
+        flags: 0,
+      ),
+    ],
+    relations: <obx_int.ModelRelation>[],
+    backlinks: <obx_int.ModelBacklink>[],
+  ),
 ];
 
 /// Shortcut for [obx.Store.new] that passes [getObjectBoxModel] and for Flutter
@@ -61,9 +708,12 @@ final _entities = <obx_int.ModelEntity>[
 ///
 /// Note: for desktop apps it is recommended to specify a unique [directory].
 ///
-/// Use [obx.Store.new] directly to use all its options. See its
-/// documentation for an explanation of all parameters.
-obx.Store openStore({
+/// See [obx.Store.new] for an explanation of all parameters.
+///
+/// For Flutter apps, also calls `loadObjectBoxLibraryAndroidCompat()` from
+/// the ObjectBox Flutter library to fix loading the native ObjectBox library
+/// on Android 6 and older.
+Future<obx.Store> openStore({
   String? directory,
   int? maxDBSizeInKB,
   int? maxDataSizeInKB,
@@ -71,10 +721,11 @@ obx.Store openStore({
   int? maxReaders,
   bool queriesCaseSensitiveDefault = true,
   String? macosApplicationGroup,
-}) {
+}) async {
+  await loadObjectBoxLibraryAndroidCompat();
   return obx.Store(
     getObjectBoxModel(),
-    directory: directory,
+    directory: directory ?? (await defaultStoreDirectory()).path,
     maxDBSizeInKB: maxDBSizeInKB,
     maxDataSizeInKB: maxDataSizeInKB,
     fileMode: fileMode,
@@ -94,8 +745,8 @@ obx_int.ModelDefinition getObjectBoxModel() {
     // Typically, this is done with `dart run build_runner build`.
     generatorVersion: obx_int.GeneratorVersion.v2025_12_16,
     entities: _entities,
-    lastEntityId: const obx_int.IdUid(1, 715899443088525639),
-    lastIndexId: const obx_int.IdUid(1, 1718561825550097155),
+    lastEntityId: const obx_int.IdUid(8, 6905279468846091847),
+    lastIndexId: const obx_int.IdUid(12, 221238471021171161),
     lastRelationId: const obx_int.IdUid(0, 0),
     lastSequenceId: const obx_int.IdUid(0, 0),
     retiredEntityUids: const [],
@@ -136,10 +787,12 @@ obx_int.ModelDefinition getObjectBoxModel() {
           4,
           0,
         );
-        final keyParam = const fb.StringReader(asciiOptimization: true)
-            .vTableGet(buffer, rootOffset, 6, '');
-        final valueParam = const fb.StringReader(asciiOptimization: true)
-            .vTableGet(buffer, rootOffset, 8, '');
+        final keyParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 6, '');
+        final valueParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 8, '');
         final updatedAtParam = DateTime.fromMillisecondsSinceEpoch(
           const fb.Int64Reader().vTableGet(buffer, rootOffset, 10, 0),
         );
@@ -148,6 +801,828 @@ obx_int.ModelDefinition getObjectBoxModel() {
           key: keyParam,
           value: valueParam,
           updatedAt: updatedAtParam,
+        );
+
+        return object;
+      },
+    ),
+    BodyMeasurementEntity: obx_int.EntityDefinition<BodyMeasurementEntity>(
+      model: _entities[1],
+      toOneRelations: (BodyMeasurementEntity object) => [],
+      toManyRelations: (BodyMeasurementEntity object) => {},
+      getId: (BodyMeasurementEntity object) => object.id,
+      setId: (BodyMeasurementEntity object, int id) {
+        object.id = id;
+      },
+      objectToFB: (BodyMeasurementEntity object, fb.Builder fbb) {
+        final businessIdOffset = fbb.writeString(object.businessId);
+        final fieldsOffset = fbb.writeList(
+          object.fields.map(fbb.writeString).toList(growable: false),
+        );
+        final dateIsoOffset = fbb.writeString(object.dateIso);
+        final bodyFatSourceOffset = object.bodyFatSource == null
+            ? null
+            : fbb.writeString(object.bodyFatSource!);
+        final noteOffset = object.note == null
+            ? null
+            : fbb.writeString(object.note!);
+        fbb.startTable(17);
+        fbb.addInt64(0, object.id);
+        fbb.addOffset(1, businessIdOffset);
+        fbb.addOffset(2, fieldsOffset);
+        fbb.addOffset(3, dateIsoOffset);
+        fbb.addFloat64(4, object.weightKg);
+        fbb.addFloat64(5, object.waistCm);
+        fbb.addFloat64(6, object.chestCm);
+        fbb.addFloat64(7, object.hipsCm);
+        fbb.addFloat64(8, object.leftArmCm);
+        fbb.addFloat64(9, object.rightArmCm);
+        fbb.addFloat64(10, object.leftThighCm);
+        fbb.addFloat64(11, object.rightThighCm);
+        fbb.addFloat64(12, object.bodyFatPercent);
+        fbb.addFloat64(13, object.muscleMassKg);
+        fbb.addOffset(14, bodyFatSourceOffset);
+        fbb.addOffset(15, noteOffset);
+        fbb.finish(fbb.endTable());
+        return object.id;
+      },
+      objectFromFB: (obx.Store store, ByteData fbData) {
+        final buffer = fb.BufferContext(fbData);
+        final rootOffset = buffer.derefObject(0);
+        final idParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          4,
+          0,
+        );
+        final businessIdParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 6, '');
+        final fieldsParam = const fb.ListReader<String>(
+          fb.StringReader(asciiOptimization: true),
+          lazy: false,
+        ).vTableGet(buffer, rootOffset, 8, []);
+        final dateIsoParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 10, '');
+        final weightKgParam = const fb.Float64Reader().vTableGetNullable(
+          buffer,
+          rootOffset,
+          12,
+        );
+        final waistCmParam = const fb.Float64Reader().vTableGetNullable(
+          buffer,
+          rootOffset,
+          14,
+        );
+        final chestCmParam = const fb.Float64Reader().vTableGetNullable(
+          buffer,
+          rootOffset,
+          16,
+        );
+        final hipsCmParam = const fb.Float64Reader().vTableGetNullable(
+          buffer,
+          rootOffset,
+          18,
+        );
+        final leftArmCmParam = const fb.Float64Reader().vTableGetNullable(
+          buffer,
+          rootOffset,
+          20,
+        );
+        final rightArmCmParam = const fb.Float64Reader().vTableGetNullable(
+          buffer,
+          rootOffset,
+          22,
+        );
+        final leftThighCmParam = const fb.Float64Reader().vTableGetNullable(
+          buffer,
+          rootOffset,
+          24,
+        );
+        final rightThighCmParam = const fb.Float64Reader().vTableGetNullable(
+          buffer,
+          rootOffset,
+          26,
+        );
+        final bodyFatPercentParam = const fb.Float64Reader().vTableGetNullable(
+          buffer,
+          rootOffset,
+          28,
+        );
+        final muscleMassKgParam = const fb.Float64Reader().vTableGetNullable(
+          buffer,
+          rootOffset,
+          30,
+        );
+        final bodyFatSourceParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGetNullable(buffer, rootOffset, 32);
+        final noteParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGetNullable(buffer, rootOffset, 34);
+        final object = BodyMeasurementEntity(
+          id: idParam,
+          businessId: businessIdParam,
+          fields: fieldsParam,
+          dateIso: dateIsoParam,
+          weightKg: weightKgParam,
+          waistCm: waistCmParam,
+          chestCm: chestCmParam,
+          hipsCm: hipsCmParam,
+          leftArmCm: leftArmCmParam,
+          rightArmCm: rightArmCmParam,
+          leftThighCm: leftThighCmParam,
+          rightThighCm: rightThighCmParam,
+          bodyFatPercent: bodyFatPercentParam,
+          muscleMassKg: muscleMassKgParam,
+          bodyFatSource: bodyFatSourceParam,
+          note: noteParam,
+        );
+
+        return object;
+      },
+    ),
+    FitnessAssessmentEntity: obx_int.EntityDefinition<FitnessAssessmentEntity>(
+      model: _entities[2],
+      toOneRelations: (FitnessAssessmentEntity object) => [],
+      toManyRelations: (FitnessAssessmentEntity object) => {},
+      getId: (FitnessAssessmentEntity object) => object.id,
+      setId: (FitnessAssessmentEntity object, int id) {
+        object.id = id;
+      },
+      objectToFB: (FitnessAssessmentEntity object, fb.Builder fbb) {
+        final businessIdOffset = fbb.writeString(object.businessId);
+        final fieldsOffset = fbb.writeList(
+          object.fields.map(fbb.writeString).toList(growable: false),
+        );
+        final testOffset = fbb.writeString(object.test);
+        final metricOffset = fbb.writeString(object.metric);
+        final dateIsoOffset = fbb.writeString(object.dateIso);
+        final noteOffset = object.note == null
+            ? null
+            : fbb.writeString(object.note!);
+        fbb.startTable(9);
+        fbb.addInt64(0, object.id);
+        fbb.addOffset(1, businessIdOffset);
+        fbb.addOffset(2, fieldsOffset);
+        fbb.addOffset(3, testOffset);
+        fbb.addOffset(4, metricOffset);
+        fbb.addFloat64(5, object.value);
+        fbb.addOffset(6, dateIsoOffset);
+        fbb.addOffset(7, noteOffset);
+        fbb.finish(fbb.endTable());
+        return object.id;
+      },
+      objectFromFB: (obx.Store store, ByteData fbData) {
+        final buffer = fb.BufferContext(fbData);
+        final rootOffset = buffer.derefObject(0);
+        final idParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          4,
+          0,
+        );
+        final businessIdParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 6, '');
+        final fieldsParam = const fb.ListReader<String>(
+          fb.StringReader(asciiOptimization: true),
+          lazy: false,
+        ).vTableGet(buffer, rootOffset, 8, []);
+        final testParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 10, '');
+        final metricParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 12, '');
+        final valueParam = const fb.Float64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          14,
+          0,
+        );
+        final dateIsoParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 16, '');
+        final noteParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGetNullable(buffer, rootOffset, 18);
+        final object = FitnessAssessmentEntity(
+          id: idParam,
+          businessId: businessIdParam,
+          fields: fieldsParam,
+          test: testParam,
+          metric: metricParam,
+          value: valueParam,
+          dateIso: dateIsoParam,
+          note: noteParam,
+        );
+
+        return object;
+      },
+    ),
+    FitnessGoalEntity: obx_int.EntityDefinition<FitnessGoalEntity>(
+      model: _entities[3],
+      toOneRelations: (FitnessGoalEntity object) => [],
+      toManyRelations: (FitnessGoalEntity object) => {},
+      getId: (FitnessGoalEntity object) => object.id,
+      setId: (FitnessGoalEntity object, int id) {
+        object.id = id;
+      },
+      objectToFB: (FitnessGoalEntity object, fb.Builder fbb) {
+        final businessIdOffset = fbb.writeString(object.businessId);
+        final fieldsOffset = fbb.writeList(
+          object.fields.map(fbb.writeString).toList(growable: false),
+        );
+        final titleOffset = fbb.writeString(object.title);
+        final metricOffset = fbb.writeString(object.metric);
+        final targetDateIsoOffset = fbb.writeString(object.targetDateIso);
+        final assessmentTestOffset = object.assessmentTest == null
+            ? null
+            : fbb.writeString(object.assessmentTest!);
+        fbb.startTable(12);
+        fbb.addInt64(0, object.id);
+        fbb.addOffset(1, businessIdOffset);
+        fbb.addOffset(2, fieldsOffset);
+        fbb.addOffset(3, titleOffset);
+        fbb.addOffset(4, metricOffset);
+        fbb.addFloat64(5, object.target);
+        fbb.addFloat64(6, object.startingValue);
+        fbb.addOffset(7, targetDateIsoOffset);
+        fbb.addOffset(8, assessmentTestOffset);
+        fbb.addBool(9, object.isPrimary);
+        fbb.addBool(10, object.isComplete);
+        fbb.finish(fbb.endTable());
+        return object.id;
+      },
+      objectFromFB: (obx.Store store, ByteData fbData) {
+        final buffer = fb.BufferContext(fbData);
+        final rootOffset = buffer.derefObject(0);
+        final idParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          4,
+          0,
+        );
+        final businessIdParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 6, '');
+        final fieldsParam = const fb.ListReader<String>(
+          fb.StringReader(asciiOptimization: true),
+          lazy: false,
+        ).vTableGet(buffer, rootOffset, 8, []);
+        final titleParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 10, '');
+        final metricParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 12, '');
+        final targetParam = const fb.Float64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          14,
+          0,
+        );
+        final startingValueParam = const fb.Float64Reader().vTableGetNullable(
+          buffer,
+          rootOffset,
+          16,
+        );
+        final targetDateIsoParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 18, '');
+        final assessmentTestParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGetNullable(buffer, rootOffset, 20);
+        final isPrimaryParam = const fb.BoolReader().vTableGet(
+          buffer,
+          rootOffset,
+          22,
+          false,
+        );
+        final isCompleteParam = const fb.BoolReader().vTableGet(
+          buffer,
+          rootOffset,
+          24,
+          false,
+        );
+        final object = FitnessGoalEntity(
+          id: idParam,
+          businessId: businessIdParam,
+          fields: fieldsParam,
+          title: titleParam,
+          metric: metricParam,
+          target: targetParam,
+          startingValue: startingValueParam,
+          targetDateIso: targetDateIsoParam,
+          assessmentTest: assessmentTestParam,
+          isPrimary: isPrimaryParam,
+          isComplete: isCompleteParam,
+        );
+
+        return object;
+      },
+    ),
+    ProfileEntity: obx_int.EntityDefinition<ProfileEntity>(
+      model: _entities[4],
+      toOneRelations: (ProfileEntity object) => [],
+      toManyRelations: (ProfileEntity object) => {},
+      getId: (ProfileEntity object) => object.id,
+      setId: (ProfileEntity object, int id) {
+        object.id = id;
+      },
+      objectToFB: (ProfileEntity object, fb.Builder fbb) {
+        final slotOffset = fbb.writeString(object.slot);
+        final businessIdOffset = fbb.writeString(object.businessId);
+        final fieldsOffset = fbb.writeList(
+          object.fields.map(fbb.writeString).toList(growable: false),
+        );
+        final nameOffset = fbb.writeString(object.name);
+        final heightOffset = fbb.writeString(object.height);
+        final weightOffset = fbb.writeString(object.weight);
+        final ageOffset = object.age == null
+            ? null
+            : fbb.writeString(object.age!);
+        final goalOffset = object.goal == null
+            ? null
+            : fbb.writeString(object.goal!);
+        final levelOffset = object.level == null
+            ? null
+            : fbb.writeString(object.level!);
+        final locationOffset = object.location == null
+            ? null
+            : fbb.writeString(object.location!);
+        final durationOffset = object.duration == null
+            ? null
+            : fbb.writeString(object.duration!);
+        final dateOfBirthOffset = object.dateOfBirth == null
+            ? null
+            : fbb.writeString(object.dateOfBirth!);
+        final biologicalSexOffset = object.biologicalSex == null
+            ? null
+            : fbb.writeString(object.biologicalSex!);
+        final primaryEnvironmentOffset = object.primaryEnvironment == null
+            ? null
+            : fbb.writeString(object.primaryEnvironment!);
+        final limitationsOffset = object.limitations == null
+            ? null
+            : fbb.writeString(object.limitations!);
+        final equipmentOffset = fbb.writeList(
+          object.equipment.map(fbb.writeString).toList(growable: false),
+        );
+        final availableEquipmentOffset = fbb.writeList(
+          object.availableEquipment
+              .map(fbb.writeString)
+              .toList(growable: false),
+        );
+        final daysOffset = fbb.writeList(
+          object.days.map(fbb.writeString).toList(growable: false),
+        );
+        fbb.startTable(21);
+        fbb.addInt64(0, object.id);
+        fbb.addOffset(1, slotOffset);
+        fbb.addOffset(2, businessIdOffset);
+        fbb.addOffset(3, fieldsOffset);
+        fbb.addOffset(4, nameOffset);
+        fbb.addOffset(5, heightOffset);
+        fbb.addOffset(6, weightOffset);
+        fbb.addOffset(7, ageOffset);
+        fbb.addOffset(8, goalOffset);
+        fbb.addOffset(9, levelOffset);
+        fbb.addOffset(10, locationOffset);
+        fbb.addOffset(11, durationOffset);
+        fbb.addOffset(12, dateOfBirthOffset);
+        fbb.addOffset(13, biologicalSexOffset);
+        fbb.addOffset(14, primaryEnvironmentOffset);
+        fbb.addOffset(15, limitationsOffset);
+        fbb.addOffset(16, equipmentOffset);
+        fbb.addOffset(17, availableEquipmentOffset);
+        fbb.addOffset(18, daysOffset);
+        fbb.addInt64(19, object.step);
+        fbb.finish(fbb.endTable());
+        return object.id;
+      },
+      objectFromFB: (obx.Store store, ByteData fbData) {
+        final buffer = fb.BufferContext(fbData);
+        final rootOffset = buffer.derefObject(0);
+        final idParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          4,
+          0,
+        );
+        final slotParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 6, '');
+        final businessIdParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 8, '');
+        final fieldsParam = const fb.ListReader<String>(
+          fb.StringReader(asciiOptimization: true),
+          lazy: false,
+        ).vTableGet(buffer, rootOffset, 10, []);
+        final nameParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 12, '');
+        final heightParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 14, '');
+        final weightParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 16, '');
+        final ageParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGetNullable(buffer, rootOffset, 18);
+        final goalParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGetNullable(buffer, rootOffset, 20);
+        final levelParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGetNullable(buffer, rootOffset, 22);
+        final locationParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGetNullable(buffer, rootOffset, 24);
+        final durationParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGetNullable(buffer, rootOffset, 26);
+        final dateOfBirthParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGetNullable(buffer, rootOffset, 28);
+        final biologicalSexParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGetNullable(buffer, rootOffset, 30);
+        final primaryEnvironmentParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGetNullable(buffer, rootOffset, 32);
+        final limitationsParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGetNullable(buffer, rootOffset, 34);
+        final equipmentParam = const fb.ListReader<String>(
+          fb.StringReader(asciiOptimization: true),
+          lazy: false,
+        ).vTableGet(buffer, rootOffset, 36, []);
+        final availableEquipmentParam = const fb.ListReader<String>(
+          fb.StringReader(asciiOptimization: true),
+          lazy: false,
+        ).vTableGet(buffer, rootOffset, 38, []);
+        final daysParam = const fb.ListReader<String>(
+          fb.StringReader(asciiOptimization: true),
+          lazy: false,
+        ).vTableGet(buffer, rootOffset, 40, []);
+        final stepParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          42,
+          0,
+        );
+        final object = ProfileEntity(
+          id: idParam,
+          slot: slotParam,
+          businessId: businessIdParam,
+          fields: fieldsParam,
+          name: nameParam,
+          height: heightParam,
+          weight: weightParam,
+          age: ageParam,
+          goal: goalParam,
+          level: levelParam,
+          location: locationParam,
+          duration: durationParam,
+          dateOfBirth: dateOfBirthParam,
+          biologicalSex: biologicalSexParam,
+          primaryEnvironment: primaryEnvironmentParam,
+          limitations: limitationsParam,
+          equipment: equipmentParam,
+          availableEquipment: availableEquipmentParam,
+          days: daysParam,
+          step: stepParam,
+        );
+
+        return object;
+      },
+    ),
+    ProfileStateEntity: obx_int.EntityDefinition<ProfileStateEntity>(
+      model: _entities[5],
+      toOneRelations: (ProfileStateEntity object) => [],
+      toManyRelations: (ProfileStateEntity object) => {},
+      getId: (ProfileStateEntity object) => object.id,
+      setId: (ProfileStateEntity object, int id) {
+        object.id = id;
+      },
+      objectToFB: (ProfileStateEntity object, fb.Builder fbb) {
+        fbb.startTable(4);
+        fbb.addInt64(0, object.id);
+        fbb.addInt64(1, object.version);
+        fbb.addBool(2, object.completed);
+        fbb.finish(fbb.endTable());
+        return object.id;
+      },
+      objectFromFB: (obx.Store store, ByteData fbData) {
+        final buffer = fb.BufferContext(fbData);
+        final rootOffset = buffer.derefObject(0);
+        final idParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          4,
+          0,
+        );
+        final versionParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          6,
+          0,
+        );
+        final completedParam = const fb.BoolReader().vTableGet(
+          buffer,
+          rootOffset,
+          8,
+          false,
+        );
+        final object = ProfileStateEntity(
+          id: idParam,
+          version: versionParam,
+          completed: completedParam,
+        );
+
+        return object;
+      },
+    ),
+    TrainingPlanActivityEntity:
+        obx_int.EntityDefinition<TrainingPlanActivityEntity>(
+          model: _entities[6],
+          toOneRelations: (TrainingPlanActivityEntity object) => [object.plan],
+          toManyRelations: (TrainingPlanActivityEntity object) => {},
+          getId: (TrainingPlanActivityEntity object) => object.id,
+          setId: (TrainingPlanActivityEntity object, int id) {
+            object.id = id;
+          },
+          objectToFB: (TrainingPlanActivityEntity object, fb.Builder fbb) {
+            final recordKeyOffset = fbb.writeString(object.recordKey);
+            final sectionOffset = fbb.writeString(object.section);
+            final fieldsOffset = fbb.writeList(
+              object.fields.map(fbb.writeString).toList(growable: false),
+            );
+            final nameOffset = fbb.writeString(object.name);
+            final musclesOffset = fbb.writeString(object.muscles);
+            final setsOffset = fbb.writeString(object.sets);
+            final repsOffset = fbb.writeString(object.reps);
+            final weightOffset = fbb.writeString(object.weight);
+            final restOffset = fbb.writeString(object.rest);
+            final durationOffset = fbb.writeString(object.duration);
+            final notesOffset = fbb.writeString(object.notes);
+            fbb.startTable(15);
+            fbb.addInt64(0, object.id);
+            fbb.addOffset(1, recordKeyOffset);
+            fbb.addInt64(2, object.plan.targetId);
+            fbb.addOffset(3, sectionOffset);
+            fbb.addInt64(4, object.position);
+            fbb.addOffset(5, fieldsOffset);
+            fbb.addOffset(6, nameOffset);
+            fbb.addOffset(7, musclesOffset);
+            fbb.addOffset(8, setsOffset);
+            fbb.addOffset(9, repsOffset);
+            fbb.addOffset(10, weightOffset);
+            fbb.addOffset(11, restOffset);
+            fbb.addOffset(12, durationOffset);
+            fbb.addOffset(13, notesOffset);
+            fbb.finish(fbb.endTable());
+            return object.id;
+          },
+          objectFromFB: (obx.Store store, ByteData fbData) {
+            final buffer = fb.BufferContext(fbData);
+            final rootOffset = buffer.derefObject(0);
+            final idParam = const fb.Int64Reader().vTableGet(
+              buffer,
+              rootOffset,
+              4,
+              0,
+            );
+            final recordKeyParam = const fb.StringReader(
+              asciiOptimization: true,
+            ).vTableGet(buffer, rootOffset, 6, '');
+            final sectionParam = const fb.StringReader(
+              asciiOptimization: true,
+            ).vTableGet(buffer, rootOffset, 10, '');
+            final positionParam = const fb.Int64Reader().vTableGet(
+              buffer,
+              rootOffset,
+              12,
+              0,
+            );
+            final fieldsParam = const fb.ListReader<String>(
+              fb.StringReader(asciiOptimization: true),
+              lazy: false,
+            ).vTableGet(buffer, rootOffset, 14, []);
+            final nameParam = const fb.StringReader(
+              asciiOptimization: true,
+            ).vTableGet(buffer, rootOffset, 16, '');
+            final musclesParam = const fb.StringReader(
+              asciiOptimization: true,
+            ).vTableGet(buffer, rootOffset, 18, '');
+            final setsParam = const fb.StringReader(
+              asciiOptimization: true,
+            ).vTableGet(buffer, rootOffset, 20, '');
+            final repsParam = const fb.StringReader(
+              asciiOptimization: true,
+            ).vTableGet(buffer, rootOffset, 22, '');
+            final weightParam = const fb.StringReader(
+              asciiOptimization: true,
+            ).vTableGet(buffer, rootOffset, 24, '');
+            final restParam = const fb.StringReader(
+              asciiOptimization: true,
+            ).vTableGet(buffer, rootOffset, 26, '');
+            final durationParam = const fb.StringReader(
+              asciiOptimization: true,
+            ).vTableGet(buffer, rootOffset, 28, '');
+            final notesParam = const fb.StringReader(
+              asciiOptimization: true,
+            ).vTableGet(buffer, rootOffset, 30, '');
+            final object = TrainingPlanActivityEntity(
+              id: idParam,
+              recordKey: recordKeyParam,
+              section: sectionParam,
+              position: positionParam,
+              fields: fieldsParam,
+              name: nameParam,
+              muscles: musclesParam,
+              sets: setsParam,
+              reps: repsParam,
+              weight: weightParam,
+              rest: restParam,
+              duration: durationParam,
+              notes: notesParam,
+            );
+            object.plan.targetId = const fb.Int64Reader().vTableGet(
+              buffer,
+              rootOffset,
+              8,
+              0,
+            );
+            object.plan.attach(store);
+            return object;
+          },
+        ),
+    TrainingPlanEntity: obx_int.EntityDefinition<TrainingPlanEntity>(
+      model: _entities[7],
+      toOneRelations: (TrainingPlanEntity object) => [],
+      toManyRelations: (TrainingPlanEntity object) => {},
+      getId: (TrainingPlanEntity object) => object.id,
+      setId: (TrainingPlanEntity object, int id) {
+        object.id = id;
+      },
+      objectToFB: (TrainingPlanEntity object, fb.Builder fbb) {
+        final businessIdOffset = fbb.writeString(object.businessId);
+        final fieldsOffset = fbb.writeList(
+          object.fields.map(fbb.writeString).toList(growable: false),
+        );
+        final titleOffset = fbb.writeString(object.title);
+        final typeOffset = fbb.writeString(object.type);
+        final focusOffset = fbb.writeString(object.focus);
+        final dateOffset = fbb.writeString(object.date);
+        final durationOffset = fbb.writeString(object.duration);
+        final volumeOffset = fbb.writeString(object.volume);
+        final effortOffset = fbb.writeString(object.effort);
+        final rpeOffset = fbb.writeString(object.rpe);
+        final imageUrlOffset = fbb.writeString(object.imageUrl);
+        final descriptionOffset = fbb.writeString(object.description);
+        final notesOffset = fbb.writeString(object.notes);
+        final targetEventOffset = fbb.writeString(object.targetEvent);
+        final eventDateIsoOffset = object.eventDateIso == null
+            ? null
+            : fbb.writeString(object.eventDateIso!);
+        final scheduledDateIsoOffset = object.scheduledDateIso == null
+            ? null
+            : fbb.writeString(object.scheduledDateIso!);
+        fbb.startTable(22);
+        fbb.addInt64(0, object.id);
+        fbb.addOffset(1, businessIdOffset);
+        fbb.addOffset(2, fieldsOffset);
+        fbb.addInt64(3, object.position);
+        fbb.addBool(4, object.isSample);
+        fbb.addOffset(5, titleOffset);
+        fbb.addOffset(6, typeOffset);
+        fbb.addOffset(7, focusOffset);
+        fbb.addOffset(8, dateOffset);
+        fbb.addOffset(9, durationOffset);
+        fbb.addOffset(10, volumeOffset);
+        fbb.addOffset(11, effortOffset);
+        fbb.addOffset(12, rpeOffset);
+        fbb.addOffset(13, imageUrlOffset);
+        fbb.addInt64(14, object.iconCodePoint);
+        fbb.addInt64(15, object.accent);
+        fbb.addOffset(16, descriptionOffset);
+        fbb.addOffset(17, notesOffset);
+        fbb.addOffset(18, targetEventOffset);
+        fbb.addOffset(19, eventDateIsoOffset);
+        fbb.addOffset(20, scheduledDateIsoOffset);
+        fbb.finish(fbb.endTable());
+        return object.id;
+      },
+      objectFromFB: (obx.Store store, ByteData fbData) {
+        final buffer = fb.BufferContext(fbData);
+        final rootOffset = buffer.derefObject(0);
+        final idParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          4,
+          0,
+        );
+        final businessIdParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 6, '');
+        final fieldsParam = const fb.ListReader<String>(
+          fb.StringReader(asciiOptimization: true),
+          lazy: false,
+        ).vTableGet(buffer, rootOffset, 8, []);
+        final positionParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          10,
+          0,
+        );
+        final isSampleParam = const fb.BoolReader().vTableGet(
+          buffer,
+          rootOffset,
+          12,
+          false,
+        );
+        final titleParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 14, '');
+        final typeParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 16, '');
+        final focusParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 18, '');
+        final dateParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 20, '');
+        final durationParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 22, '');
+        final volumeParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 24, '');
+        final effortParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 26, '');
+        final rpeParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 28, '');
+        final imageUrlParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 30, '');
+        final iconCodePointParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          32,
+          0,
+        );
+        final accentParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          34,
+          0,
+        );
+        final descriptionParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 36, '');
+        final notesParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 38, '');
+        final targetEventParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 40, '');
+        final eventDateIsoParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGetNullable(buffer, rootOffset, 42);
+        final scheduledDateIsoParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGetNullable(buffer, rootOffset, 44);
+        final object = TrainingPlanEntity(
+          id: idParam,
+          businessId: businessIdParam,
+          fields: fieldsParam,
+          position: positionParam,
+          isSample: isSampleParam,
+          title: titleParam,
+          type: typeParam,
+          focus: focusParam,
+          date: dateParam,
+          duration: durationParam,
+          volume: volumeParam,
+          effort: effortParam,
+          rpe: rpeParam,
+          imageUrl: imageUrlParam,
+          iconCodePoint: iconCodePointParam,
+          accent: accentParam,
+          description: descriptionParam,
+          notes: notesParam,
+          targetEvent: targetEventParam,
+          eventDateIso: eventDateIsoParam,
+          scheduledDateIso: scheduledDateIsoParam,
         );
 
         return object;
@@ -178,5 +1653,492 @@ class ProfileBoxEntity_ {
   /// See [ProfileBoxEntity.updatedAt].
   static final updatedAt = obx.QueryDateProperty<ProfileBoxEntity>(
     _entities[0].properties[3],
+  );
+}
+
+/// [BodyMeasurementEntity] entity fields to define ObjectBox queries.
+class BodyMeasurementEntity_ {
+  /// See [BodyMeasurementEntity.id].
+  static final id = obx.QueryIntegerProperty<BodyMeasurementEntity>(
+    _entities[1].properties[0],
+  );
+
+  /// See [BodyMeasurementEntity.businessId].
+  static final businessId = obx.QueryStringProperty<BodyMeasurementEntity>(
+    _entities[1].properties[1],
+  );
+
+  /// See [BodyMeasurementEntity.fields].
+  static final fields = obx.QueryStringVectorProperty<BodyMeasurementEntity>(
+    _entities[1].properties[2],
+  );
+
+  /// See [BodyMeasurementEntity.dateIso].
+  static final dateIso = obx.QueryStringProperty<BodyMeasurementEntity>(
+    _entities[1].properties[3],
+  );
+
+  /// See [BodyMeasurementEntity.weightKg].
+  static final weightKg = obx.QueryDoubleProperty<BodyMeasurementEntity>(
+    _entities[1].properties[4],
+  );
+
+  /// See [BodyMeasurementEntity.waistCm].
+  static final waistCm = obx.QueryDoubleProperty<BodyMeasurementEntity>(
+    _entities[1].properties[5],
+  );
+
+  /// See [BodyMeasurementEntity.chestCm].
+  static final chestCm = obx.QueryDoubleProperty<BodyMeasurementEntity>(
+    _entities[1].properties[6],
+  );
+
+  /// See [BodyMeasurementEntity.hipsCm].
+  static final hipsCm = obx.QueryDoubleProperty<BodyMeasurementEntity>(
+    _entities[1].properties[7],
+  );
+
+  /// See [BodyMeasurementEntity.leftArmCm].
+  static final leftArmCm = obx.QueryDoubleProperty<BodyMeasurementEntity>(
+    _entities[1].properties[8],
+  );
+
+  /// See [BodyMeasurementEntity.rightArmCm].
+  static final rightArmCm = obx.QueryDoubleProperty<BodyMeasurementEntity>(
+    _entities[1].properties[9],
+  );
+
+  /// See [BodyMeasurementEntity.leftThighCm].
+  static final leftThighCm = obx.QueryDoubleProperty<BodyMeasurementEntity>(
+    _entities[1].properties[10],
+  );
+
+  /// See [BodyMeasurementEntity.rightThighCm].
+  static final rightThighCm = obx.QueryDoubleProperty<BodyMeasurementEntity>(
+    _entities[1].properties[11],
+  );
+
+  /// See [BodyMeasurementEntity.bodyFatPercent].
+  static final bodyFatPercent = obx.QueryDoubleProperty<BodyMeasurementEntity>(
+    _entities[1].properties[12],
+  );
+
+  /// See [BodyMeasurementEntity.muscleMassKg].
+  static final muscleMassKg = obx.QueryDoubleProperty<BodyMeasurementEntity>(
+    _entities[1].properties[13],
+  );
+
+  /// See [BodyMeasurementEntity.bodyFatSource].
+  static final bodyFatSource = obx.QueryStringProperty<BodyMeasurementEntity>(
+    _entities[1].properties[14],
+  );
+
+  /// See [BodyMeasurementEntity.note].
+  static final note = obx.QueryStringProperty<BodyMeasurementEntity>(
+    _entities[1].properties[15],
+  );
+}
+
+/// [FitnessAssessmentEntity] entity fields to define ObjectBox queries.
+class FitnessAssessmentEntity_ {
+  /// See [FitnessAssessmentEntity.id].
+  static final id = obx.QueryIntegerProperty<FitnessAssessmentEntity>(
+    _entities[2].properties[0],
+  );
+
+  /// See [FitnessAssessmentEntity.businessId].
+  static final businessId = obx.QueryStringProperty<FitnessAssessmentEntity>(
+    _entities[2].properties[1],
+  );
+
+  /// See [FitnessAssessmentEntity.fields].
+  static final fields = obx.QueryStringVectorProperty<FitnessAssessmentEntity>(
+    _entities[2].properties[2],
+  );
+
+  /// See [FitnessAssessmentEntity.test].
+  static final test = obx.QueryStringProperty<FitnessAssessmentEntity>(
+    _entities[2].properties[3],
+  );
+
+  /// See [FitnessAssessmentEntity.metric].
+  static final metric = obx.QueryStringProperty<FitnessAssessmentEntity>(
+    _entities[2].properties[4],
+  );
+
+  /// See [FitnessAssessmentEntity.value].
+  static final value = obx.QueryDoubleProperty<FitnessAssessmentEntity>(
+    _entities[2].properties[5],
+  );
+
+  /// See [FitnessAssessmentEntity.dateIso].
+  static final dateIso = obx.QueryStringProperty<FitnessAssessmentEntity>(
+    _entities[2].properties[6],
+  );
+
+  /// See [FitnessAssessmentEntity.note].
+  static final note = obx.QueryStringProperty<FitnessAssessmentEntity>(
+    _entities[2].properties[7],
+  );
+}
+
+/// [FitnessGoalEntity] entity fields to define ObjectBox queries.
+class FitnessGoalEntity_ {
+  /// See [FitnessGoalEntity.id].
+  static final id = obx.QueryIntegerProperty<FitnessGoalEntity>(
+    _entities[3].properties[0],
+  );
+
+  /// See [FitnessGoalEntity.businessId].
+  static final businessId = obx.QueryStringProperty<FitnessGoalEntity>(
+    _entities[3].properties[1],
+  );
+
+  /// See [FitnessGoalEntity.fields].
+  static final fields = obx.QueryStringVectorProperty<FitnessGoalEntity>(
+    _entities[3].properties[2],
+  );
+
+  /// See [FitnessGoalEntity.title].
+  static final title = obx.QueryStringProperty<FitnessGoalEntity>(
+    _entities[3].properties[3],
+  );
+
+  /// See [FitnessGoalEntity.metric].
+  static final metric = obx.QueryStringProperty<FitnessGoalEntity>(
+    _entities[3].properties[4],
+  );
+
+  /// See [FitnessGoalEntity.target].
+  static final target = obx.QueryDoubleProperty<FitnessGoalEntity>(
+    _entities[3].properties[5],
+  );
+
+  /// See [FitnessGoalEntity.startingValue].
+  static final startingValue = obx.QueryDoubleProperty<FitnessGoalEntity>(
+    _entities[3].properties[6],
+  );
+
+  /// See [FitnessGoalEntity.targetDateIso].
+  static final targetDateIso = obx.QueryStringProperty<FitnessGoalEntity>(
+    _entities[3].properties[7],
+  );
+
+  /// See [FitnessGoalEntity.assessmentTest].
+  static final assessmentTest = obx.QueryStringProperty<FitnessGoalEntity>(
+    _entities[3].properties[8],
+  );
+
+  /// See [FitnessGoalEntity.isPrimary].
+  static final isPrimary = obx.QueryBooleanProperty<FitnessGoalEntity>(
+    _entities[3].properties[9],
+  );
+
+  /// See [FitnessGoalEntity.isComplete].
+  static final isComplete = obx.QueryBooleanProperty<FitnessGoalEntity>(
+    _entities[3].properties[10],
+  );
+}
+
+/// [ProfileEntity] entity fields to define ObjectBox queries.
+class ProfileEntity_ {
+  /// See [ProfileEntity.id].
+  static final id = obx.QueryIntegerProperty<ProfileEntity>(
+    _entities[4].properties[0],
+  );
+
+  /// See [ProfileEntity.slot].
+  static final slot = obx.QueryStringProperty<ProfileEntity>(
+    _entities[4].properties[1],
+  );
+
+  /// See [ProfileEntity.businessId].
+  static final businessId = obx.QueryStringProperty<ProfileEntity>(
+    _entities[4].properties[2],
+  );
+
+  /// See [ProfileEntity.fields].
+  static final fields = obx.QueryStringVectorProperty<ProfileEntity>(
+    _entities[4].properties[3],
+  );
+
+  /// See [ProfileEntity.name].
+  static final name = obx.QueryStringProperty<ProfileEntity>(
+    _entities[4].properties[4],
+  );
+
+  /// See [ProfileEntity.height].
+  static final height = obx.QueryStringProperty<ProfileEntity>(
+    _entities[4].properties[5],
+  );
+
+  /// See [ProfileEntity.weight].
+  static final weight = obx.QueryStringProperty<ProfileEntity>(
+    _entities[4].properties[6],
+  );
+
+  /// See [ProfileEntity.age].
+  static final age = obx.QueryStringProperty<ProfileEntity>(
+    _entities[4].properties[7],
+  );
+
+  /// See [ProfileEntity.goal].
+  static final goal = obx.QueryStringProperty<ProfileEntity>(
+    _entities[4].properties[8],
+  );
+
+  /// See [ProfileEntity.level].
+  static final level = obx.QueryStringProperty<ProfileEntity>(
+    _entities[4].properties[9],
+  );
+
+  /// See [ProfileEntity.location].
+  static final location = obx.QueryStringProperty<ProfileEntity>(
+    _entities[4].properties[10],
+  );
+
+  /// See [ProfileEntity.duration].
+  static final duration = obx.QueryStringProperty<ProfileEntity>(
+    _entities[4].properties[11],
+  );
+
+  /// See [ProfileEntity.dateOfBirth].
+  static final dateOfBirth = obx.QueryStringProperty<ProfileEntity>(
+    _entities[4].properties[12],
+  );
+
+  /// See [ProfileEntity.biologicalSex].
+  static final biologicalSex = obx.QueryStringProperty<ProfileEntity>(
+    _entities[4].properties[13],
+  );
+
+  /// See [ProfileEntity.primaryEnvironment].
+  static final primaryEnvironment = obx.QueryStringProperty<ProfileEntity>(
+    _entities[4].properties[14],
+  );
+
+  /// See [ProfileEntity.limitations].
+  static final limitations = obx.QueryStringProperty<ProfileEntity>(
+    _entities[4].properties[15],
+  );
+
+  /// See [ProfileEntity.equipment].
+  static final equipment = obx.QueryStringVectorProperty<ProfileEntity>(
+    _entities[4].properties[16],
+  );
+
+  /// See [ProfileEntity.availableEquipment].
+  static final availableEquipment =
+      obx.QueryStringVectorProperty<ProfileEntity>(_entities[4].properties[17]);
+
+  /// See [ProfileEntity.days].
+  static final days = obx.QueryStringVectorProperty<ProfileEntity>(
+    _entities[4].properties[18],
+  );
+
+  /// See [ProfileEntity.step].
+  static final step = obx.QueryIntegerProperty<ProfileEntity>(
+    _entities[4].properties[19],
+  );
+}
+
+/// [ProfileStateEntity] entity fields to define ObjectBox queries.
+class ProfileStateEntity_ {
+  /// See [ProfileStateEntity.id].
+  static final id = obx.QueryIntegerProperty<ProfileStateEntity>(
+    _entities[5].properties[0],
+  );
+
+  /// See [ProfileStateEntity.version].
+  static final version = obx.QueryIntegerProperty<ProfileStateEntity>(
+    _entities[5].properties[1],
+  );
+
+  /// See [ProfileStateEntity.completed].
+  static final completed = obx.QueryBooleanProperty<ProfileStateEntity>(
+    _entities[5].properties[2],
+  );
+}
+
+/// [TrainingPlanActivityEntity] entity fields to define ObjectBox queries.
+class TrainingPlanActivityEntity_ {
+  /// See [TrainingPlanActivityEntity.id].
+  static final id = obx.QueryIntegerProperty<TrainingPlanActivityEntity>(
+    _entities[6].properties[0],
+  );
+
+  /// See [TrainingPlanActivityEntity.recordKey].
+  static final recordKey = obx.QueryStringProperty<TrainingPlanActivityEntity>(
+    _entities[6].properties[1],
+  );
+
+  /// See [TrainingPlanActivityEntity.plan].
+  static final plan =
+      obx.QueryRelationToOne<TrainingPlanActivityEntity, TrainingPlanEntity>(
+        _entities[6].properties[2],
+      );
+
+  /// See [TrainingPlanActivityEntity.section].
+  static final section = obx.QueryStringProperty<TrainingPlanActivityEntity>(
+    _entities[6].properties[3],
+  );
+
+  /// See [TrainingPlanActivityEntity.position].
+  static final position = obx.QueryIntegerProperty<TrainingPlanActivityEntity>(
+    _entities[6].properties[4],
+  );
+
+  /// See [TrainingPlanActivityEntity.fields].
+  static final fields =
+      obx.QueryStringVectorProperty<TrainingPlanActivityEntity>(
+        _entities[6].properties[5],
+      );
+
+  /// See [TrainingPlanActivityEntity.name].
+  static final name = obx.QueryStringProperty<TrainingPlanActivityEntity>(
+    _entities[6].properties[6],
+  );
+
+  /// See [TrainingPlanActivityEntity.muscles].
+  static final muscles = obx.QueryStringProperty<TrainingPlanActivityEntity>(
+    _entities[6].properties[7],
+  );
+
+  /// See [TrainingPlanActivityEntity.sets].
+  static final sets = obx.QueryStringProperty<TrainingPlanActivityEntity>(
+    _entities[6].properties[8],
+  );
+
+  /// See [TrainingPlanActivityEntity.reps].
+  static final reps = obx.QueryStringProperty<TrainingPlanActivityEntity>(
+    _entities[6].properties[9],
+  );
+
+  /// See [TrainingPlanActivityEntity.weight].
+  static final weight = obx.QueryStringProperty<TrainingPlanActivityEntity>(
+    _entities[6].properties[10],
+  );
+
+  /// See [TrainingPlanActivityEntity.rest].
+  static final rest = obx.QueryStringProperty<TrainingPlanActivityEntity>(
+    _entities[6].properties[11],
+  );
+
+  /// See [TrainingPlanActivityEntity.duration].
+  static final duration = obx.QueryStringProperty<TrainingPlanActivityEntity>(
+    _entities[6].properties[12],
+  );
+
+  /// See [TrainingPlanActivityEntity.notes].
+  static final notes = obx.QueryStringProperty<TrainingPlanActivityEntity>(
+    _entities[6].properties[13],
+  );
+}
+
+/// [TrainingPlanEntity] entity fields to define ObjectBox queries.
+class TrainingPlanEntity_ {
+  /// See [TrainingPlanEntity.id].
+  static final id = obx.QueryIntegerProperty<TrainingPlanEntity>(
+    _entities[7].properties[0],
+  );
+
+  /// See [TrainingPlanEntity.businessId].
+  static final businessId = obx.QueryStringProperty<TrainingPlanEntity>(
+    _entities[7].properties[1],
+  );
+
+  /// See [TrainingPlanEntity.fields].
+  static final fields = obx.QueryStringVectorProperty<TrainingPlanEntity>(
+    _entities[7].properties[2],
+  );
+
+  /// See [TrainingPlanEntity.position].
+  static final position = obx.QueryIntegerProperty<TrainingPlanEntity>(
+    _entities[7].properties[3],
+  );
+
+  /// See [TrainingPlanEntity.isSample].
+  static final isSample = obx.QueryBooleanProperty<TrainingPlanEntity>(
+    _entities[7].properties[4],
+  );
+
+  /// See [TrainingPlanEntity.title].
+  static final title = obx.QueryStringProperty<TrainingPlanEntity>(
+    _entities[7].properties[5],
+  );
+
+  /// See [TrainingPlanEntity.type].
+  static final type = obx.QueryStringProperty<TrainingPlanEntity>(
+    _entities[7].properties[6],
+  );
+
+  /// See [TrainingPlanEntity.focus].
+  static final focus = obx.QueryStringProperty<TrainingPlanEntity>(
+    _entities[7].properties[7],
+  );
+
+  /// See [TrainingPlanEntity.date].
+  static final date = obx.QueryStringProperty<TrainingPlanEntity>(
+    _entities[7].properties[8],
+  );
+
+  /// See [TrainingPlanEntity.duration].
+  static final duration = obx.QueryStringProperty<TrainingPlanEntity>(
+    _entities[7].properties[9],
+  );
+
+  /// See [TrainingPlanEntity.volume].
+  static final volume = obx.QueryStringProperty<TrainingPlanEntity>(
+    _entities[7].properties[10],
+  );
+
+  /// See [TrainingPlanEntity.effort].
+  static final effort = obx.QueryStringProperty<TrainingPlanEntity>(
+    _entities[7].properties[11],
+  );
+
+  /// See [TrainingPlanEntity.rpe].
+  static final rpe = obx.QueryStringProperty<TrainingPlanEntity>(
+    _entities[7].properties[12],
+  );
+
+  /// See [TrainingPlanEntity.imageUrl].
+  static final imageUrl = obx.QueryStringProperty<TrainingPlanEntity>(
+    _entities[7].properties[13],
+  );
+
+  /// See [TrainingPlanEntity.iconCodePoint].
+  static final iconCodePoint = obx.QueryIntegerProperty<TrainingPlanEntity>(
+    _entities[7].properties[14],
+  );
+
+  /// See [TrainingPlanEntity.accent].
+  static final accent = obx.QueryIntegerProperty<TrainingPlanEntity>(
+    _entities[7].properties[15],
+  );
+
+  /// See [TrainingPlanEntity.description].
+  static final description = obx.QueryStringProperty<TrainingPlanEntity>(
+    _entities[7].properties[16],
+  );
+
+  /// See [TrainingPlanEntity.notes].
+  static final notes = obx.QueryStringProperty<TrainingPlanEntity>(
+    _entities[7].properties[17],
+  );
+
+  /// See [TrainingPlanEntity.targetEvent].
+  static final targetEvent = obx.QueryStringProperty<TrainingPlanEntity>(
+    _entities[7].properties[18],
+  );
+
+  /// See [TrainingPlanEntity.eventDateIso].
+  static final eventDateIso = obx.QueryStringProperty<TrainingPlanEntity>(
+    _entities[7].properties[19],
+  );
+
+  /// See [TrainingPlanEntity.scheduledDateIso].
+  static final scheduledDateIso = obx.QueryStringProperty<TrainingPlanEntity>(
+    _entities[7].properties[20],
   );
 }

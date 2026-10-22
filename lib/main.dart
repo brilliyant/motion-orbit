@@ -4,6 +4,7 @@ import 'core/theme/app_theme.dart';
 import 'features/dashboard/presentation/screens/dashboard_screen.dart';
 import 'features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'features/profile/data/datasources/objectbox_data_source.dart';
+import 'features/profile/data/datasources/objectbox_entity_migration.dart';
 import 'features/profile/data/datasources/profile_local_data_source.dart';
 import 'features/profile/data/repositories/profile_repository_impl.dart';
 import 'features/profile/domain/usecases/profile_use_cases.dart';
@@ -16,7 +17,6 @@ import 'features/settings/presentation/state/settings_store.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await MotionOrbitObjectBox.initialize();
   final settingsRepository = SettingsRepositoryImpl(
     dataSource: SettingsLocalDataSource(),
   );
@@ -30,7 +30,6 @@ Future<void> main() async {
     restoreJsonBackup: RestoreJsonBackup(settingsRepository),
     resetLocalProfileData: ResetLocalProfileData(settingsRepository),
   );
-  await settingsStore.load();
   runApp(MainApp(settingsStore: settingsStore));
 }
 
@@ -72,22 +71,26 @@ class StartupScreen extends StatefulWidget {
 }
 
 class _StartupScreenState extends State<StartupScreen> {
-  late final ProfileStore store;
+  ProfileStore? _store;
+  ProfileStore get store => _store ??= _createProfileStore();
   String? error;
   bool corrupt = false;
   @override
   void initState() {
     super.initState();
+    _load();
+  }
+
+  ProfileStore _createProfileStore() {
     final repository = ProfileRepositoryImpl(
       dataSource: ProfileLocalDataSourceImpl(),
     );
-    store = ProfileStore(
+    return ProfileStore(
       loadProfile: LoadProfile(repository),
       saveDraft: SaveProfileDraft(repository),
       completeProfile: CompleteProfile(repository),
       recoverProfile: RecoverProfile(repository),
     );
-    _load();
   }
 
   Future<void> _load({bool recover = false}) async {
@@ -96,6 +99,8 @@ class _StartupScreenState extends State<StartupScreen> {
       corrupt = false;
     });
     try {
+      await MotionOrbitObjectBox.initialize();
+      if (!widget.settingsStore.loaded) await widget.settingsStore.load();
       if (recover) await store.recover();
       await store.load();
       if (!mounted) return;
@@ -116,7 +121,9 @@ class _StartupScreenState extends State<StartupScreen> {
       if (!mounted) return;
       setState(() {
         corrupt = e is FormatException;
-        error = corrupt
+        error = e is ObjectBoxMigrationException
+            ? e.toString()
+            : corrupt
             ? 'Your saved setup could not be read. Retry, or start a new setup. The unreadable data will be kept on this device.'
             : 'Local storage is unavailable. Please retry. Setup needs working local storage to save your profile.';
       });

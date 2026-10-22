@@ -3,6 +3,7 @@ import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
 
 import '../../../../objectbox.g.dart';
+import 'objectbox_entity_migration.dart';
 
 class MotionOrbitObjectBox {
   MotionOrbitObjectBox._();
@@ -15,7 +16,15 @@ class MotionOrbitObjectBox {
 
     final appSupportDirectory = await getApplicationSupportDirectory();
     final objectBoxDirectory = path.join(appSupportDirectory.path, 'objectbox');
-    _store ??= openStore(directory: objectBoxDirectory);
+    final openedStore = await openStore(directory: objectBoxDirectory);
+    try {
+      await ObjectBoxEntityMigration(openedStore).run();
+      // Publish the store only after the migration and readback succeed.
+      _store = openedStore;
+    } catch (_) {
+      openedStore.close();
+      rethrow;
+    }
 
     if (!kDebugMode) return;
 
